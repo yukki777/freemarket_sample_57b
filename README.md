@@ -1,24 +1,74 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# Database設計
 
-* Ruby version
 
-* System dependencies
+## usersテーブル
 
-* Configuration
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|nickname|string|null: false|
+|first_name|string|null: false|
+|family_name|string|null: false|
+|birthday|date|null: false|
+|phone_number|string|null: false|
+|postal_code|string|null: false|
+|city|string|null: false|
+|address|string|null: false|
+|building_name|string|-|
+|building_phone_number|string|-|
 
-* Database creation
+### Association
+- has_many: products
+- belongs_to: prefecture
 
-* Database initialization
 
-* How to run the test suite
+## productsテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|postage|integer|null: false|
+|price|integer|null: false|
+|description|text|null: false|
+|status|string|null: false|
+|shipping_date|string|null: false|
 
-* Deployment instructions
+### Association
+- has_many: images
+- belongs_to: prefecture
+- belongs_to: category
 
-* ...
+
+## imagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|image_url|string|null: false|
+
+### Association
+- belongs_to: product
+
+
+## prefecturesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many: users
+- has_many: products
+
+
+## categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|category|string|null: false|
+
+### Association
+- has_many: products
