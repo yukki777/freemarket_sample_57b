@@ -41,6 +41,7 @@
 - has_many: images
 - belongs_to: prefecture
 - belongs_to: category
+- belongs_to: user
 
 
 ## imagesテーブル
