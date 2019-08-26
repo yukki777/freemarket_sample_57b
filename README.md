@@ -1,24 +1,81 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# Database設計
 
-* Ruby version
 
-* System dependencies
+## usersテーブル
 
-* Configuration
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|nickname|string|null: false|
+|first_name|string|null: false|
+|first_name_kana|string|null: false|
+|family_name|string|null: false|
+|family_name_kana|string|null: false|
+|birthday|date|null: false|
+|phone_number|string|null: false|
 
-* Database creation
+### Association
+- has_many: products
+- has_one: address
 
-* Database initialization
 
-* How to run the test suite
+## addressesテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|postal_code|string|null: false|
+|city|string|null: false|
+|address|string|null: false|
+|building_name|string|-|
+|building_phone_number|string|-|
+|prefecture|integer|null: false|
 
-* Deployment instructions
+### Association
+- belongs_to: user
+- has_one: product
 
-* ...
+
+## productsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|postage|integer|null: false|
+|price|integer|null: false|
+|description|text|null: false|
+|status|string|null: false|
+|shipping_date|string|null: false|
+|address_id|string|null: false, foreign_key: true|
+|category_id|integer|foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+
+
+### Association
+- has_many: images
+- belongs_to: address
+- belongs_to: category
+- belongs_to: user
+
+
+## imagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|image_url|string|null: false|
+|product_id|integer|null: false, foreign_key: true|
+
+
+### Association
+- belongs_to: product
+
+
+## categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|category|string|null: false|
+
+### Association
+- has_many: products
