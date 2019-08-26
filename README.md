@@ -34,8 +34,7 @@
 
 ### Association
 - has_one: user
-- has_many: products
-
+- has_one: product
 
 
 ## productsテーブル
@@ -55,7 +54,7 @@
 
 ### Association
 - has_many: images
-- belongs_to: address
+- has_one: address
 - belongs_to: category
 - belongs_to: user
 
