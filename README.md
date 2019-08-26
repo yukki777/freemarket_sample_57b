@@ -33,7 +33,7 @@
 |prefecture|integer|null: false|
 
 ### Association
-- has_one: user
+- belongs_to: user
 - has_one: product
 
 
@@ -54,7 +54,7 @@
 
 ### Association
 - has_many: images
-- has_one: address
+- belongs_to: address
 - belongs_to: category
 - belongs_to: user
 
