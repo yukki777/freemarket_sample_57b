@@ -1,18 +1,16 @@
 class CreateProducts < ActiveRecord::Migration[5.2]
   def change
     create_table :products do |t|
-      t.string     :name,          null: false
-      t.integer    :postage,       null: false
-      t.integer    :price,         null: false
-      t.text       :description,   null: false
-      t.string     :status,        null: false
-      t.string     :shipping_date, null: false
-      t.references :address
-      t.references :category
+      t.string  :name,          null: false
+      t.integer :postage,       null: false
+      t.integer :price,         null: false
+      t.text    :description,   null: false
+      t.string  :status,        null: false
+      t.strin   :shipping_date, null: false
+      t.integer :address_id,    foreign_key: true
+      t.integer :category_id,   foreign_key: true
 
       t.timestamps
     end
-
-    add_foreign_key :addresses, :categories
   end
 end
