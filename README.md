@@ -20,8 +20,7 @@
 
 ### Association
 - has_many: products
-- has_many: addresses
-- belongs_to: prefecture
+- has_one: address
 
 
 ## addressesテーブル
@@ -31,11 +30,12 @@
 |address|string|null: false|
 |building_name|string|-|
 |building_phone_number|string|-|
-|prefecture_id|string|null: false, foreign_key: true|
+|prefecture|integer|null: false|
 
 ### Association
-- belongs_to: user
-- belongs_to: prefecture
+- has_one: user
+- has_many: products
+
 
 
 ## productsテーブル
@@ -48,11 +48,14 @@
 |description|text|null: false|
 |status|string|null: false|
 |shipping_date|string|null: false|
-|prefecture_id|string|null: false, foreign_key: true|
+|address_id|string|null: false, foreign_key: true|
+|category_id|integer|foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+
 
 ### Association
 - has_many: images
-- belongs_to: prefecture
+- belongs_to: address
 - belongs_to: category
 - belongs_to: user
 
@@ -62,20 +65,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |image_url|string|null: false|
+|product_id|integer|null: false, foreign_key: true|
+
 
 ### Association
 - belongs_to: product
-
-
-## prefecturesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- has_many: addresses
-- has_many: products
 
 
 ## categoriesテーブル
