@@ -1,0 +1,61 @@
+%footer.footer
+  .footer__image
+    .footer__image__content
+      .footer__image__content__left
+        %p スマホでかんたんフリマアプリ
+        %h3 今すぐ無料ダウンロード！
+        .footer__image__content__left__phone
+          = image_tag "mercari_icon.png",class: "mercari-image"
+          = link_to image_tag("app-store.svg",class: "app-image"),root_path
+          = link_to image_tag("google-play.svg",class: "google-image"),root_path
+      .footer__image__content__right
+        = image_tag "phone.png",class: "phone-image"
+  .footer__nav
+    .footer__nav__flex
+      .footer__nav__flex__colum
+        %h3 メルカリについて
+        %ul
+          %li=link_to "会社概要(運営会社)",root_path
+          %li=link_to "採用情報",root_path 
+          %li=link_to "プレスリリース",root_path
+          %li=link_to "公式ブログ",root_path
+          %li=link_to "メルカリロゴ利用ガイドライン",root_path  
+        .fa.fa-twitter
+        .fa.fa-facebook-official
+      .footer__nav__flex__colum
+        %h3 ヘルプ&ガイド
+        %ul
+          %li=link_to "メルカリガイド",root_path
+          %li=link_to "らくらくメルカリ便",root_path
+          %li=link_to "ゆうゆうメルカリ便",root_path
+          %li=link_to "大型メルカリ便",root_path
+          %li=link_to "車体取引ガイド",root_path  
+          %li=link_to "メルカリ安心・あんぜ宣言",root_path
+          %li=link_to "偽ブランド品撲滅への取り組み",root_path
+          %li=link_to "メルカリボックス",root_path
+      .footer__nav__flex__colum
+        %h3 プライバシーと利用規約
+        %ul 
+          %li=link_to "プライバシーポリシー",root_path
+          %li=link_to "メルカリ利用規約",root_path
+          %li=link_to "あんしんスマホサポート制度に関する利用特約",root_path
+          %li=link_to "コンプライアンスポリシー",root_path 
+      .footer__nav__flex__colum
+        %h3.colum-margin
+        %ul 
+          %li=link_to "個人データの安全管理に係る基本方針",root_path
+          %li=link_to "特定取引に関する表記",root_path
+          %li=link_to "資金決済法に基づく表示",root_path
+          %li=link_to "法令順守と犯罪防止のために",root_path
+      .footer__nav__flex__colum
+        %h3 国
+        %ul 
+          %li=link_to "日本",root_path
+          %li=link_to "United States",root_path
+    .footer-bottom 
+      =link_to image_tag('logo-white.svg',class: "logo-white"),root_path
+      .copyright 
+        © 2019 Mercari
+       
+         
+  
