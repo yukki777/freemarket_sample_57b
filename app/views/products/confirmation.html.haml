@@ -1,0 +1,45 @@
+.confirmation-container
+  .confirmation-container__image
+    = link_to image_tag("logo.svg",class: "logo"),root_path
+  .confirmation-container__content
+    %h2
+      購入内容の確認
+    %hr
+    .confirmation-container__content__block
+      .confirmation-container__content__block__item
+        = image_tag "kutu.jpg", class: "item-icon"
+        %p シャネルイヤリング
+      .confirmation-container__content__block__form
+        %p ¥18,800 
+        %p.small-font 送料込み
+      .confirmation-container__content__block__form2
+        =link_to "ポイントはありません",root_path
+      .confirmation-container__content__block__form3
+        %p 支払い金額
+        .price-font 
+          ¥18,800,000
+      .confirmation-container__content__block__form4
+        = link_to "購入する",root_path
+    %hr
+    .confirmation-container__content__shipping-address
+      %h4 配送先
+      %p 〒郵便番号
+      %p 住所
+      %p 名前
+      .confirmation-container__content__shipping-address__editbutton
+        =link_to "変更する",root_path
+        =link_to "",root_path,class:"fa fa-angle-right"
+    %hr
+    .confirmation-container__content__credit
+      %h4 支払い方法
+      %p クレジット情報
+      .confirmation-container__content__credit__editbutton
+        =link_to "変更する",root_path
+        =link_to "",root_path,class:"fa fa-angle-right"
+  .confirmation-container__footer
+    %ul
+      %li=link_to "プライバシーポリシー",root_path
+      %li=link_to "メルカリ利用規約",root_path
+      %li=link_to "特定商取引に関する表記",root_path    
+    = link_to image_tag("logo-gray.svg",class: "footer-logo"),root_path 
+    %p © 2019 Mercari   
