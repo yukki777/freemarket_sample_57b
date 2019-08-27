@@ -49,12 +49,10 @@
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server '3.114.129.44',
-  user: "ec2-user",
-  roles: %w{app db web}
+server '3.114.129.44', user: "ec2-user", roles: %w{app db web}
 
-set :rails_env, "production"
-set :unicorn_rack_env, "production"
+# set :rails_env, "production"
+# set :unicorn_rack_env, "production"
 
 #   ssh_options: {
 #     user: "user_name", # overrides user setting above
