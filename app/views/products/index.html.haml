@@ -1,0 +1,66 @@
+= render partial: "header"
+-# 特集ページ
+.wrapper
+  .feature
+    = image_tag "index_keyvisual.png", size: "700x380"
+-# 出品ボタン
+.wrapper2
+  .circle
+    .circle__message
+      = "出品"
+    .circle__awesome
+      = link_to "#" do
+        %i.fa.fa-camera
+-# 商品一覧
+.wrapper3
+  .product
+    .upper-product
+      = "商品一覧"
+    .middle-product-set
+      .middle-product
+        .middle-product__image
+          = image_tag "m19588550336_1.jpg", size: "200x200"
+        .middle-product__description
+          .middle-product__description__message
+            = "BEAMS ローファー　24cm"
+          .middle-product__description__value
+            %p.middle-product__description__value__money
+              = "¥1,900"
+            %p.middle-product__description__value__like
+              = "♡11"
+      .middle-product
+        .middle-product__image
+          = image_tag "m85693164901_1.jpg", size: "200x200"
+        .middle-product__description
+          .middle-product__description__message
+            = "コウペンちゃんトート　チョコななな"
+          .middle-product__description__value
+            %p.middle-product__description__value__money
+              = "¥3,000"
+            %p.middle-product__description__value__like
+              = "♡870"
+      .middle-product
+        .middle-product__image
+          = image_tag "m16577281625_1.jpg", size: "200x200"
+        .middle-product__description
+          .middle-product__description__message
+            = "プロを目指す人のためのRuby入門"
+          .middle-product__description__value
+            %p.middle-product__description__value__money
+              = "¥2,000"
+            %p.middle-product__description__value__like
+              = "♡7"
+      .middle-product
+        .middle-product__image
+          = image_tag "m69315901380_1.jpg", size: "200x200"
+        .middle-product__description
+          .middle-product__description__message
+            = "iPhoneXケース　天気の子"
+          .middle-product__description__value
+            %p.middle-product__description__value__money
+              = "¥2,500"
+            %p.middle-product__description__value__like
+              = "♡822"
+    .lower-product
+      =  link_to("すべての商品を見る", {})
+= render partial: "footer"
