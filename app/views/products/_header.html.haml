@@ -1,0 +1,34 @@
+%header.header
+  .header__content
+    .header__content__up
+      = link_to image_tag('logo.svg',class: "logo"),root_path
+      = form_tag '/',class: "header-form", :method => 'get'  do
+        %i.fa.fa-search
+        = text_field_tag :search, params[:search] ,class: "header-field",placeholder: "何かお探しですか？"   
+        = submit_tag 'Search', :name => nil,class: "hidden"
+    .header__content__down
+      .header__content__down__left
+        %i.fa.fa-list-ul
+        %ul 
+          %li=link_to "カテゴリーから探す",root_path
+        %i.fa.fa-tags
+        %ul 
+          %li=link_to "ブランドから探す",root_path
+      .header__content__down__right
+        %ul
+          %li.fa.fa-bell-o
+            =link_to "お知らせ",root_path,class: "bell-text"
+          %li.fa.fa-check
+            =link_to "やることリスト",root_path,class: "check-text"
+          %li.profile-content
+            =link_to "マイページ",root_path
+          %li=link_to image_tag('profile.png',class: "profile"),root_path
+          
+            
+          
+        
+        
+
+             
+        
+     
