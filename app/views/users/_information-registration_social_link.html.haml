@@ -6,10 +6,11 @@
     .information-registration__base__main-box__click-area
       .information-registration__base__main-box__click-area__social__link-box
         .information-registration__base__main-box__click-area__social__link-box__configuration
-          %a.information-registration__base__main-box__click-area__social__link-box__configuration__social__mail{href: ""}
-            メールアドレスで登録する
-          %a.information-registration__base__main-box__click-area__social__link-box__configuration__social__facebook{href: ""}
-            facebookで登録する
-          %a.information-registration__base__main-box__click-area__social__link-box__configuration__social__google{href: ""}
-            googleで登録する
+          .information-registration__base__main-box__click-area__social__link-box__configuration__social__mail
+            = link_to 'メールアドレスで登録する',root_path
+          .information-registration__base__main-box__click-area__social__link-box__configuration__social__facebook
+            = link_to 'facebookで登録する',root_path
+          .information-registration__base__main-box__click-area__social__link-box__configuration__social__google
+            = link_to 'googleで登録する',root_path
+            
 

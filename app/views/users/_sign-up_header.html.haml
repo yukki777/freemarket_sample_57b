@@ -1,7 +1,8 @@
 .information-registration__main-header
   .information-registration__main-header__logo-mark
-    %a.nformation-registration__main-header__logo-mark__img{href: ""}
-      %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3951034907" }
+    .nformation-registration__main-header__logo-mark__img
+      = link_to '',root_path
+      = image_tag 'logo_horizontal.png', class: "img"
   .information-registration__main-header__reft
     .guide-messages
       .guide-messages__information__red 会員情報

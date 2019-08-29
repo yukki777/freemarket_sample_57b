@@ -1,5 +1,3 @@
-
--# 名前、メアド、パス、誕生日、ロボット
 .information-registration__base
   .information-registration__base__main-box
     .information-registration__base__main-box__inner-header
@@ -67,11 +65,13 @@
 
       .information-registration__base__main-box__click-area__input
         %p.information-registration__base__main-box__click-area__input__center-notes 「次へ進む」のボタンを押すことにより、
-        %a.information-registration__base__main-box__click-area__input__center-notes__rink{href: ""} 利用規約
-        に同意したものとみなします
+        .information-registration__base__main-box__click-area__input__center-notes__rink
+          = link_to '利用規約',root_path
+          に同意したものとみなします
 
       .information-registration__base__main-box__click-area__input
-        %a.information-registration__base__main-box__click-area__rink-btn{href: ""} 次ぎへ進む
-
+        .information-registration__base__main-box__click-area__rink-btn
+          = link_to '次ぎへ進む',root_path
       .information-registration__base__main-box__click-area__input
-        %a.information-registration__base__main-box__click-area__input__rink{href: ""} 本人情報の登録について
+        .information-registration__base__main-box__click-area__input__rink
+          = link_to '本人情報の登録について',root_path

@@ -35,30 +35,34 @@
           &__social__mail{
             height: 50px;
             border-radius: 3px;
-            color: #FFF;
             background-color: #EA352D;
-            display: block;
             text-decoration: none;
+            a{
+              color: #FFF;
+              text-decoration: none;
+            }
           }
           
           &__social__facebook{
             height: 50px;
             margin-top: 10px;
             border-radius: 3px;
-            color: #FFF;
             background-color: #385185;
-            display: block;
-            text-decoration: none;
+            a{
+              color: #FFF;
+              text-decoration: none;
+            }
           }
           &__social__google{
             height: 50px;
             margin-top: 10px;
             border-radius: 3px;
-            color: #000000;
             border: 1px solid#979797;
             background-color: #FFF;
-            display: block;
-            text-decoration: none;
+            a{
+              color: #000000;
+              text-decoration: none;
+            }
           }
         }
       }
@@ -180,8 +184,10 @@
 
         }
         &__center-notes__rink{
+          a{
           text-decoration: none;
           color: #0199E8;
+          }
         }
 
         &__left-notes{
@@ -190,12 +196,16 @@
           text-align: left;
 
           &__rink{
+            a{
+              text-align: left;
             text-decoration: none;
           color: #0199E8;
+            }
           }
         }
       }
       &__rink-btn{
+        a{
         height: 50px;
         width: 350px;
         margin: 0 auto;
@@ -205,20 +215,24 @@
         background-color: #EA352D;
         display: block;
         text-decoration: none;
+        }
       }
       &__input__rink{
+        a{
         text-decoration: none;
         color: #0199E8;
         text-align: right;
         display: block;
+        }
 
         &__position-left{
+          a{
           margin-top: 3px;
         text-decoration: none;
         color: #0199E8;
         text-align: left;
         display: block;
-
+          }
         }
       }
       &__next-input{

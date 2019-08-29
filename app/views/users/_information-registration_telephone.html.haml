@@ -11,9 +11,11 @@
         %p.information-registration__base__main-box__click-area__input__black-notes
           本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
       .information-registration__base__main-box__click-area__input
-        %a.information-registration__base__main-box__click-area__rink-btn{href: ""} SMSを送信する
+        .information-registration__base__main-box__click-area__rink-btn
+          = link_to 'SMSを送信する',root_path
         %p.information-registration__base__main-box__click-area__input__black-notes
           電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
         .information-registration__base__main-box__click-area__input
-        %a.information-registration__base__main-box__click-area__input__rink{href: ""} 電話番号の確認が必要な理由
+        .information-registration__base__main-box__click-area__input__rink
+          = link_to '電話番号の確認が必要な理由',root_path
 

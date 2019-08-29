@@ -11,7 +11,8 @@
         %p.information-registration__base__main-box__click-area__input__black-notes
           SMSで届いた番号を入力してください
       .information-registration__base__main-box__click-area__input
-        %a.information-registration__base__main-box__click-area__rink-btn{href: ""} 認証して完了
+        .information-registration__base__main-box__click-area__rink-btn{href: ""} 
+          = link_to '認証して完了',root_path
     
     .information-registration__base__main-box__click-area
       .information-registration__base__main-box__click-area__input
@@ -19,49 +20,17 @@
         %p.information-registration__base__main-box__click-area__input__gry-notes
           電話番号で認証を聞くこともできます。
       .information-registration__base__main-box__click-area__input
-        %a.information-registration__base__main-box__click-area__rink-btn{href: ""} 電話で認証番号を聞く (通話無料)
+        .information-registration__base__main-box__click-area__rink-btn{href: ""} 
+          = link_to '電話で認証番号を聞く (通話無料)',root_path
     
     .information-registration__base__main-box__click-area
       .information-registration__base__main-box__click-area__input
         %p.information-registration__base__main-box__click-area__input__black-notes 電話番号を再送することもできます。もう一度電話番号を入力してください。
-        %a.information-registration__base__main-box__click-area__input__rink__position-left{href: ""}電話番号を再度入力する
+        .information-registration__base__main-box__click-area__input__rink__position-left{href: ""}
+          = link_to '電話番号を再度入力する',root_path
 
         %p.information-registration__base__main-box__click-area__input__left-notes 
           ※SMSが届かない場合は
-          %a.information-registration__base__main-box__click-area__input__left-notes__rink{href: ""} SMS受信設定
-          を確認して、もう一度電話番号を入力してください。
-      
-
-
-
-
-
-
-
--# .information-registration
--#   .information-registration__base
--#     .information-registration__main
--#       .information-registration__header
--#         %h2.information-registration__heading 電話番号認証
--#       .telephone-authentication
--#         .information__text-area
--#           %label.information__label 認証番号
--#           %input.information__text{:placeholder => "認証番号番号を入力", :type => "text"}/
--#           %p.form-info-text SMSで届いた番号を入力してください
--#           %a.next-page{:href => ""} 認証して完了
--#         / これ大事なやつ
--#       / これ大事なやつ
--#       .telephone-authentication
--#         .information__text-area
--#           %label.information__label 30秒たっても認証番号が届かない方へ
--#           %input.information__text{:placeholder => "認証番号番号を入力", :type => "text"}/
--#           %p.form-info-text SMSで届いた番号を入力してください
--#           %a.next-page{:href => ""} 認証して完了
--#       .telephone-authentication
--#         .information__text-area
--#           .notes__main
--#             %p.notes 認証番号を再送することもできます。もう一度電話番号を入力してください。
--#           %p.form-info-text
--#             SMSが届かない場合は
--#             %a> SMS受信設定
--#             を確認して、もう一度電話番号を入力してください。
+          .information-registration__base__main-box__click-area__input__left-notes__rink{href: ""} 
+            = link_to 'SMS受信設定',root_path
+            を確認して、もう一度電話番号を入力してください。
