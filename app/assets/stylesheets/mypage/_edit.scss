@@ -1,0 +1,104 @@
+.container{
+  box-shadow: none;
+  &__mypage{
+    padding: 15px 0 50px 0;
+    width: 1000px;
+    display: flex;
+    margin: 0 auto;
+  
+    &__left-content{
+      width: 30%;
+      height: 1000px;
+      background-color: #333333;
+    }
+    &__right-person{
+      width: 70%;
+      height: calc(100% - 50px);
+      padding-bottom: 40px;
+      margin-left: 40px;
+      background-color: #fff;
+      h2{
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        padding: 10px 0 0 0;
+      }
+      hr{
+        border: none;
+        height: 2px;
+        background-color: #F5F5F5;
+      }
+      &__content{
+        font-size: 14px;
+        padding: 50px 50px;
+        p{
+          line-height: 20px;
+        }
+        &__document{
+          float: right;
+          padding-top: 10px;
+          a{
+            color: #0099e8;;
+            text-decoration: none;
+          }
+          :hover{
+            text-decoration: underline;
+          }
+        }
+        &__form{
+          margin-top: 50px;
+          h5{
+            padding-bottom: 5px;
+            font-weight: 600;
+          }
+          &__content{
+            padding: 20px 0;
+           
+          }
+          &__edit{
+            
+            p{
+              display: inline-block;
+              background-color: #CCCCCC;
+              padding: 0 3px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              margin-top: 30px;
+              margin-left: 5px;
+              margin-bottom: 10px;
+            }
+            .label{
+              font-weight: 600;
+              padding-bottom: 5px;
+            }
+            .user-content{
+              width: calc(100% - 50px );
+              padding: 12px 20px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+            }
+            .user-country{
+              width: calc(100% - 10px);
+              height: 45px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              background-color: #fff;
+            }
+            
+          }
+          &__submit{
+            padding: 40px 0;
+            .user-submit{
+              width: 100%;
+              height: 50px;
+              color: #fff;
+              background-color: #EA352D;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
