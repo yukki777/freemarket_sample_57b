@@ -1,0 +1,25 @@
+.container{
+  &__mypage{
+    &__right-logout{
+      width: 70%;
+      padding-bottom: 40px;
+      margin-left: 40px;
+      background-color: #fff;
+      height: 100%;
+      &__submit{
+        padding: 40px 0;
+        text-align: center;
+        margin-top: 35px;
+        .user-submit{
+          width: 320px;
+          height: 50px;
+          color: #fff;
+          background-color: #EA352D;
+          border: none;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
