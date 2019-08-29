@@ -1,0 +1,29 @@
+.sell {
+  background-color: #F5F5F5;
+  &__header {
+    height: 128px;
+    h1 {
+      height: 128px;
+      img {
+        display: block;
+        margin: auto;
+        padding-top: 19px;
+      }
+    }
+  }
+  &__main {
+    width: 700px;
+    margin: auto;
+    display: block;
+    background-color: #FFFFFF;
+    h2 {
+      padding: 32px 16px;
+      font-size: 22px;
+      text-align: center;
+      display: block;
+      font-weight: bold;
+      color: rgb(51, 51, 51);
+      border-bottom: 1px solid #eee;
+    }
+  }
+}
