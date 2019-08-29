@@ -1,0 +1,51 @@
+= render partial: "products/header"
+.container
+  .container__mypage
+    = render partial: "products/mypage-left"
+    .container__mypage__right-person
+      %h2
+        本人情報の登録
+      %hr
+      .container__mypage__right-person__content 
+        %p お客さまの本人情報をご登録ください。
+        %p 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        .container__mypage__right-person__content__document
+          =link_to "本人確認書類のアップロードについて",root_path
+          =link_to "",root_path,class:"fa fa-angle-right"
+        .container__mypage__right-person__content__form
+          .container__mypage__right-person__content__form__content
+            %h5 お名前
+            %p ユーザー名が入ります 
+          .container__mypage__right-person__content__form__content
+            %h5 お名前カナ
+            %p ユーザーのカナ名が入ります
+          .container__mypage__right-person__content__form__content
+            %h5 生年月日
+            %p ユーザーの生年月日が入ります
+          = form_for root_path do |f|
+            .container__mypage__right-person__content__form__edit
+              = f.label '郵便番号', class:"label"
+              %p 任意
+              = f.text_field :adress, class: 'user-content',placeholder:"例) 1234567" 
+            .container__mypage__right-person__content__form__edit
+              = f.label '都道府県', class:"label"
+              %p 任意
+              = f.select :country, [["",""], ["静岡県","静岡県"], ["東京都","東京都"]], {}, class: 'user-country'
+            .container__mypage__right-person__content__form__edit
+              = f.label '市区町村', class:"label"
+              %p 任意
+              = f.text_field :adress, class: 'user-content',placeholder:"例) 横浜市緑区" 
+            .container__mypage__right-person__content__form__edit
+              = f.label '番地', class:"label"
+              %p 任意
+              = f.text_field :adress, class: 'user-content',placeholder:"例) 青山1-1-1" 
+            .container__mypage__right-person__content__form__edit
+              = f.label '建築名', class:"label"
+              %p 任意
+              = f.text_field :adress, class: 'user-content',placeholder:"例) 柳ビル103" 
+            .container__mypage__right-person__content__form__submit
+              = f.submit "登録する", class: 'user-submit'
+        .container__mypage__right-person__content__document
+          =link_to "本人情報の登録について",root_path
+          =link_to "",root_path,class:"fa fa-angle-right"    
+= render partial: "products/footer"

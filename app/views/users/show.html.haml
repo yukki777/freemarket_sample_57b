@@ -1,0 +1,17 @@
+= render partial: "products/header"
+.container
+  .container__mypage
+    = render partial: "products/mypage-left"
+    .container__mypage__right-profile
+      %h2
+        プロフィール
+      .container__mypage__right-profile__user
+        = form_tag '/',class: "user-form", :method => 'get'  do
+          .container__mypage__right-profile__user__image
+            = image_tag "profile.png",class: "user-profile"
+            = text_field_tag :profile, params[:profile] ,class: "user-field",placeholder: "例)AYAセール中☆" 
+          .container__mypage__right-profile__user__text
+            = text_area_tag :body, nil, placeholder: "例) こんにちわ☆ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に９号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問ありましたらお気軽にどうぞ♪", class:"user-textarea"
+          .container__mypage__right-profile__user__button
+            = submit_tag "変更する", class: 'edit-button'
+= render partial: "products/footer"
