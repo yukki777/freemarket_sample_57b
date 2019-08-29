@@ -1,0 +1,89 @@
+.sidebar{
+  width: 30%;
+  &__list{
+    list-style: none;
+    display: block;
+    list-style-type: disc;
+    :hover{
+      background: #fafafa;
+      opacity: 1;;
+    }
+    &__activepoints{
+      position: relative;
+      display: block;
+      min-height: 25px;
+      padding:16px 14px 12px 14px;
+      font-size: 14px;
+      color: #333;
+      background-color: #fff;
+      border-bottom: solid 1px #EEEEEE;
+      
+        &__text{
+          a{
+            display: block;
+            color: #333;
+            text-decoration: none;
+          }
+        }
+        &__allow-right{
+          color: #ccc;
+          position: absolute;
+          top: 50%;
+          right: 16px;
+          transform: translate(0, -50%);
+          transition: all ease-out .2s;
+        }
+      }
+    &__points{
+        border-bottom:solid 1px #EEEEEE;
+        position: relative;
+        display: block;
+        min-height: 25px;
+        padding:16px 14px 12px 14px;
+        background: #fff;
+        font-size: 14px;
+        color: #333;
+        
+        &__text{
+          color: #0099e8;
+          text-decoration: none;
+          a{
+            display: block;
+            color: #333;
+            text-decoration: none;
+          }
+          
+        }
+        &__hidden{
+          position: absolute;
+          top: 50%;
+          right: 32px;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ea352d;
+          text-align: center;
+          line-height: 24px;
+          color: #fff;
+          transform: translate(0, -50%);
+        }
+        &__allow-right{
+          position: absolute;
+          top: 50%;
+          right: 16px;
+          color: #ccc;
+          transform: translate(0, -50%);
+          transition: all ease-out .2s;
+        }
+    }
+  }
+  &__header{
+    margin: 40px 2% 0;
+    font-size: 16px;
+    font-weight:bold;
+    a{
+      color: #333;
+      text-decoration: none;
+    }
+  }
+}
