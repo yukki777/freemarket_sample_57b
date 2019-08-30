@@ -1,5 +1,7 @@
 @import "font-awesome";
 @import "reset";
-@import "mixin/form-require";
-@import "mixin/input-default";
-@import "new"
+@import "mixins/form-require";
+@import "mixins/input-default";
+@import "mixins/clearfix";
+@import "mixins/select";
+@import "new";

@@ -55,8 +55,17 @@
           font-weight: 600;
           display: inline-block;
           color: #333;
-          span {
+          .form-require {
             @include form-require();
+          }
+          .form-optional {
+            background: gray;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
           }
         }
         div{
@@ -80,42 +89,28 @@
       }
     }
     .sell-content {
+      width: 620px;
+      padding: 40px;
+      border-top: 1px solid #eee;
       h3 {
         float: left;
         color: #888;
         font-size: 14px;
         display: block;
         font-weight: bold;
-        .sell-form-box {
-          
-          float: right;
+      }
+      .sell-form-box {
+        @include clearfix();
+        float: right;
+        width: 400px;
+        .form-group {
           width: 400px;
-          .form-group {
-            width: 400px;
-            margin: 0;
-            color: #333;
-            label {
-              font-weight: 600;
-              display: inline-block;
-              color: #333;
-            }
-            div {
-              .select-wrap1 {
-                margin: 8px 0 0;
-                background: #fff;
-                position: relative;
-                &__defaultcategory1 {
-                  width: 400px;
-                  height: 48px;
-                  border: 1px solid #ccc;
-                  position: relative;
-                  background: 0;
-                  -webkit-appearance: none;
-                  padding: 0 16px;
-                }
-              }
-            }
-          }
+          margin: 0;
+          color: #333;
+          @include select();
+        }
+        .top-margin {
+          margin-top: 40px;
         }
       }
     }

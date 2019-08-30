@@ -39,83 +39,116 @@
               カテゴリー
               %span.form-require 必須
             %div
-              .select-wrap1
-                %select{class:"select-wrap1__defaultcategory1"}
+              .select-wrap
+                %select{class:"select-wrap__defaultcategory"}
                   %option{value: 0} ---
                   %option{value: 0} ---
                   %option{value: 0} ---
                 %i.fa.fa-angle-down
-  -#             .select-wrap2
-  -#               %select.select-default
-  -#                 %option{value: 0} ---
-  -#                 %option{value: 1} トップス
-  -#                 %option{value: 2} ジャケット/アウター
-  -#                 %option{value: 3} パンツ
-  -#                 %option{value: 4} スカート
-  -#                 %option{value: 5} ワンピース
-  -#                 %option{value: 1328} 靴
-  -#                 %option{value: 6} ルームウェア/パジャマ
-  -#                 %option{value: 7} レッグウェア
-  -#                 %option{value: 8} 帽子
-  -#                 %option{value: 9}バッグ
-  -#                 %option{value: 1027} アクセサリー
-  -#                 %option{value: 1318} ヘアアクセサリー
-  -#                 %option{value: 10} その他
-  -#               %i.far.fa-angle-down
-  -#             .select-wrap3
-  -#               %select.select-default
-  -#                 %option{value: "0"} ---
-  -#                 %option{value: "1"} Tシャツ
-  -#                 %option{value: "2"} シャツ
-  -#                 %option{value: "3"} ポロシャツ
-  -#                 %option{value: "4"} キャミソール
-  -#                 %option{value: "5"} タンクトップ
-  -#                 %option{value: "1328"} ホルターネック
-  -#                 %option{value: "6"} ニット/セーター
-  -#                 %option{value: "7"} チュニック
-  -#                 %option{value: "8"} カーディガン
-  -#                 %option{value: "9"} アンサンブル
-  -#                 %option{value: "1027"} ベスト
-  -#                 %option{value: "1318"} パーカー
-  -#                 %option{value: "10"} その他
-  -#               %i.far.fa-angle-down
-  -#         .form-group
-  -#           %label
-  -#             商品の状態
-  -#             %span.form-require 必須
-  -#           %div
-  -#             .select-wrap
-  -#               -# = f.select :status,Item.statuses.keys, {}, {class:"select--wrap__default"}
-  -#               %i.far.fa-angle-down
+              .select-wrap
+                %select{class:"select-wrap__defaultcategory"}
+                  %option{value: 0} ---
+                  %option{value: 1} トップス
+                  %option{value: 2} ジャケット/アウター
+                  %option{value: 3} パンツ
+                  %option{value: 4} スカート
+                  %option{value: 5} ワンピース
+                  %option{value: 1328} 靴
+                  %option{value: 6} ルームウェア/パジャマ
+                  %option{value: 7} レッグウェア
+                  %option{value: 8} 帽子
+                  %option{value: 9}バッグ
+                  %option{value: 1027} アクセサリー
+                  %option{value: 1318} ヘアアクセサリー
+                  %option{value: 10} その他
+                %i.far.fa-angle-down
+              .select-wrap
+                %select{class:"select-wrap__defaultcategory"}
+                  %option{value: "0"} ---
+                  %option{value: "1"} Tシャツ
+                  %option{value: "2"} シャツ
+                  %option{value: "3"} ポロシャツ
+                  %option{value: "4"} キャミソール
+                  %option{value: "5"} タンクトップ
+                  %option{value: "1328"} ホルターネック
+                  %option{value: "6"} ニット/セーター
+                  %option{value: "7"} チュニック
+                  %option{value: "8"} カーディガン
+                  %option{value: "9"} アンサンブル
+                  %option{value: "1027"} ベスト
+                  %option{value: "1318"} パーカー
+                  %option{value: "10"} その他
+                %i.far.fa-angle-down
+          .form-group.top-margin
+            %label
+              サイズ
+              %span.form-require 必須
+            %div
+              .select-wrap
+                %select{class:"select-wrap__defaultcategory"}
+                  %option{value: "0"} ---
+                  %option{value: "1"} XXS以下
+                  %option{value: "2"} XS
+                  %option{value: "3"} S
+                  %option{value: "4"} M
+                  %option{value: "5"} L
+                  %option{value: "1328"} XL
+                  %option{value: "6"} 2XL
+                  %option{value: "7"} 3XL
+                  %option{value: "8"} 4XL
+                  %option{value: "9"} Free
+                %i.fa.fa-angle-down
+          .form-group.top-margin
+            %label
+              ブランド
+              %span.form-optional 任意
+            %div
+              .select-wrap
+                %select{class:"select-wrap__defaultcategory"}
+                  %option{value: 0} ---
+                  %option{value: 0} ---
+                  %option{value: 0} ---
+                %i.fa.fa-angle-down
+          .form-group.top-margin
+            %label
+              商品の状態
+              %span.form-require 必須
+            %div
+              .select-wrap
+                %select{class:"select-wrap__defaultcategory"}
+                  %option{value: 0} ---
+                  %option{value: 0} ---
+                  %option{value: 0} ---
+                %i.far.fa-angle-down
 
-  -#     .sell-content.clearfix
-  -#       %h3.sell-sub-head 配送について
-  -#       %a(href="").form-question ?
-  -#       .sell-form-box
-  -#         .form-group
-  -#           %label
-  -#             配送料の負担
-  -#             %span.form-require 必須
-  -#           %div
-  -#             .select-wrap
-  -#               -# = f.select :delivery_charge,[['---',""], ['送料込み（出品者負担）', '送料込み（出品者負担）'], ['着払い（購入者負担）', '着払い（購入者負担）']], {}, {class:"select--wrap__default"}
-  -#               %i.far.fa-angle-down
-  -#         .form-group
-  -#           %label
-  -#             発送元の地域
-  -#             %span.form-require 必須
-  -#           %div
-  -#             .select-wrap
-  -#               -# = f.select :prefecture,Item.prefectures.keys,{},{class:"select--wrap__default select--wrap-cat3__default-category3"}
-  -#               %i.far.fa-angle-down
-  -#         .form-group
-  -#           %label
-  -#             発送までの日数
-  -#             %span.form-require 必須
-  -#           %div
-  -#             .select-wrap
-  -#               = f.select :delivery_days,[['---',""], ['1~2日で発送', '1~2日で発送'], ['2〜3日で発送', '2〜3日で発送'],['4〜7日で発送', '4〜7日で発送']], {}, {class:"select--wrap__default"}
-  -#               %i.far.fa-angle-down
+      .sell-content.clearfix
+        %h3.sell-sub-head 配送について
+        %a(href="").form-question ?
+        .sell-form-box
+          .form-group
+            %label
+              配送料の負担
+              %span.form-require 必須
+            %div
+              .select-wrap
+                -# = f.select :delivery_charge,[['---',""], ['送料込み（出品者負担）', '送料込み（出品者負担）'], ['着払い（購入者負担）', '着払い（購入者負担）']], {}, {class:"select--wrap__default"}
+                %i.far.fa-angle-down
+          .form-group
+            %label
+              発送元の地域
+              %span.form-require 必須
+            %div
+              .select-wrap
+                -# = f.select :prefecture,Item.prefectures.keys,{},{class:"select--wrap__default select--wrap-cat3__default-category3"}
+                %i.far.fa-angle-down
+          .form-group
+            %label
+              発送までの日数
+              %span.form-require 必須
+            %div
+              .select-wrap
+                -# = f.select :delivery_days,[['---',""], ['1~2日で発送', '1~2日で発送'], ['2〜3日で発送', '2〜3日で発送'],['4〜7日で発送', '4〜7日で発送']], {}, {class:"select--wrap__default"}
+                %i.far.fa-angle-down
 
   -#     .sell-content.clearfix
   -#       %h3.sell-sub-head 販売価格(300~9,999,999)
