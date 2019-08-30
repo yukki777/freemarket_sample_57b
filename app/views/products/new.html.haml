@@ -7,31 +7,29 @@
     .sell__main__container
       %h2.single-head
         商品の情報を入力
-    -#   -# = form_for @item do |f|
-    -#   -# = form_with model:@product, class:"sell--form",local: true do |f|
-    -#     -# = f.hidden_field :sales_status,{value:"出品中"}
-    -#     .sell-upload-box
-    -#       %h3.sell-upload-head
-    -#         出品画像
-    -#         %span.form-require 必須
-    -#       %p 最大10枚までアップロードできます
-    -#       .sell-upload-dropbox.have-item-0
-    -#         %pre.visible-pc
-    -#           ドラッグアンドドロップまたはクリックしてファイルをアップロード
-    -#         %i.fas.fa-camera
+      .sell__main__upload--box
+        %h3.sell-upload-head
+          出品画像
+          %span.form-require 必須
+        %p 最大10枚までアップロードできます
+        .sell-upload-dropbox
+          %input(type="file"){class: 'hidden sell--upload--drop--box'}
+          %pre.visible-pc
+            ドラッグアンドドロップまたはクリックしてファイルをアップロード
+          -# %i.fas.fa-camera
 
-    -#     .sell-content
-    -#       .form-group
-    -#         %label
-    -#           商品名
-    -#           %span.form-require 必須
-    -#         %div
-    -#           -# = f.text_field.input-default{placeholder: "商品名（必須 40文字まで）"}
-    -#       .form-group
-    -#         %label
-    -#           商品の説明
-    -#           %span.form-require 必須
-    -#         -# = f.text_area.textarea-default :description, {rows: "5", placeholder: "商品の説明（必須 1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+      .sell-content
+        .form-group
+          %label
+            商品名
+            %span.form-require 必須
+          %div
+            %input(type="text"){class: "input-default", placeholder: "商品名（必須 40文字まで）"}
+        .form-group
+          %label
+            商品の説明
+            %span.form-require 必須
+          -# = f.text_area.textarea-default :description, {rows: "5", placeholder: "商品の説明（必須 1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
 
     -#     .sell-content.clearfix
     -#       %h3.sell-sub-head 商品の詳細
