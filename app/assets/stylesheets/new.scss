@@ -1,5 +1,3 @@
-@import "mixin/form-require";
-
 .sell {
   background-color: #F5F5F5;
   &__header {
@@ -76,6 +74,47 @@
             background: #fff;
             font-size: 16px;
             line-height: 1.5;
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+    .sell-content {
+      h3 {
+        float: left;
+        color: #888;
+        font-size: 14px;
+        display: block;
+        font-weight: bold;
+        .sell-form-box {
+          
+          float: right;
+          width: 400px;
+          .form-group {
+            width: 400px;
+            margin: 0;
+            color: #333;
+            label {
+              font-weight: 600;
+              display: inline-block;
+              color: #333;
+            }
+            div {
+              .select-wrap1 {
+                margin: 8px 0 0;
+                background: #fff;
+                position: relative;
+                &__defaultcategory1 {
+                  width: 400px;
+                  height: 48px;
+                  border: 1px solid #ccc;
+                  position: relative;
+                  background: 0;
+                  -webkit-appearance: none;
+                  padding: 0 16px;
+                }
+              }
+            }
           }
         }
       }
