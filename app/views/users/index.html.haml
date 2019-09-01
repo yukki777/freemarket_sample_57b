@@ -1,9 +1,9 @@
-= render partial: "header.html.haml"
+= render partial: "products/header"
 - breadcrumb :mypages
 = render "layouts/breadcrumbs"
 .mypage-container
   .mypage-size
-    = render partial: "mypage-left"
+    = render partial: "products/mypage-left"
     .mypage-right
       .mypage-usericon
         .mypage-usericon__center
@@ -131,4 +131,4 @@
             .mypage-tab-transaction__content__trading__area
               .mypage-tab-transaction__content__trading__area__text
                 取引中の商品がありません
-  = render partial: "footer.html.haml"
+  = render partial: "products/footer.html.haml"

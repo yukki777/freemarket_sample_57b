@@ -4,7 +4,7 @@ end
 
 # メルカリ＞マイページ
 crumb :mypages do
-  link 'マイページ',mypage_path
+  link 'マイページ',users_path
   parent :root
 end
 
