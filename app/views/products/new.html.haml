@@ -158,6 +158,10 @@
             %div
               .select-wrap
                 %select{class:"select-wrap__defaultcategory"}
+                -# active_hashは導入してあります。
+                -# 参照：https://kossy-web-engineer.hatenablog.com/entry/2019/01/08/205702
+                -# form_for使い始めたら使う
+                -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
                   %option{value: 0} ---
                 %i.far.fa-angle-down
           .form-group.top-margin
