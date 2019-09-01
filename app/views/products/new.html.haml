@@ -12,10 +12,13 @@
           出品画像
           %span.form-require 必須
         %p 最大10枚までアップロードできます
-        .sell-upload-dropbox
-          %input(type="file"){class: 'hidden sell--upload--drop--box'}
-          %pre.visible-pc
-            ドラッグアンドドロップまたはクリックしてファイルをアップロード
+        %label
+          .sell-upload-dropbox
+            -# %input(type="file"){class: 'hidden sell--upload--drop--box'}
+            .sell-upload-dropbox2  
+              %pre.visible-pc
+                ドラッグアンドドロップ 
+                またはクリックしてファイルをアップロード
 
       .sell-content
         .form-group

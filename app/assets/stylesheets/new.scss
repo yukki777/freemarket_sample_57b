@@ -41,8 +41,50 @@
         font-size: 14px;
         color: #333;
       }
+      .sell--dropbox--container {
+        display: block;
+        width: 620px;
+        height: 162px;
+        margin: 16px auto 0;
+        &__items {
+          display: inline;
+          &__upload {
+            float: left;
+            display: block;
+            &__ul {
+              display: block;
+            }
+          }
+        }
+      }
       .sell-upload-dropbox {
-
+        margin-top: 16px;
+        height: 162px;
+        position: relative;
+        background: #f5f5f5;
+        border: 1px dashed #ccc;
+        text-align: center;
+        #canvas{
+          float:left;
+        }
+        .sell-upload-dropbox2 {
+          padding: 40px;
+          height: 82px;
+          padding-top: 60px;
+        }
+        .visible--pc{
+          position: absolute;
+          padding-top: 50%;
+          left: 16px;
+          right: 16px;
+          text-align: center;
+          font-size: 14px;
+          line-height: 1.5;
+          transform: translate(0, -50%);
+          pointer-events: none;
+          white-space: pre-wrap;
+          word-wrap: break-word;
+        }
       }
     }
     .sell-content {
