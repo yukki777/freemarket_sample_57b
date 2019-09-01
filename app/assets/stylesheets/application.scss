@@ -1,6 +1,10 @@
 @import "font-awesome";
 @import "reset";
+
+@import "mixins/form-require";
+@import "mixins/input-default";
 @import "mixins/clearfix";
+@import "mixins/select";
 @import "mixins/dot";
 
 @import "modules/sign-up_main";
@@ -12,9 +16,9 @@
 @import "confirmation";
 @import "details";
 @import "logout";
+@import "new";
 
 @import "mypage-left";
 @import "mypage";
 @import "mypage/edit";
 @import "mypage/profile";
-
