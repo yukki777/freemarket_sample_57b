@@ -124,7 +124,8 @@
 
       .sell-content.clearfix
         %h3.sell-sub-head 配送について
-        %a(href="").form-question ?
+        =link_to "#", class: 'form--question' do
+          ?
         .sell-form-box
           .form-group
             %label
@@ -132,23 +133,31 @@
               %span.form-require 必須
             %div
               .select-wrap
-                -# = f.select :delivery_charge,[['---',""], ['送料込み（出品者負担）', '送料込み（出品者負担）'], ['着払い（購入者負担）', '着払い（購入者負担）']], {}, {class:"select--wrap__default"}
+                %select{class:"select-wrap__defaultcategory"}
+                  %option{value: 0} ---
+                  %option{value: 0} 送料込み（出品者負担）
+                  %option{value: 0} 着払い（購入者負担）
                 %i.far.fa-angle-down
-          .form-group
+          .form-group.top-margin
             %label
               発送元の地域
               %span.form-require 必須
             %div
               .select-wrap
-                -# = f.select :prefecture,Item.prefectures.keys,{},{class:"select--wrap__default select--wrap-cat3__default-category3"}
+                %select{class:"select-wrap__defaultcategory"}
+                  %option{value: 0} ---
                 %i.far.fa-angle-down
-          .form-group
+          .form-group.top-margin
             %label
               発送までの日数
               %span.form-require 必須
             %div
               .select-wrap
-                -# = f.select :delivery_days,[['---',""], ['1~2日で発送', '1~2日で発送'], ['2〜3日で発送', '2〜3日で発送'],['4〜7日で発送', '4〜7日で発送']], {}, {class:"select--wrap__default"}
+                %select{class:"select-wrap__defaultcategory"}
+                  %option{value: 0} ---
+                  %option{value: 1} 1~2日で発送
+                  %option{value: 2} 2~3日で発送
+                  %option{value: 3} 4~7日で発送
                 %i.far.fa-angle-down
 
   -#     .sell-content.clearfix
