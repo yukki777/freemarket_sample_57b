@@ -171,6 +171,9 @@
             display: list-item;
             .l-left {
               display: inline-block;
+              .small {
+                font-size: 13px;
+              }
             }
             .l-right {
               float: right;
@@ -181,12 +184,13 @@
       }
     }
     .sell-content.sell-btn-box {
-      height: 329px;
+      height: 248px;
       padding: 40px;
       border-top: 1px solid #eee;
       p {
-        line-height: 1.5;
+        line-height: 1.7;
         color: #333;
+        font-size: 13px;
         a {
           color: #0099e8;
           text-decoration: none;
@@ -216,6 +220,40 @@
         transition: all ease-out .3s;
         text-align: center;
       }
+    }
+  }
+  &__footer {
+    width: 456px;
+    height: 160px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 0;
+    nav {
+      display: block;
+      ul {
+        li {
+          display: inline-block;
+          margin: 0;
+          font-size: 12px;
+          list-style: none;
+          color: #333;
+          a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    h1 {
+      margin: 40px auto 0;
+    }
+    p {
+      display: block;
+      color: #333;
+      height: 65px;
+      text-decoration: none;
+      margin: 0 auto;
     }
   }
 }

@@ -178,7 +178,7 @@
                     %input(type="text"){class: "input--price__default", placeholder: "例）300"}
             %li.clearfix
               .l-left
-                販売手数料（10%）
+                .small 販売手数料（10%）
               .l-right -
             %li.clearfix.bold
               .l-left 販売利益
@@ -204,3 +204,23 @@
           .actions
             %input(type="submit"){value: "出品する", class: "btn--red"}
         %a.btn-default.btn--gray もどる
+
+  .sell__footer
+    %nav.single--footer__nav
+      %ul.single--footer__nav__ul
+        %li.single--footer__nav__ul__li
+          =link_to "#" do
+            プライバシーポリシー
+        %li.single--footer__nav__ul__li
+          =link_to "#" do
+            メルカリ利用規約
+        %li.single--footer__nav__ul__li
+          =link_to "#" do
+            特定商取引に関する表記
+    %h1
+      = image_tag "logo-gray.svg", size: "80x65"
+    -# =link_to "#", class: '.single--footer--logo'
+       
+        
+    %p
+      %small © 2019 Mercari
