@@ -157,13 +157,13 @@
               %span.form-require 必須
             %div
               .select-wrap
-                %select{class:"select-wrap__defaultcategory"}
+                = collection_select :prefecture, :prefecture_id, Prefecture.all, :id, :name, {class:"select-wrap__defaultcategory"}
+                %i.far.fa-angle-down
                 -# active_hashは導入してあります。
                 -# 参照：https://kossy-web-engineer.hatenablog.com/entry/2019/01/08/205702
                 -# form_for使い始めたら使う
                 -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
-                  %option{value: 0} ---
-                %i.far.fa-angle-down
+
           .form-group.top-margin
             %label
               発送までの日数
