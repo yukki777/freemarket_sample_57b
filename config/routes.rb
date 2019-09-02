@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  root 'products#index'
+  resources :products, only: :new
 end
