@@ -47,7 +47,7 @@
 |name|string|null: false|
 |price|integer|null: false|
 |description|text|null: false|
-|address_id|string|null: false, foreign_key: true|
+|address_id|integer|null: false, foreign_key: true|
 |postage_id|integer|foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
