@@ -33,6 +33,7 @@
 |building_name|string|-|
 |building_phone_number|string|-|
 |prefecture|integer|null: false|
+|user_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to: user
@@ -44,21 +45,31 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|postage|integer|null: false|
 |price|integer|null: false|
 |description|text|null: false|
-|status|string|null: false|
-|shipping_date|string|null: false|
 |address_id|string|null: false, foreign_key: true|
-|category_id|integer|foreign_key: true|
+|postage_id|integer|foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
+|brand_id|integer|foreign_key: true|
+|shipping_method_id|integer|foreign_key: true|
+|size_id|integer|foreign_key: true|
+|shipping_date_id|integer|foreign_key: true|
+|condition_id|integer|foreign_key: true|
 
 
 ### Association
-- has_many: images
+
 - belongs_to: address
-- belongs_to: category
 - belongs_to: user
+- belongs_to: brand
+- belongs_to: postage
+- belongs_to: condition
+- belongs_to: shipping_date
+- belongs_to: size
+- belongs_to: shipping_method
+- has_many: images
+- has_many: product-categories
+- has_many: categories, through: :product-categories
 
 
 ## imagesテーブル
@@ -68,7 +79,6 @@
 |image_url|string|null: false|
 |product_id|integer|null: false, foreign_key: true|
 
-
 ### Association
 - belongs_to: product
 
@@ -77,7 +87,82 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|category|string|null: false|
+|name|string|null: false|
+|brand_id|integer|foreign_key: true|
+
+### Association
+- has_many: product-categories
+- has_many: products, through: :product-categories
+- belongs_to: brand
+
+
+## postagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|payment|string|null: false|
+
+### Association
+- has_one: product
+
+
+## shipping_methodsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|method|string|null: false|
+
+### Association
+- has_one: product
+
+
+## product-categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|product_id|integer|foreign_key: true|
+|category_id|integer|foreign_key: true|
+
+### Association
+- belongs_to: product
+- belongs_to: category
+
+## conditionsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|condition|string|null: false|
+
+### Association
+- has_one: product
+
+
+## shipping_datesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|date|string|null: false|
+
+### Association
+- has_one: product
+
+
+## sizesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|size|string|null: false|
+
+### Association
+- has_one: product
+
+
+## brandsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
 
 ### Association
 - has_many: products
+- has_many: categories
