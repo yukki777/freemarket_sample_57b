@@ -1,0 +1,35 @@
+.information-registration__base
+  .information-registration__base__main-box
+    .information-registration__base__main-box__inner-header
+      お支払い方法
+    .information-registration__base__main-box__click-area
+
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label カード番号
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        %input.information-registration__base__main-box__click-area__input__information__text{placeholder: " 半角数字のみ", type: "text"}/
+      .information-registration__base__main-box__click-area__input__image-box
+
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label 有効期限
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+
+        .information-registration__base__main-box__click-area__input__flex-start
+          %select.information-registration__base__main-box__click-area__input__flex-start__select
+          %span.information-registration__base__main-box__click-area__input__flex-start__calendar 月
+
+        .information-registration__base__main-box__click-area__input__flex-start__next-select
+          %select.information-registration__base__main-box__click-area__input__flex-start__select
+          %span.information-registration__base__main-box__click-area__input__flex-start__calendar 年
+
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label セキュリティーコード
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        %input.information-registration__base__main-box__click-area__input__information__text{placeholder: " カード背面4桁もしくは3桁の番号", type: "text"}/
+      
+      .information-registration__base__main-box__click-area__input
+      .information-registration__base__main-box__click-area__input__empty-box
+        .information-registration__base__main-box__click-area__rink-btn
+          = link_to '次へ進む',root_path
+      
+      .information-registration__base__main-box__click-area__input__empty-box
