@@ -87,3 +87,15 @@
 ### Association
 - has_many: product-categories
 - has_many: products, through: :product-categories
+
+
+## product_categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|product_id|integer|foreign_key: true|
+|category_id|integer|foreign_key: true|
+
+### Association
+- belongs_to: product
+- belongs_to: category
