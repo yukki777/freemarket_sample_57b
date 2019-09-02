@@ -15,8 +15,7 @@
         %ul 
           %li=link_to "ブランドから探す",root_path
       .header__content__down__right
-      - if user_signed_in?
-        %ul.header__content__down__right__signin
+        %ul
           %li.fa.fa-bell-o
             =link_to "お知らせ",root_path,class: "bell-text"
           %li.fa.fa-check
@@ -24,12 +23,6 @@
           %li.profile-content
             =link_to "マイページ",root_path
           %li=link_to image_tag('profile.png',class: "profile"),root_path
-      - else
-        %ul.header__content__down__right__notsignin
-          .header__content__down__right__notsignin__new
-            %li=link_to "新規会員登録",root_path,class: "new"
-          .header__content__down__right__notsignin__login
-            %li=link_to "ログイン",root_path,class: "login"
           
             
           

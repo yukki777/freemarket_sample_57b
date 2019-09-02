@@ -80,3 +80,5 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'active_hash'
 gem 'devise'
+gem 'gretel'
+
