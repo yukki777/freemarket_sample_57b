@@ -61,6 +61,9 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :production do
@@ -75,4 +78,7 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'active_hash'
+gem 'devise'
 gem 'gretel'
+
