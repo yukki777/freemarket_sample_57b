@@ -1,0 +1,119 @@
+.information-registration__main-header{
+  height: 120px;
+  width: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  @include clearfix();
+
+  &__logo-mark{
+    margin-left: 30px;
+    height: 200px;
+    width: 200px;
+    .img{
+      width: 200px;
+    }
+  }
+  &__reft{
+    margin-top: 30px;
+    width: 700px;
+    @include clearfix();
+
+    .guide-messages{
+      margin-right: 40px;
+      display: flex;
+      justify-content: flex-end;
+
+      &__information{
+        margin-right: 80px;
+        font-size: x-small;
+        color: #888888;
+        
+        &__red{
+          margin-right: 80px;
+          font-size: x-small;
+          color: #EA352D;
+        }
+      }
+
+      &__tel{
+        margin-right: 50px;
+        font-size: x-small;
+        color: #888888;
+        &__red{
+          margin-right: 50px;
+          font-size: x-small;
+          color: #EA352D;
+        }
+      }
+
+      &__address{
+        margin-right: 50px;
+        font-size: x-small;
+        color: #888888;
+        &__red{
+          margin-right: 50px;
+          font-size: x-small;
+          color: #EA352D;
+        }
+      }
+
+      &__payment{
+        margin-right: 40px;
+        font-size: x-small;
+        color: #888888;
+        &__red{
+          margin-right: 40px;
+          font-size: x-small;
+          color: #EA352D;
+        }
+ 
+      }
+
+      &__end{
+        margin-left: 40px;
+        font-size: x-small;
+        color: #888888;
+        &__red{
+          margin-left: 40px;
+          font-size: x-small;
+          color: #EA352D;
+        }
+      }
+    }
+
+    .guide-line{
+      margin-right: 41px;
+      display: flex;
+      justify-content: flex-end;
+
+      &__dot-red{
+        @include dot-road();
+        background-color: #EA352D;
+      }
+     
+      
+      &__dot-gray{
+        @include dot-road();
+        background-color: #CCCCCC;
+      }
+
+      &__border-red{
+        margin-top: 6px;
+        width: 100px;
+        height: 2px;
+        background-color: #EA352D;
+
+      }
+
+      &__border-gray{
+        margin-top: 6px;
+        width: 100px;
+        height: 2px;
+        background-color: #CCCCCC;
+
+      }
+    }
+  }
+}
+

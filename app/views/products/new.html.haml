@@ -1,0 +1,244 @@
+.sell
+  .sell__header
+    %h1
+      = image_tag "logo.svg", size: "185x90"
+
+  .sell__main
+    .sell__main__container
+      %h2.single-head
+        商品の情報を入力
+      .sell__main__upload--box
+        %h3.sell-upload-head
+          出品画像
+          %span.form-require 必須
+        %p 最大10枚までアップロードできます
+        %label
+          .sell-upload-dropbox
+            .sell-upload-dropbox2  
+              %pre.visible-pc
+                ドラッグアンドドロップ 
+                またはクリックしてファイルをアップロード
+
+      .sell-content
+        .form-group
+          %label
+            商品名
+            %span.form-require 必須
+          %div
+            %input(type="text"){class: "input-default", placeholder: "商品名（必須 40文字まで）"}
+        .form-group
+          %label
+            商品の説明
+            %span.form-require 必須
+          %div
+            %textarea{class: "textarea-default", rows: "5", placeholder: "商品の説明（必須 1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+
+      .sell-content.clearfix
+        %h3.sell-sub-head 商品の詳細
+        .sell-form-box
+          .sell-form-box__right
+            .form-group
+              %label
+                カテゴリー
+                %span.form-require 必須
+              %div
+                .select-wrap
+                  %select{class:"select-wrap__defaultcategory"}
+                    %option{value: 0} ---
+                    %option{value: 0} ---
+                    %option{value: 0} ---
+                  %i.fa.fa-angle-down
+                .select-wrap
+                  %select{class:"select-wrap__defaultcategory"}
+                    %option{value: 0} ---
+                    %option{value: 1} トップス
+                    %option{value: 2} ジャケット/アウター
+                    %option{value: 3} パンツ
+                    %option{value: 4} スカート
+                    %option{value: 5} ワンピース
+                    %option{value: 1328} 靴
+                    %option{value: 6} ルームウェア/パジャマ
+                    %option{value: 7} レッグウェア
+                    %option{value: 8} 帽子
+                    %option{value: 9}バッグ
+                    %option{value: 1027} アクセサリー
+                    %option{value: 1318} ヘアアクセサリー
+                    %option{value: 10} その他
+                  %i.far.fa-angle-down
+                .select-wrap
+                  %select{class:"select-wrap__defaultcategory"}
+                    %option{value: "0"} ---
+                    %option{value: "1"} Tシャツ
+                    %option{value: "2"} シャツ
+                    %option{value: "3"} ポロシャツ
+                    %option{value: "4"} キャミソール
+                    %option{value: "5"} タンクトップ
+                    %option{value: "1328"} ホルターネック
+                    %option{value: "6"} ニット/セーター
+                    %option{value: "7"} チュニック
+                    %option{value: "8"} カーディガン
+                    %option{value: "9"} アンサンブル
+                    %option{value: "1027"} ベスト
+                    %option{value: "1318"} パーカー
+                    %option{value: "10"} その他
+                  %i.far.fa-angle-down
+            .form-group.top-margin
+              %label
+                サイズ
+                %span.form-require 必須
+              %div
+                .select-wrap
+                  %select{class:"select-wrap__defaultcategory"}
+                    %option{value: "0"} ---
+                    %option{value: "1"} XXS以下
+                    %option{value: "2"} XS
+                    %option{value: "3"} S
+                    %option{value: "4"} M
+                    %option{value: "5"} L
+                    %option{value: "1328"} XL
+                    %option{value: "6"} 2XL
+                    %option{value: "7"} 3XL
+                    %option{value: "8"} 4XL
+                    %option{value: "9"} Free
+                  %i.fa.fa-angle-down
+            .form-group.top-margin
+              %label
+                ブランド
+                %span.form-optional 任意
+              %div
+                .select-wrap
+                  %select{class:"select-wrap__defaultcategory"}
+                    %option{value: 0} ---
+                    %option{value: 0} ---
+                    %option{value: 0} ---
+                  %i.fa.fa-angle-down
+            .form-group.top-margin
+              %label
+                商品の状態
+                %span.form-require 必須
+              %div.clearfix
+                .select-wrap
+                  %select{class:"select-wrap__defaultcategory"}
+                    %option{value: 0} ---
+                    %option{value: 0} ---
+                    %option{value: 0} ---
+                  %i.far.fa-angle-down
+
+      .sell-content.clearfix
+        %h3.sell-sub-head 配送について
+        =link_to "#", class: 'form--question' do
+          ?
+        .sell-form-box
+          .form-group
+            %label
+              配送料の負担
+              %span.form-require 必須
+            %div
+              .select-wrap
+                %select{class:"select-wrap__defaultcategory"}
+                  %option{value: 0} ---
+                  %option{value: 0} 送料込み（出品者負担）
+                  %option{value: 0} 着払い（購入者負担）
+                %i.far.fa-angle-down
+          .form-group.top-margin
+            %label
+              配送の方法
+              %span.form-require 必須
+            %div
+              .select-wrap
+                %select{class:"select-wrap__defaultcategory"}
+                  %option{value: 0} ---
+                  %option{value: 0} クロネコヤマト
+                  %option{value: 0} ゆうパック
+                %i.far.fa-angle-down
+          .form-group.top-margin
+            %label
+              発送元の地域
+              %span.form-require 必須
+            %div
+              .select-wrap
+                = collection_select :prefecture, :prefecture_id, Prefecture.all, :id, :name, {class:"select-wrap__defaultcategory"}
+                %i.far.fa-angle-down
+                -# active_hashは導入してあります。
+                -# 参照：https://kossy-web-engineer.hatenablog.com/entry/2019/01/08/205702
+                -# form_for使い始めたら使う
+                -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+
+          .form-group.top-margin
+            %label
+              発送までの日数
+              %span.form-require 必須
+            %div
+              .select-wrap
+                %select{class:"select-wrap__defaultcategory"}
+                  %option{value: 0} ---
+                  %option{value: 1} 1~2日で発送
+                  %option{value: 2} 2~3日で発送
+                  %option{value: 3} 4~7日で発送
+                %i.far.fa-angle-down
+
+      .sell-content.clearfix
+        %h3.sell-sub-head 販売価格(300~9,999,999)
+        =link_to "#", class: 'form--question' do
+          ?
+        .sell-form-box
+          %ul.sell-price
+            %li.form-group
+              .clearfix
+                %label.l-left
+                  価格
+                  %span.form-require
+                    必須
+                .l-right.sell-price-input
+                  ¥
+                  %div.sell-price-input__form
+                    %input(type="text"){class: "input--price__default", placeholder: "例）300"}
+            %li.clearfix
+              .l-left
+                .small 販売手数料（10%）
+              .l-right -
+            %li.clearfix.bold
+              .l-left 販売利益
+              .l-right -
+      
+      .modal{role: "dialog", tabindex: "--1"}
+        .modal--inner
+      .sell-content.sell-btn-box
+        %div
+          %p
+            = link_to "#" do
+              禁止されている出品
+            、
+            = link_to "#" do
+              行為
+            を必ずご確認ください。
+          %p
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "#" do
+              偽ブランドの販売
+            は犯罪であり処罰される可能性があります。
+          %p
+            また出品をもちまして
+            = link_to "#" do
+              加盟店規約
+            に同意したことになります。
+          .actions
+            %input(type="submit"){value: "出品する", class: "btn--red"}
+        %a.btn-default.btn--gray もどる
+
+  .sell__footer
+    %nav.single--footer__nav
+      %ul.single--footer__nav__ul
+        %li.single--footer__nav__ul__li
+          =link_to "#" do
+            プライバシーポリシー
+        %li.single--footer__nav__ul__li
+          =link_to "#" do
+            メルカリ利用規約
+        %li.single--footer__nav__ul__li
+          =link_to "#" do
+            特定商取引に関する表記
+    %h1
+      = image_tag "logo-gray.svg", size: "80x65"       
+    %p
+      %small © 2019 Mercari
