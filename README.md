@@ -47,26 +47,20 @@
 |name|string|null: false|
 |price|integer|null: false|
 |description|text|null: false|
-|address_id|integer|null: false, foreign_key: true|
-|postage_id|integer|foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
-|brand_id|integer|foreign_key: true|
-|shipping_method_id|integer|foreign_key: true|
-|size_id|integer|foreign_key: true|
-|shipping_date_id|integer|foreign_key: true|
-|condition_id|integer|foreign_key: true|
+|address_id|integer|null: false, foreign_key: true|
+|brand_id|integer|-|
+|postage_id|integer|null: false|
+|shipping_method_id|integer|null: false|
+|size_id|integer|null: false|
+|shipping_date_id|integer|null: false|
+|condition_id|integer|null: false|
 
 
 ### Association
 
 - belongs_to: address
 - belongs_to: user
-- belongs_to: brand
-- belongs_to: postage
-- belongs_to: condition
-- belongs_to: shipping_date
-- belongs_to: size
-- belongs_to: shipping_method
 - has_many: images
 - has_many: product-categories
 - has_many: categories, through: :product-categories
@@ -88,81 +82,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|brand_id|integer|foreign_key: true|
+|parent_id|integer|-|
 
 ### Association
 - has_many: product-categories
 - has_many: products, through: :product-categories
-- belongs_to: brand
-
-
-## postagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|payment|string|null: false|
-
-### Association
-- has_one: product
-
-
-## shipping_methodsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|method|string|null: false|
-
-### Association
-- has_one: product
-
-
-## product-categoriesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|product_id|integer|foreign_key: true|
-|category_id|integer|foreign_key: true|
-
-### Association
-- belongs_to: product
-- belongs_to: category
-
-## conditionsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|condition|string|null: false|
-
-### Association
-- has_one: product
-
-
-## shipping_datesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|date|string|null: false|
-
-### Association
-- has_one: product
-
-
-## sizesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|size|string|null: false|
-
-### Association
-- has_one: product
-
-
-## brandsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- has_many: products
-- has_many: categories
