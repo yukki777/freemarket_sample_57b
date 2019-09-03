@@ -15,24 +15,23 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:edit, :update, :show]
-  resources :productss, only: [:edit, :update, :show]
+  resources :products, only: [:edit, :update, :show]
   
-  get 'products/top'
-  get 'products/show'
-  get 'products/new'
-  get 'products/confirmation'
+  get 'products/show' =>'products#show'
+  get 'products/new' =>'products#new'
+  get 'products/confirmation' =>'products#confirmation'
 
-  get 'users/logout'
-  get 'users/mypage'
-  get 'users/details'
-  get 'users/telephone'
-  get 'users/telephonesecond'
-  get 'users/address'
-  get 'users/payment'
-  get 'users/finish'
-  get 'users/sociallink'
-  get 'users/show'
-  get 'users/edit'
-  get 'users/registration'
+  get 'users/logout' =>'users#logout'
+  get 'users/mypage' =>'users#mypage'
+  get 'users/details' =>'users#details'
+  get 'users/telephone' =>'users#telephone'
+  get 'users/telephonesecond' =>'users#telephonesecond'
+  get 'users/address' =>'users#address'
+  get 'users/payment' =>'users#payment'
+  get 'users/finish' =>'users#finish'
+  get 'users/sociallink' =>'users#sociallink'
+  get 'users/show' =>'users#show'
+  get 'users/edit' =>'users#edit'
+  get 'users/registration' =>'users#registration'
 
 end
