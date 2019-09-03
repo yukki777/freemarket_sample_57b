@@ -1,6 +1,10 @@
 @import "font-awesome";
 @import "reset";
+
+@import "mixins/form-require";
+@import "mixins/input-default";
 @import "mixins/clearfix";
+@import "mixins/select";
 @import "mixins/dot";
 
 @import "modules/sign-up_main";
@@ -13,6 +17,8 @@
 @import "details";
 @import "form_footer";
 @import "login";
+@import "new";
+
 
 @import "mypage-left";
 @import "mypage";

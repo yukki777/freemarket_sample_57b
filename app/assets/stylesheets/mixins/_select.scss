@@ -1,0 +1,33 @@
+@mixin select() {
+  label {
+    font-weight: 600;
+    display: inline-block;
+    color: #333;
+  }
+  div {
+    .select-wrap {
+      margin: 8px 0 0;
+      background: #fff;
+      position: relative;
+      &__defaultcategory, #prefecture_prefecture_id {
+        width: 400px;
+        height: 48px;
+        border: 1px solid #ccc;
+        position: relative;
+        background: 0;
+        -webkit-appearance: none;
+        padding: 0 16px;
+      }
+      .fa-angle-down {
+        font: normal 25px FontAwesome;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        z-index: 2;
+        color: #888;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+      }
+    }
+  }
+}

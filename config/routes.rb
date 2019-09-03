@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users 
     
   root to: 'products#index'
@@ -16,4 +17,5 @@ Rails.application.routes.draw do
   
   resources :users, only: [:edit, :update, :show]
   resources :productss, only: [:edit, :update, :show]
+
 end
