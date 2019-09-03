@@ -1,0 +1,46 @@
+.information
+  .information__registration
+    .information__registration__main-header
+      .information__registration__main-header__logo-mark
+        .information__registration__main-header__logo-mark__img
+          = link_to '',root_path
+          = link_to image_tag('logo_horizontal.png', class: "img"),root_path
+      .information__registration__main-header__reft
+        .guide-messages
+          .guide-messages__information__red 会員情報
+          .guide-messages__tel__red 電話番号認証
+          .guide-messages__address お届け先住所入力
+          .guide-messages__payment 支払い方法
+          .guide-messages__end 完了
+        .guide-line
+          .guide-line__dot-red
+          .guide-line__border-red
+          .guide-line__dot-red
+          .guide-line__border-gray
+          .guide-line__dot-gray
+          .guide-line__border-gray
+          .guide-line__dot-gray
+          .guide-line__border-gray
+          .guide-line__dot-gray 
+-# 電話番号確認ページ
+.information-registration__base
+  .information-registration__base__main-box
+    .information-registration__base__main-box__inner-header
+      電話番号の確認
+    .information-registration__base__main-box__click-area
+    = form_for @user, url: new3_signup_index_path, method: :get, html: {class: 'form'} do |f|
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label 携帯電話の番号
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        = f.text_field :phone_number,placeholder: " 例）携帯電話の番号を入力",class: "information-registration__base__main-box__click-area__input__information__text" 
+        %p.information-registration__base__main-box__click-area__input__black-notes
+          本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+      .information-registration__base__main-box__click-area__input
+        .information-registration__base__main-box__click-area__rink-btn
+          = f.submit "SNSを送信する", class: "information-registration__base__main-box__click-area__rink-btn"
+        %p.information-registration__base__main-box__click-area__input__black-notes
+          ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+        .information-registration__base__main-box__click-area__input
+        .information-registration__base__main-box__click-area__input__rink
+          = link_to '電話番号の確認が必要な理由',root_path
+= render partial: "devise/registrations/form-footer" 

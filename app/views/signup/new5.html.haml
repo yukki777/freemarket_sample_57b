@@ -1,0 +1,68 @@
+.information
+  .information__registration
+    .information__registration__main-header
+      .information__registration__main-header__logo-mark
+        .information__registration__main-header__logo-mark__img
+          = link_to '',root_path
+          = link_to image_tag('logo_horizontal.png', class: "img"),root_path
+      .information__registration__main-header__reft
+        .guide-messages
+          .guide-messages__information 会員情報
+          .guide-messages__tel 電話番号認証
+          .guide-messages__address お届け先住所入力
+          .guide-messages__payment__red 支払い方法
+          .guide-messages__end 完了
+        .guide-line
+          .guide-line__dot-red
+          .guide-line__border-red
+          .guide-line__dot-red
+          .guide-line__border-red
+          .guide-line__dot-red
+          .guide-line__border-red
+          .guide-line__dot-red
+          .guide-line__border-gray
+          .guide-line__dot-gray 
+    
+.information-registration__base
+  .information-registration__base__main-box
+    .information-registration__base__main-box__inner-header
+      お支払い方法
+    .information-registration__base__main-box__click-area
+    = form_for @user, url: signup_index_path, method: :post, html: {class: 'form'} do |f|
+      = f.hidden_field :user, value: @user
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label カード番号
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        %input.information-registration__base__main-box__click-area__input__information__text{placeholder: " 半角数字のみ", type: "text"}/
+      .information-registration__base__main-box__click-area__input__image-box
+        =image_tag "visa.svg",class: "image"
+        =image_tag "master-card.svg",class: "image"
+        =image_tag "american_express.svg",class: "image"
+        =image_tag "jcb.svg",class: "image"
+        =image_tag "dinersclub.svg",class: "image"
+        =image_tag "discover.svg",class: "image"
+        
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label 有効期限
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        .information-registration__base__main-box__click-area__input__area
+          .information-registration__base__main-box__click-area__input__area__flex-start
+            %select.information-registration__base__main-box__click-area__input__area__flex-start__select
+            %span.information-registration__base__main-box__click-area__input__area__flex-start__calendar 月
+
+          .information-registration__base__main-box__click-area__input__area__flex-start__next-select
+            %select.information-registration__base__main-box__click-area__input__area__flex-start__select
+            %span.information-registration__base__main-box__click-area__input__area__flex-start__calendar 年
+
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label セキュリティーコード
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        %input.information-registration__base__main-box__click-area__input__information__text{placeholder: " カード背面4桁もしくは3桁の番号", type: "text"}/
+      
+      .information-registration__base__main-box__click-area__input
+      .information-registration__base__main-box__click-area__input__empty-box
+        .information-registration__base__main-box__click-area__rink-btn
+          = f.submit "次へ進む", class: "information-registration__base__main-box__click-area__rink-btn"
+      
+      .information-registration__base__main-box__click-area__input__empty-box
+= render partial: "devise/registrations/form-footer" 
