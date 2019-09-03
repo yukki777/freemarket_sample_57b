@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'products#index'
   resources :products, only: [:new, :index, :create] do
     collection do
-      post 'confirmation'
+      post 'confirmation/:id' => 'products#confirmation', as: 'pay'
     end
   end
   get 'products/confirmation' => 'products#confirmation'
