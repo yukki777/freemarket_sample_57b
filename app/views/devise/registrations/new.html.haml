@@ -1,16 +1,20 @@
-
+.information-registration-header
+  =link_to image_tag("logo_horizontal.png",class: "img"),root_path
 .information-registration__base
   .information-registration__base__main-box
     .information-registration__base__main-box__inner-header
-      会員情報登録
+      新規会員登録
     .information-registration__base__main-box__click-area
       .information-registration__base__main-box__click-area__social__link-box
         .information-registration__base__main-box__click-area__social__link-box__configuration
           .information-registration__base__main-box__click-area__social__link-box__configuration__social__mail
-            = link_to 'メールアドレスで登録する',root_path
+            %i.fa.fa-envelope-o
+            = link_to 'メールアドレスで登録する',new1_signup_index_path
           .information-registration__base__main-box__click-area__social__link-box__configuration__social__facebook
+            %i.fa.fa-facebook-official
             = link_to 'facebookで登録する',root_path
           .information-registration__base__main-box__click-area__social__link-box__configuration__social__google
-            = link_to 'googleで登録する',root_path
+            = link_to 'Googleで登録する',root_path
+            = image_tag "google.svg",class: "google"
+= render partial: "form-footer"
             
-

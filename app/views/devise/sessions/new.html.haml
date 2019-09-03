@@ -1,0 +1,28 @@
+.information-registration-header
+  =link_to image_tag("logo_horizontal.png",class: "img"),root_path
+  .information-registration-header__white
+    .information-registration-header__white__content
+      %h3 アカウントをお持ちでない方はこちら
+      .information-registration-header__white__content__new
+        = link_to '新規会員登録',new1_signup_index_path
+    .information-registration-header__white__content-bottom
+      .information-registration-header__white__content-bottom__facebook
+        %i.fa.fa-facebook-official
+        = link_to 'Facebookでログイン',root_path
+      .information-registration-header__white__content-bottom__google
+        = link_to 'Googleでログイン',root_path
+        = image_tag "google.svg",class: "google"
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .information-registration-header__white__content-bottom__form
+          .information-registration-header__white__content-bottom__form__mail
+            = f.email_field :email,placeholder: "メールアドレス",class: "input-mail"
+          .information-registration-header__white__content-bottom__form__password
+            = f.password_field :password, autocomplete: "off",placeholder: "パスワード",class: "input-password"
+          .information-registration-header__white__content-bottom__form__image
+            = image_tag "people.png",class: "image"
+          .information-registration-header__white__content-bottom__form__submit
+            = f.submit "ログイン", class: 'input-btn'
+      .information-registration-header__white__content-bottom__text
+        =link_to "パスワードをお忘れの方",root_path,class: "text"
+
+= render partial: "devise/registrations/form-footer" 
