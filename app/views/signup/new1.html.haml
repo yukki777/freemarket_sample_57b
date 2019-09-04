@@ -32,21 +32,22 @@
         %label.information-registration__base__main-box__click-area__input__information__label ニックネーム
         %span.information-registration__base__main-box__click-area__input__caveat 必須
         = f.text_field :nickname,placeholder: " 例）メルカリ太郎",class:"information-registration__base__main-box__click-area__input__information__text"
+      = render partial: 'error-messages', locals: {user: @user, column: "nickname"}
       .information-registration__base__main-box__click-area__input
         %label.information-registration__base__main-box__click-area__input__information__label メールアドレス
         %span.information-registration__base__main-box__click-area__input__caveat 必須
         = f.text_field :email,placeholder: " 例）PC・携帯どちらでも",class:"information-registration__base__main-box__click-area__input__information__text"
-      
+      = render partial: 'error-messages', locals: {user: @user, column: "email"}
       .information-registration__base__main-box__click-area__input
         %label.information-registration__base__main-box__click-area__input__information__label パスワード
         %span.information-registration__base__main-box__click-area__input__caveat 必須
         = f.password_field :password,placeholder: " 例）７文字以上",class:"information-registration__base__main-box__click-area__input__information__text"
-      
+      = render partial: 'error-messages', locals: {user: @user, column: "password"}
       .information-registration__base__main-box__click-area__input
         %label.information-registration__base__main-box__click-area__input__information__label パスワード(確認)
         %span.information-registration__base__main-box__click-area__input__caveat 必須
         = f.password_field :password_confirmation,placeholder: " 例）７文字以上",class:"information-registration__base__main-box__click-area__input__information__text"
-      
+      = render partial: 'error-messages', locals: {user: @user, column: "password_confirmation"}
       .information-registration__base__main-box__click-area__input
         %p.information-registration__base__main-box__click-area__input__information__label 本人確認
         %p.information-registration__base__main-box__click-area__input__notes
@@ -59,7 +60,8 @@
         .information-registration__base__main-box__click-area__input__name-space
           = f.text_field :family_name,placeholder: " 例）山田",class:"information-registration__base__main-box__click-area__input__name-space__text"
           = f.text_field :first_name,placeholder: " 例）彩",class:"information-registration__base__main-box__click-area__input__name-space__text"
-
+        = render partial: 'error-messages', locals: {user: @user, column: "family_name"}
+        = render partial: 'error-messages', locals: {user: @user, column: "first_name"}
       .information-registration__base__main-box__click-area__input
         %label.information-registration__base__main-box__click-area__input__information__label お名前カナ(全角)
         %span.information-registration__base__main-box__click-area__input__caveat 必須
@@ -67,6 +69,8 @@
         .information-registration__base__main-box__click-area__input__name-space
           = f.text_field :family_name_kana,placeholder: " 例）ヤマダ",class:"information-registration__base__main-box__click-area__input__name-space__text"
           = f.text_field :first_name_kana,placeholder: " 例）アヤ",class:"information-registration__base__main-box__click-area__input__name-space__text"
+        = render partial: 'error-messages', locals: {user: @user, column: "family_name_kana"}
+        = render partial: 'error-messages', locals: {user: @user, column: "first_name_lana"}
       .information-registration__base__main-box__click-area__input
         %label.information-registration__base__main-box__click-area__input__information__label 生年月日
         %span.information-registration__base__main-box__click-area__input__caveat 必須

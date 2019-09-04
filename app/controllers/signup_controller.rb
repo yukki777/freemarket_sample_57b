@@ -1,5 +1,7 @@
 class SignupController < ApplicationController
 
+before_action :validates_new1, only: :new2
+#before_action :validates_new4, only: :new5
 def new1
   @user = User.new
   
@@ -61,6 +63,37 @@ def create
     end
 end
 
+def validates_new1
+  session[:nickname] = user_params[:nickname]
+  session[:email] = user_params[:email]
+  session[:password] = user_params[:password]
+  session[:password_confirmation] = user_params[:password_confirmation]
+  session[:family_name] = user_params[:family_name]
+  session[:first_name] = user_params[:first_name]
+  session[:family_name_kana] = user_params[:family_name_kana]
+  session[:first_name_kana] = user_params[:first_name_kana]
+
+  @user = User.new(
+    nickname: session[:nickname], 
+    email: session[:email],
+    password: session[:password],
+    password_confirmation: session[:password_confirmation],
+    family_name: session[:family_name], 
+    first_name: session[:first_name], 
+    family_name_kana: session[:family_name_kana], 
+    first_name_kana: session[:first_name_kana], 
+  )
+  render '/signup/new1' unless @user.valid?
+end
+
+def validates_new4
+  session[:address_attributes] = user_params[:address_attributes]
+
+  @user = User.new(
+    address_attributes: session[:address_attributes]
+  )
+  render '/signup/new4' unless @user.valid?
+end
 
 private
 
