@@ -1,6 +1,6 @@
-= render partial: "header.html.haml"
--# - breadcrumb :mypages
--# = render "layouts/breadcrumbs"
+= render partial: "products/header.html.haml"
+- breadcrumb :mypage
+= render "layouts/breadcrumbs"
 .mypage-container
   .mypage-size
     = render partial: "mypage-left"
@@ -8,7 +8,7 @@
       .mypage-usericon
         .mypage-usericon__center
           .mypage-usericon__center__image
-            -# =image_tag "/assets/member_photo_noimage_thumb.png", size: "60x60"
+            =image_tag "/assets/member_photo_noimage_thumb.png", size: "60x60"
           .mypage-usericon__center__name
             ky
           .mypage-usericon__center__number
@@ -55,7 +55,7 @@
               .mypage-tab-information__content__information__list__body
                 .mypage-tab-information__content__information__list__body__image
                   .mypage-tab-information__content__information__list__body__image__mercari
-                    -#  =image_tag "/assets/mercari_profile.png", size: "60x60"
+                    =image_tag "/assets/mercari_profile.png", size: "60x60"
                 .mypage-tab-information__content__information__list__body__area
                   .mypage-tab-information__content__information__list__body__area__text
                     \&lt;&lt;ご登録記念&gt;&gt;￥1,000の商品を「実質1円」でご購入いただけます！
@@ -131,4 +131,4 @@
             .mypage-tab-transaction__content__trading__area
               .mypage-tab-transaction__content__trading__area__text
                 取引中の商品がありません
-  = render partial: "footer.html.haml"
+  = render partial: "products/footer.html.haml"
