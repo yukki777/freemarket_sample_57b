@@ -50,19 +50,20 @@ class WalletController < ApplicationController
     else
       redirect_to action: "confirmation", id: current_user.id
     end
+  end
 
-    private
+  private
 
-    def get_payjp_info
-      # credentials.yml使うときコメントアウト外す
-      # if Rails.env == 'development'
-        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      # else
-      #   Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
-      # end
-    end
+  def get_payjp_info
+    # credentials.yml使うときコメントアウト外す
+    # if Rails.env == 'development'
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    # else
+    #   Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+    # end
+  end
 
-    def set_card
-      @wallet = Wallet.where(user_id: current_user.id).first if Wallet.where(user_id: current_user.id).present?
-    end
+  def set_card
+    @wallet = Wallet.where(user_id: current_user.id).first if Wallet.where(user_id: current_user.id).present?
+  end
 end
