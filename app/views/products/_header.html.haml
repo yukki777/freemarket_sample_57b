@@ -22,7 +22,7 @@
           %li.fa.fa-check
             =link_to "やることリスト",root_path,class: "check-text"
           %li.profile-content
-            =link_to "マイページ",destroy_user_session_path, method: :delete
+            =link_to "マイページ",user_path(current_user.id)
           %li=link_to image_tag('profile.png',class: "profile"),root_path        
       - else
         %ul.header__content__down__right__notsignin
