@@ -2,7 +2,7 @@
   .sidebar__list
     .sidebar__list__activepoints
       .sidebar__list__activepoints__text
-        =link_to "マイページ",root_path
+        =link_to "マイページ",user_path(current_user.id)
       .sidebar__list__activepoints__allow-right
         = fa_icon 'chevron-right'
     .sidebar__list__points
@@ -90,7 +90,7 @@
   .sidebar__list
     .sidebar__list__points
       .sidebar__list__points__text
-        = link_to "プロフィール",root_path
+        = link_to "プロフィール",users_profile_path
       .sidebar__list__points__allow-right
         = fa_icon 'chevron-right'
     .sidebar__list__points
@@ -120,6 +120,6 @@
         = fa_icon 'chevron-right'
     .sidebar__list__points
       .sidebar__list__points__text
-        =link_to "ログアウト",root_path
+        =link_to "ログアウト",users_logout_path
       .sidebar__list__points__allow-right
         = fa_icon 'chevron-right'
