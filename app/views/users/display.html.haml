@@ -1,0 +1,17 @@
+= render partial: "products/header"
+- breadcrumb :logout
+= render "layouts/breadcrumbs"
+.container
+  .container__mypage
+    = render partial: "mypage-left"
+    .container__mypage__display
+      %h4
+        出品した商品
+      .container__mypage__display__flex
+        .container__mypage__display__flex__column
+          = link_to "出品中",root_path
+        .container__mypage__display__flex__column
+          = link_to "取引中",root_path
+        .container__mypage__display__flex__column
+          = link_to "売却済み",root_path
+= render partial: "products/footer"

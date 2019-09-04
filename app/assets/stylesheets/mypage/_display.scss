@@ -1,0 +1,18 @@
+.container{
+  &__mypage{
+    &__display{
+      width: 70%;
+      padding-bottom: 40px;
+      margin-left: 40px;
+      background-color: #FAFAFA;
+      height: 100%;
+      &__flex{
+        display: flex;
+        &__column{
+          width: 33%;
+          text-align:center;
+        }
+      }
+    }
+  }
+}
