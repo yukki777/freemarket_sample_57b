@@ -19,8 +19,9 @@
         .price-font 
           ¥18,800,000
       .confirmation-container__content__block__form4
-        = form_tag(action: :pay, method: :post) do
-          %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => ENV["PAYJP_PRIVATE_KEY"]}
+        -# = form_tag(action: :pay, method: :post) do
+        = form_with url: pay_products_path do
+          %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => 'pk_test_bd8507bffbc91664686778aa'}
     %hr
     .confirmation-container__content__shipping-address
       %h4 配送先
