@@ -14,13 +14,9 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users, only: [:edit, :update, :show]
-  resources :products, only: [:edit, :update, :show]
-  
-  get 'products/show' =>'products#show'
-  get 'products/new' =>'products#new'
+  # スプリントレビュー後削除、ここから
   get 'products/confirmation' =>'products#confirmation'
-
+  
   get 'users/logout' =>'users#logout'
   get 'users/mypage' =>'users#mypage'
   get 'users/details' =>'users#details'
@@ -30,8 +26,9 @@ Rails.application.routes.draw do
   get 'users/payment' =>'users#payment'
   get 'users/finish' =>'users#finish'
   get 'users/sociallink' =>'users#sociallink'
-  get 'users/show' =>'users#show'
-  get 'users/edit' =>'users#edit'
   get 'users/registration' =>'users#registration'
+ # ここまで
 
+  resources :users, only: [:edit, :update, :show]
+  resources :products, only: [:edit, :update, :show, :new]
 end

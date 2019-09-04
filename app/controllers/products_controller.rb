@@ -7,5 +7,8 @@ class ProductsController < ApplicationController
 
   def new
   end
-
+# スプリントレビュー後削除、ここから
+  def confirmation
+  end
+# ここまで
 end
