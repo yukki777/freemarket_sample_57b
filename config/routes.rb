@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   
   get 'users/logout' =>'users#logout'
   get 'users/mypage' =>'users#mypage'
+  get 'users/profile' =>'users#profile'
   get 'users/details' =>'users#details'
   get 'users/telephone' =>'users#telephone'
   get 'users/telephonesecond' =>'users#telephonesecond'

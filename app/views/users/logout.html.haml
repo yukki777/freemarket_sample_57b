@@ -5,7 +5,6 @@
   .container__mypage
     =render partial: "mypage-left"
     .container__mypage__right-logout
-      = form_for root_path do |f|
-        .container__mypage__right-logout__submit
-          = f.submit "ログアウト", class: 'user-submit'  
+      .container__mypage__right-logout__submit
+        = link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'user-submit'  
 = render partial: "products/footer"
