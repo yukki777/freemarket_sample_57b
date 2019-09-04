@@ -8,9 +8,9 @@
     .information-registration-header__white__content-bottom
       .information-registration-header__white__content-bottom__facebook
         %i.fa.fa-facebook-official
-        = link_to 'Facebookでログイン',root_path
+        = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
       .information-registration-header__white__content-bottom__google
-        = link_to 'Googleでログイン',root_path
+        = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
         = image_tag "google.svg",class: "google"
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .information-registration-header__white__content-bottom__form
