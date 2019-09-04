@@ -1,4 +1,4 @@
-= render partial: "header"
+= render partial: "products/header"
 - breadcrumb :logout
 = render "layouts/breadcrumbs"
 .container
@@ -8,4 +8,4 @@
       = form_for root_path do |f|
         .container__mypage__right-logout__submit
           = f.submit "ログアウト", class: 'user-submit'  
-= render partial: "footer"
+= render partial: "products/footer"

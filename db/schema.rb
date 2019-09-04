@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_110957) do
     t.string "first_name_kana", null: false
     t.string "family_name", null: false
     t.string "family_name_kana", null: false
-    t.date "birthday", null: false
+    t.date "birthday"
     t.string "phone_number", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
