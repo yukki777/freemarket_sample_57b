@@ -30,6 +30,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session[:family_name] = @user.family_name
       session[:encrypted_password] = @user.encrypted_password
 
+        # session[:uid] = user_params[:uid]
+  # session[:prpvider] = user_params[:provider]
+     # uid: session[:uid],
+    # provider: session[:provider]
+      # :uid,
+    # :provider,
+
+
+
       # redirect_to new_user_registration_path
       redirect_to new1_signup_index_path
       # binding.pry
