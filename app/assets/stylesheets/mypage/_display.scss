@@ -2,15 +2,55 @@
   &__mypage{
     &__display{
       width: 70%;
-      padding-bottom: 40px;
       margin-left: 40px;
       background-color: #FAFAFA;
       height: 100%;
+      h4{
+        padding: 20px;
+        font-size: 16px;
+        font-weight: 600;
+      }
       &__flex{
         display: flex;
         &__column{
           width: 33%;
+          height: 75px;
+          line-height: 75px;
           text-align:center;
+          background-color: #EEEEEE;
+          a{
+            color: #333333;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+          }
+        }
+        &__column-red{
+          width: 33%;
+          height: 75px;
+          line-height: 75px;
+          text-align:center;
+          background-color: #fff;
+          border-top: solid 2px #EA352D;
+          a{
+            color: #333333;
+            font-weight: 600;
+            text-decoration: none;
+          }
+        }
+      }
+      &__content{
+        padding: 50px 0;
+        background-color: #fff;
+        text-align: center;
+        .image{
+          width: 90px;
+        }
+        p{
+          font-size: 16px;
+          color: #CCCCCC;
+          font-weight: 600;
+          padding-top: 30px;
         }
       }
     }
