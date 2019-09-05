@@ -27,9 +27,12 @@
     %hr
     .confirmation-container__content__shipping-address
       %h4 配送先
-      %p 〒郵便番号
-      %p 住所
-      %p 名前
+      %a 〒
+      = @product.address.postal_code
+      %p
+      = @product.address.city + @product.address.address + @product.address.building_name
+      %p
+      = @product.user.first_name + " " + @product.user.family_name
       .confirmation-container__content__shipping-address__editbutton
         =link_to "変更する",root_path
         =link_to "",root_path,class:"fa fa-angle-right"
