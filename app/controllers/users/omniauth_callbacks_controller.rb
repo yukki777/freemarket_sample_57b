@@ -6,12 +6,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     callback_for(:facebook)
   end
-
-  # callback for twitter
-  def twitter
-    callback_for(:twitter)
-  end
-
   # callback for google
   def google_oauth2
     callback_for(:google)
@@ -19,23 +13,39 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   # common callback method
   def callback_for(provider)
+    
     # binding.pry
-    @user = User.from_omniauth(request.env["omniauth.auth"])
+    @user = User.new
+    # @user = User.from_omniauth(request.env["omniauth.auth"])
+
+
     # binding.pry
     if @user.persisted?
+      # trueの時点でSNSのアカウントを持っていることが確定
       # Active Record object がDB に保存済みかどうかを判定するメソッド です。
       sign_in_and_redirect @user, event: :authentication #this will throw if @user is not activated
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
-      binding.pry
+      # binding.pry
     else
-      session["devise.#{provider}_data"] = request.env["omniauth.auth"].except("extra")
-      redirect_to new_user_registration_url
-      binding.pry
-    end
-  end
+      # user_provider = @user.provider
+      if @user.blank?
+      session[:uid] = @user.uid
+      session[:email] = @user.email
+      session[:provider] = @user.provider
+      session[:nickname] = @user.nickname
+      session[:first_name] = @user.first_name
+      session[:family_name] = @user.family_name
+      session[:encrypted_password] = @user.encrypted_password
 
-  def failure
-    redirect_to root_path
+      # redirect_to new_user_registration_path
+      redirect_to new1_signup_index_path
+      # binding.pry
+      else
+        @provider = provider.to_s
+        redirect_to new_user_session_path
+
+      end
+    end
   end
 
   # def facebook

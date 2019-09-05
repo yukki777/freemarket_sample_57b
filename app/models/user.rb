@@ -4,6 +4,12 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+  # サインイン時にユーザーの正当性を検証するためにパスワードを暗号化してDBに登録します。認証方法としてはPOSTリクエストかHTTP Basic認証が使えます。
+  # 登録処理を通してユーザーをサインアップします。また、ユーザーに自身のアカウントを編集したり削除することを許可します。
+  # パスワードをリセットし、それを通知します。
+  # 保存されたcookieから、ユーザーを記憶するためのトークンを生成・削除します。
+  # Emailやパスワードのバリデーションを提供します。独自に定義したバリデーションを追加することもできます
+
 
   has_many :products
   has_one :address
@@ -18,8 +24,10 @@ class User < ApplicationRecord
 # gitのやつ
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      # binding.pry
       user.uid = auth.uid
       user.provider = auth.uid
+      user.nickname = auth.info.name
       user.email = auth.info.email
       user.first_name = auth.info.first_name
       user.family_name = auth.info.last_name
