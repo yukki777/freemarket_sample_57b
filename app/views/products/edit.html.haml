@@ -1,0 +1,93 @@
+= render partial: "header"
+.edit-container 
+  .edit-container__content
+    %h1 白スリムストレートデニム
+    .edit-container__content__flex
+      .edit-container__content__flex__left
+        ああ
+      .edit-container__content__flex__right
+        %table
+          %tbody
+            %tr
+              %th 出品者
+              %td 
+                %p 名前
+                %p aaaaa
+            %tr
+              %th カテゴリー
+              %td 
+                スボン
+                %p aaaaa
+            %tr
+              %th ブランド
+              %td aaaaaaaa
+            %tr
+              %th 商品のサイズ
+              %td a
+            %tr
+              %th 商品の状態
+              %td aaa
+            %tr
+              %th 配送料の負担
+              %td aaaaaa
+            %tr
+              %th 配送の方法
+              %td aaaaaaa
+            %tr
+              %th 配送元地域
+              %td aaaaaaa
+            %tr
+              %th 発送日の目安
+              %td aaaaaaaaa
+    .edit-container__content__price     
+      %span.price-left ¥400
+      %span.price-right (税込)
+      %span.price-right-postage 送料込み
+      .edit-container__content__price__btn-buy
+        = link_to  "購入画面に進む",root_path,class: "link"
+    .edit-container__content__text
+      %p  WEEKEND MaxMara 
+      %br ウィークエンド マックスマーラ
+      %br カットソー Tシャツ
+      %br
+      %br SIZE:おそらくMぐらい
+      %br 肩幅:38cm
+      %br 身幅:43(×2)cm
+      %br 袖丈:16cm
+      %br 着丈:58cm
+      %br ※素人採寸のため、多少の誤差はご容赦下さい。
+      %br
+      %br 状態:汚れ、ダメージとありませんが
+      %br 服内側のケアラベルを切ってしまったため
+      %br 正確なサイズを忘れてしまいました。
+      %br おそらくMくらい。
+      %br
+      %br ※中古品ですので、神経質な方はご遠慮下さい。
+    %span.like-button
+      %i.fa.fa-heart-o
+        = link_to  "いいね!",root_path
+    %span.report
+      %i.fa.fa-flag
+      = link_to  "不適切な商品の報告",root_path
+    %span.security
+      %i.fa.fa-lock
+      = link_to  "あんしん・あんぜんへの取り組み",root_path
+
+  .edit-container__edit-content
+    .edit-container__edit-content__btn
+      = link_to  "商品の編集",root_path,class: "link"
+    %p or
+    .edit-container__edit-content__btn
+      = link_to  "出品を再開する",root_path,class: "link"
+    .edit-container__edit-content__btn-delete
+      = link_to  "この商品を削除する",root_path,class: "link"
+
+  .edit-container__edit-content
+    .edit-container__edit-content__comment
+      .edit-container__edit-content__comment__text
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります
+      = form_for root_path do |f|
+        = f.text_field :comment, class: 'container__content__comment__field'
+        = f.submit 'コメントする', class: 'container__content__comment__submit'
+  %p.edit-container__margin
+= render partial: "footer"
