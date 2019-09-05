@@ -14,9 +14,7 @@ Rails.application.routes.draw do
     end
   end
   
-  # スプリントレビュー後削除、ここから
-  get 'products/confirmation' =>'products#confirmation'
-  
+  # スプリントレビュー後削除、ここから  
   get 'users/logout' =>'users#logout'
   get 'users/mypage' =>'users#mypage'
   get 'users/details' =>'users#details'
@@ -35,6 +33,6 @@ Rails.application.routes.draw do
       post 'confirmation/:id' => 'products#pay', as: 'pay'
     end
   end
-  get 'products/confirmation' => 'products#confirmation'
+  get "products/:id/confirmation",to: "products#confirmation",as:"products_confirmation"
 
 end

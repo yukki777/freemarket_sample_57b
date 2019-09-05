@@ -10,10 +10,9 @@ class ProductsController < ApplicationController
   def new
   end
 
-# スプリントレビュー後削除、ここから
   def confirmation
+    @product = Product.find(params[:id])
   end
-# ここまで
 
   def pay
     Payjp::api_key = ENV['PAYJP_PRIVATE_KEY']
@@ -23,4 +22,11 @@ class ProductsController < ApplicationController
     :currency => 'jpy',
     )
   end
+
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :price, :description)
+  end
+
 end

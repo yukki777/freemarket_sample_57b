@@ -8,6 +8,7 @@ class WalletController < ApplicationController
   def new
     wallet = Wallet.where(user_id: current_user.id).first
     redirect_to action: "index" if wallet.present?
+  end
 
   def edit
   end

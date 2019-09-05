@@ -8,19 +8,21 @@
     .confirmation-container__content__block
       .confirmation-container__content__block__item
         = image_tag "kutu.jpg", class: "item-icon"
-        %p シャネルイヤリング
+        = @product.name
       .confirmation-container__content__block__form
-        %p ¥18,800 
+        ¥
+        = @product.price
         %p.small-font 送料込み
       .confirmation-container__content__block__form2
         =link_to "ポイントはありません",root_path
       .confirmation-container__content__block__form3
         %p 支払い金額
         .price-font 
-          ¥18,800,000
+          ¥
+          = @product.price
       .confirmation-container__content__block__form4
-        -# = form_tag(action: :pay, method: :post) do
-        = form_with url: pay_products_path do
+        -# = form_with url: pay_products_path do
+        = form_tag(action: :pay, method: :post) do
           %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => 'pk_test_bd8507bffbc91664686778aa'}
     %hr
     .confirmation-container__content__shipping-address
@@ -38,4 +40,4 @@
       .confirmation-container__content__credit__editbutton
         =link_to "変更する",root_path
         =link_to "",root_path,class:"fa fa-angle-right"
-  = render partial: "users/form-footer"  
+  = render partial: "devise/registrations/form-footer"  
