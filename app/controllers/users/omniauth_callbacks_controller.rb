@@ -30,12 +30,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session[:family_name] = @user.family_name
       session[:encrypted_password] = @user.encrypted_password
 
-        # session[:uid] = user_params[:uid]
-  # session[:prpvider] = user_params[:provider]
-     # uid: session[:uid],
-    # provider: session[:provider]
-      # :uid,
-    # :provider,
+      # session[:uid] = user_params[:uid]
+      # session[:encrypted_password] = user_params[:encrypted_password]
+      # session[:provider] = user_params[:provider]
+
+      # uid: session[:uid]
+      # provider: session[:provider]
+      # encrypted_password: session[:encrypted_password]
+      # :uid
+      # :provider
 
 
 
