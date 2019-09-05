@@ -12,10 +12,6 @@
       .information-registration-header__white__content-bottom__google
         = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
         = image_tag "google.svg",class: "google"
-        - unless @user.blank?
-          .hoge Googleでの登録情報はありません。他の方法でログインをお試しください。
-           
-
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .information-registration-header__white__content-bottom__form
           .information-registration-header__white__content-bottom__form__mail

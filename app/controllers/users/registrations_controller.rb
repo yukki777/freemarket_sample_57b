@@ -2,28 +2,6 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
 
-  # def new
-  #   @user = User.new(
-  #     uid: session[:uid],
-  #     email: session[:email],
-  #     provider: session[:provider],
-  #     first_name: session[:first_name],
-  #     family_name: session[:family_name],
-  #     encrypted_password: session[:encrypted_password]
-  #     )
-  #     binding.pry
-  # end
-
-  # def create
-  #   super
-  #   @user.uid = session[:uid]
-  #   @user.provider = session[:provider]
-  #   @user.save
-  # end
-
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
-
   # GET /resource/sign_up
   # def new
   #   super
