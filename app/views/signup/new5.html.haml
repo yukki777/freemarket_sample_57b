@@ -28,10 +28,9 @@
     .information-registration__base__main-box__inner-header
       お支払い方法
     .information-registration__base__main-box__click-area
-    -# カードのパスを変えて実装してみる
-    -# example
-    -# = form_for @wallet, url: wallet_create_path, method: :post, html: {class: 'form'} do |f|
-    = form_for @user, url: signup_index_path, method: :post, html: {class: 'form'} do |f|
+    -# = form_for @wallet, url: wallet_index_path, method: :post, html: {class: 'form', name: 'inputForm'} do |f|
+      -# = f.hidden_field :wallet, value: @wallet
+    = form_for @user, url: signup_index_path, method: :post, html: {class: 'form', name: 'inputForm'} do |f|
       = f.hidden_field :user, value: @user
       .information-registration__base__main-box__click-area__input
         %label.information-registration__base__main-box__click-area__input__information__label カード番号
@@ -50,7 +49,6 @@
         %span.information-registration__base__main-box__click-area__input__caveat 必須
         .information-registration__base__main-box__click-area__input__area
           .information-registration__base__main-box__click-area__input__area__flex-start
-            -# = f.select :exp_month, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11','12']{class:"information-registration__base__main-box__click-area__input__area__flex-start__select", type: "text", id: "exp_month"}
             %select.information-registration__base__main-box__click-area__input__area__flex-start__select{name: "exp_month", type: "text", id: "exp_month"}
               %option{value: ""} --
               %option{value: "1"}01
@@ -87,7 +85,6 @@
         %label.information-registration__base__main-box__click-area__input__information__label セキュリティーコード
         %span.information-registration__base__main-box__click-area__input__caveat 必須
         = text_field_tag "cvc", "", class: "information-registration__base__main-box__click-area__input__information__text", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
-        -# %input.information-registration__base__main-box__click-area__input__information__text{placeholder: " カード背面4桁もしくは3桁の番号", type: "text"}/
       
       .information-registration__base__main-box__click-area__input
       .information-registration__base__main-box__click-area__input__empty-box

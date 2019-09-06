@@ -35,4 +35,7 @@ Rails.application.routes.draw do
   end
   get "products/:id/confirmation",to: "products#confirmation",as:"products_confirmation"
 
+  #クレカ関連
+  resources :wallet, only: [:new, :show, :create, :destroy]
+
 end

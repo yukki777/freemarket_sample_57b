@@ -3,11 +3,12 @@ class WalletController < ApplicationController
   before_action :set_card
   before_action :get_user_params, only: [:edit, :confirmation, :show]
   before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
+  before_action :create, only: 
 
   # カード登録
   def new
-    wallet = Wallet.where(user_id: current_user.id).first
-    redirect_to action: "index" if wallet.present?
+    # wallet = Wallet.where(user_id: current_user.id).first
+    # redirect_to action: "index" if wallet.present?
   end
 
   def edit
