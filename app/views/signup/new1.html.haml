@@ -1,0 +1,94 @@
+.information
+  .information__registration
+    .information__registration__main-header
+      .information__registration__main-header__logo-mark
+        .information__registration__main-header__logo-mark__img
+          = link_to '',root_path
+          = link_to image_tag('logo_horizontal.png', class: "img"),root_path
+      .information__registration__main-header__reft
+        .guide-messages
+          .guide-messages__information__red 会員情報
+          .guide-messages__tel 電話番号認証
+          .guide-messages__address お届け先住所入力
+          .guide-messages__payment 支払い方法
+          .guide-messages__end 完了
+        .guide-line
+          .guide-line__dot-red　
+          .guide-line__border-gray
+          .guide-line__dot-gray
+          .guide-line__border-gray
+          .guide-line__dot-gray
+          .guide-line__border-gray
+          .guide-line__dot-gray
+          .guide-line__border-gray
+          .guide-line__dot-gray 
+.information-registration__base
+  .information-registration__base__main-box
+    .information-registration__base__main-box__inner-header
+      会員情報入力
+    .information-registration__base__main-box__click-area
+    = form_for @user, url: new2_signup_index_path, method: :get, html: {class: 'form'} do |f|
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label ニックネーム
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        = f.text_field :nickname,placeholder: " 例）メルカリ太郎",class:"information-registration__base__main-box__click-area__input__information__text"
+      = render partial: 'error-messages', locals: {user: @user, column: "nickname"}
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label メールアドレス
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        = f.text_field :email,placeholder: " 例）PC・携帯どちらでも",class:"information-registration__base__main-box__click-area__input__information__text"
+      = render partial: 'error-messages', locals: {user: @user, column: "email"}
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label パスワード
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        = f.password_field :password,placeholder: " 例）７文字以上",class:"information-registration__base__main-box__click-area__input__information__text"
+      = render partial: 'error-messages', locals: {user: @user, column: "password"}
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label パスワード(確認)
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        = f.password_field :password_confirmation,placeholder: " 例）７文字以上",class:"information-registration__base__main-box__click-area__input__information__text"
+      = render partial: 'error-messages', locals: {user: @user, column: "password_confirmation"}
+      .information-registration__base__main-box__click-area__input
+        %p.information-registration__base__main-box__click-area__input__information__label 本人確認
+        %p.information-registration__base__main-box__click-area__input__notes
+          安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+      
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label お名前(全角)
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        
+        .information-registration__base__main-box__click-area__input__name-space
+          = f.text_field :family_name,placeholder: " 例）山田",class:"information-registration__base__main-box__click-area__input__name-space__text"
+          = f.text_field :first_name,placeholder: " 例）彩",class:"information-registration__base__main-box__click-area__input__name-space__text"
+        = render partial: 'error-messages', locals: {user: @user, column: "family_name"}
+        = render partial: 'error-messages', locals: {user: @user, column: "first_name"}
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label お名前カナ(全角)
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        
+        .information-registration__base__main-box__click-area__input__name-space
+          = f.text_field :family_name_kana,placeholder: " 例）ヤマダ",class:"information-registration__base__main-box__click-area__input__name-space__text"
+          = f.text_field :first_name_kana,placeholder: " 例）アヤ",class:"information-registration__base__main-box__click-area__input__name-space__text"
+        = render partial: 'error-messages', locals: {user: @user, column: "family_name_kana"}
+        = render partial: 'error-messages', locals: {user: @user, column: "first_name_lana"}
+      .information-registration__base__main-box__click-area__input
+        %label.information-registration__base__main-box__click-area__input__information__label 生年月日
+        %span.information-registration__base__main-box__click-area__input__caveat 必須
+        
+        .information-registration__base__main-box__click-area__input__flex-start
+          != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+        %p.information-registration__base__main-box__click-area__input__gry-notes
+          ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+     
+      .information-registration__base__main-box__click-area__input
+        .information-registration__base__main-box__click-area__input__center-notes__rink
+          次へ進む」のボタンを押すことにより、
+          = link_to '利用規約',root_path
+          に同意したものとみなします
+
+      .information-registration__base__main-box__click-area__input
+        = f.submit "次へ進む", class: "information-registration__base__main-box__click-area__rink-btn"
+      .information-registration__base__main-box__click-area__input
+        .information-registration__base__main-box__click-area__input__rink
+          = link_to '本人情報の登録について',root_path
+= render partial: "devise/registrations/form-footer" 

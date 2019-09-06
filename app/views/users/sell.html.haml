@@ -1,0 +1,20 @@
+= render partial: "products/header"
+- breadcrumb :logout
+= render "layouts/breadcrumbs"
+.container
+  .container__mypage
+    = render partial: "mypage-left"
+    .container__mypage__display
+      %h4
+        出品した商品
+      .container__mypage__display__flex
+        .container__mypage__display__flex__column
+          = link_to "出品中",users_display_path
+        .container__mypage__display__flex__column
+          = link_to "取引中",users_transaction_path
+        .container__mypage__display__flex__column-red
+          = link_to "売却済み",users_sell_path
+      .container__mypage__display__content
+        =image_tag "m-icon.png",class: "image"
+        %p 出品中の商品はありません
+= render partial: "products/footer"

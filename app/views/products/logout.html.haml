@@ -1,9 +1,0 @@
-= render partial: "header"
-.container
-  .container__mypage
-    =render partial: "mypage-left"
-    .container__mypage__right-logout
-      = form_for root_path do |f|
-        .container__mypage__right-logout__submit
-          = f.submit "ログアウト", class: 'user-submit'  
-= render partial: "footer"

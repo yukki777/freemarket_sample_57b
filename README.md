@@ -33,6 +33,7 @@
 |building_name|string|-|
 |building_phone_number|string|-|
 |prefecture|integer|null: false|
+|user_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to: user
@@ -44,21 +45,25 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|postage|integer|null: false|
 |price|integer|null: false|
 |description|text|null: false|
-|status|string|null: false|
-|shipping_date|string|null: false|
-|address_id|string|null: false, foreign_key: true|
-|category_id|integer|foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
+|address_id|integer|null: false, foreign_key: true|
+|brand_id|integer|-|
+|postage_id|integer|null: false|
+|shipping_method_id|integer|null: false|
+|size_id|integer|null: false|
+|shipping_date_id|integer|null: false|
+|condition_id|integer|null: false|
 
 
 ### Association
-- has_many: images
+
 - belongs_to: address
-- belongs_to: category
 - belongs_to: user
+- has_many: images
+- has_many: product-categories
+- has_many: categories, through: :product-categories
 
 
 ## imagesテーブル
@@ -68,7 +73,6 @@
 |image_url|string|null: false|
 |product_id|integer|null: false, foreign_key: true|
 
-
 ### Association
 - belongs_to: product
 
@@ -77,7 +81,21 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|category|string|null: false|
+|name|string|null: false|
+|parent_id|integer|-|
 
 ### Association
-- has_many: products
+- has_many: product-categories
+- has_many: products, through: :product-categories
+
+
+## product_categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|product_id|integer|foreign_key: true|
+|category_id|integer|foreign_key: true|
+
+### Association
+- belongs_to: product
+- belongs_to: category

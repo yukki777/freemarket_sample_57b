@@ -1,0 +1,11 @@
+@mixin input-default() {
+  width: 586px;
+  margin: 8px 0 0;
+  height: 28px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}

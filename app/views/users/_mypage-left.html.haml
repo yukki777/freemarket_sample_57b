@@ -1,0 +1,125 @@
+.sidebar
+  .sidebar__list
+    .sidebar__list__activepoints
+      .sidebar__list__activepoints__text
+        =link_to "マイページ",user_path(current_user.id)
+      .sidebar__list__activepoints__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        = link_to "お知らせ",root_path
+      .sidebar__list__points__hidden
+        1
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        = link_to "やることリスト",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        = link_to "いいね！一覧",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        =link_to "出品する",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        = link_to "出品した商品ー出品中",users_display_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        = link_to "出品した商品ー取引中",users_transaction_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        =link_to "出品した商品ー売却済み",users_sell_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        = link_to "購入した商品ー取引中",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        = link_to "購入した商品ー過去の取引",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        = link_to "ニュース一覧",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        =link_to "評価一覧",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        =link_to "ガイド一覧",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        =link_to "お問い合わせ",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+  .sidebar__header
+    =link_to "メルペイ",root_path
+  .sidebar__list
+    .sidebar__list__points
+      .sidebar__list__points__text
+        =link_to "売上・振込申請",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        =link_to "ポイント",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+  .sidebar__header
+    = link_to "設定",root_path
+  .sidebar__list
+    .sidebar__list__points
+      .sidebar__list__points__text
+        = link_to "プロフィール",users_profile_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        =link_to "配達先・お届け先住所変更",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        = link_to "支払い方法",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        =link_to "メール/パスワード",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        =link_to "本人情報",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        =link_to "電話番号の確認",root_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
+    .sidebar__list__points
+      .sidebar__list__points__text
+        =link_to "ログアウト",users_logout_path
+      .sidebar__list__points__allow-right
+        = fa_icon 'chevron-right'
