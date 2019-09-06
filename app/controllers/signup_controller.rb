@@ -30,14 +30,14 @@ def new3
   @user = User.new
 end
 
-def new4
-  
+def new4  
   @user = User.new
   @user.build_address
 end
 
 def new5
   @user = User.new
+  @user.build_wallet
   session[:address_attributes] = user_params[:address_attributes]
 end
 
@@ -46,6 +46,8 @@ def complete
 end
 
 def create
+  session[:wallet_attributes] = user_params[:wallet_attributes] #こっからチェック！
+
   @user = User.new(
     nickname: session[:nickname], 
     email: session[:email],
@@ -57,7 +59,8 @@ def create
     first_name_kana: session[:first_name_kana], 
     birthday: session[:birthday],
     phone_number: session[:phone_number],
-    address_attributes: session[:address_attributes]
+    address_attributes: session[:address_attributes],
+    wallet_attributes: session[:wallet_attributes]
   )  
     if @user.save
       session[:user_id] = @user.id
@@ -119,13 +122,10 @@ def user_params
     :first_name_kana, 
     :birthday,
     :phone_number,
-    address_attributes:[:id,:postal_code,:city,:address,:building_name,:building_phone_number,:prefecture_id]
+    address_attributes:[:id,:postal_code,:city,:address,:building_name,:building_phone_number,:prefecture_id],
+    wallet_attributes:[:card_id, :customer_id]
   )
   end
-end
-
-def wallet_params
-  params.require(:wallet).permit(:customer_id, :card_id).merge(user_id: @user.id)
 end
 
 def get_payjp_info
