@@ -28,12 +28,15 @@
     .information-registration__base__main-box__inner-header
       お支払い方法
     .information-registration__base__main-box__click-area
+    -# カードのパスを変えて実装してみる
+    -# example
+    -# = form_for @wallet, url: wallet_create_path, method: :post, html: {class: 'form'} do |f|
     = form_for @user, url: signup_index_path, method: :post, html: {class: 'form'} do |f|
       = f.hidden_field :user, value: @user
       .information-registration__base__main-box__click-area__input
         %label.information-registration__base__main-box__click-area__input__information__label カード番号
         %span.information-registration__base__main-box__click-area__input__caveat 必須
-        %input.information-registration__base__main-box__click-area__input__information__text{placeholder: " 半角数字のみ", type: "text"}/
+        = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ", maxlength: "16", type: "text", id: "card_number"
       .information-registration__base__main-box__click-area__input__image-box
         =image_tag "visa.svg",class: "image"
         =image_tag "master-card.svg",class: "image"
@@ -47,22 +50,49 @@
         %span.information-registration__base__main-box__click-area__input__caveat 必須
         .information-registration__base__main-box__click-area__input__area
           .information-registration__base__main-box__click-area__input__area__flex-start
-            %select.information-registration__base__main-box__click-area__input__area__flex-start__select
+            -# = f.select :exp_month, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11','12']{class:"information-registration__base__main-box__click-area__input__area__flex-start__select", type: "text", id: "exp_month"}
+            %select.information-registration__base__main-box__click-area__input__area__flex-start__select{name: "exp_month", type: "text", id: "exp_month"}
+              %option{value: ""} --
+              %option{value: "1"}01
+              %option{value: "2"}02
+              %option{value: "3"}03
+              %option{value: "4"}04
+              %option{value: "5"}05
+              %option{value: "6"}06
+              %option{value: "7"}07
+              %option{value: "8"}08
+              %option{value: "9"}09
+              %option{value: "10"}10
+              %option{value: "11"}11
+              %option{value: "12"}12
             %span.information-registration__base__main-box__click-area__input__area__flex-start__calendar 月
 
           .information-registration__base__main-box__click-area__input__area__flex-start__next-select
-            %select.information-registration__base__main-box__click-area__input__area__flex-start__select
+            %select.information-registration__base__main-box__click-area__input__area__flex-start__select{name: "exp_year", type: "text", id: "exp_year"}
+              %option{value: ""} --
+              %option{value: "2019"}19
+              %option{value: "2020"}20
+              %option{value: "2021"}21
+              %option{value: "2022"}22
+              %option{value: "2023"}23
+              %option{value: "2024"}24
+              %option{value: "2025"}25
+              %option{value: "2026"}26
+              %option{value: "2027"}27
+              %option{value: "2028"}28
+              %option{value: "2029"}29
             %span.information-registration__base__main-box__click-area__input__area__flex-start__calendar 年
 
       .information-registration__base__main-box__click-area__input
         %label.information-registration__base__main-box__click-area__input__information__label セキュリティーコード
         %span.information-registration__base__main-box__click-area__input__caveat 必須
-        %input.information-registration__base__main-box__click-area__input__information__text{placeholder: " カード背面4桁もしくは3桁の番号", type: "text"}/
+        = text_field_tag "cvc", "", class: "information-registration__base__main-box__click-area__input__information__text", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+        -# %input.information-registration__base__main-box__click-area__input__information__text{placeholder: " カード背面4桁もしくは3桁の番号", type: "text"}/
       
       .information-registration__base__main-box__click-area__input
       .information-registration__base__main-box__click-area__input__empty-box
         .information-registration__base__main-box__click-area__rink-btn
-          = f.submit "次へ進む", class: "information-registration__base__main-box__click-area__rink-btn"
+          = submit_tag "次へ進む", class: "information-registration__base__main-box__click-area__rink-btn", id: "token_submit"
       
       .information-registration__base__main-box__click-area__input__empty-box
 = render partial: "devise/registrations/form-footer" 
