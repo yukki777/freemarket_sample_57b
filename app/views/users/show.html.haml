@@ -1,19 +1,134 @@
-= render partial: "products/header"
-- breadcrumb :profile
+= render partial: "products/header.html.haml"
+- breadcrumb :mypage
 = render "layouts/breadcrumbs"
-.container
-  .container__mypage
+.mypage-container
+  .mypage-size
     = render partial: "mypage-left"
-    .container__mypage__right-profile
-      %h2
-        プロフィール
-      .container__mypage__right-profile__user
-        = form_tag '/',class: "user-form", :method => 'get'  do
-          .container__mypage__right-profile__user__image
-            = image_tag "profile.png",class: "user-profile"
-            = text_field_tag :profile, params[:profile] ,class: "user-field",placeholder: "例)AYAセール中☆" 
-          .container__mypage__right-profile__user__text
-            = text_area_tag :body, nil, placeholder: "例) こんにちわ☆ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に９号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問ありましたらお気軽にどうぞ♪", class:"user-textarea"
-          .container__mypage__right-profile__user__button
-            = submit_tag "変更する", class: 'edit-button'
-= render partial: "products/footer"
+    .mypage-right
+      .mypage-usericon
+        .mypage-usericon__center
+          .mypage-usericon__center__image
+            =image_tag "member_photo_noimage_thumb.png", size: "60x60"
+          .mypage-usericon__center__name
+            = current_user.nickname
+          .mypage-usericon__center__number
+            .mypage-usericon__center__number__evaluation
+              .mypage-usericon__center__number__evaluation__text
+                評価
+              .mypage-usericon__center__number__evaluation__number
+                0
+            .mypage-usericon__center__number__exhibits
+              .mypage-usericon__center__number__exhibits__text
+                出品数
+              .mypage-usericon__center__number__exhibits__number
+                0
+      .mypage-tab-information
+        .mypage-tab-information__tabs
+          .mypage-tab-information__tabs__active
+            .mypage-tab-information__tabs__active__font
+              .mypage-tab-information__tabs__active__font__border
+                お知らせ
+                .mypage-tab-information__tabs__active__font__border__hidden
+                  1
+          .mypage-tab-information__tabs__inactive
+            .mypage-tab-information__tabs__inactive__font
+              .mypage-tab-information__tabs__inactive__font__border
+                やることリスト
+        .mypage-tab-information__content
+          .mypage-tab-information__content__information
+            .mypage-tab-information__content__information__list
+              .mypage-tab-information__content__information__list__body
+                .mypage-tab-information__content__information__list__body__image
+                  .mypage-tab-information__content__information__list__body__image__mercari
+                    =image_tag "mercari_profile.png", size: "60x60"
+                .mypage-tab-information__content__information__list__body__area
+                  .mypage-tab-information__content__information__list__body__area__text
+                    3日数、P999還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+                  .mypage-tab-information__content__information__list__body__area__time
+                    .mypage-tab-information__content__information__list__body__area__time__image
+                      %i.fa.fa-history
+                    .mypage-tab-information__content__information__list__body__area__time__text
+                      1時間前
+                .mypage-tab-information__content__information__list__body__allow-right
+                  %i.fa.fa-chevron-right
+            .mypage-tab-information__content__information__list
+              .mypage-tab-information__content__information__list__body
+                .mypage-tab-information__content__information__list__body__image
+                  .mypage-tab-information__content__information__list__body__image__mercari
+                    =image_tag "mercari_profile.png", size: "60x60"
+                .mypage-tab-information__content__information__list__body__area
+                  .mypage-tab-information__content__information__list__body__area__text
+                    \&lt;&lt;ご登録記念&gt;&gt;￥1,000の商品を「実質1円」でご購入いただけます！
+                  .mypage-tab-information__content__information__list__body__area__time
+                    .mypage-tab-information__content__information__list__body__area__time__image
+                      %i.fa.fa-history
+                    .mypage-tab-information__content__information__list__body__area__time__text
+                      2日前
+                .mypage-tab-information__content__information__list__body__allow-right
+                  %i.fa.fa-chevron-right
+            .mypage-tab-information__content__information__list
+              .mypage-tab-information__content__information__list__body
+                .mypage-tab-information__content__information__list__body__image
+                  .mypage-tab-information__content__information__list__body__image__mercari
+                    =image_tag "mercari_profile.png", size: "60x60"
+                .mypage-tab-information__content__information__list__body__area
+                  .mypage-tab-information__content__information__list__body__area__text
+                    事務局からの個別メッセージ「ログイン通知」
+                  .mypage-tab-information__content__information__list__body__area__time
+                    .mypage-tab-information__content__information__list__body__area__time__image
+                      %i.fa.fa-history
+                    .mypage-tab-information__content__information__list__body__area__time__text
+                      2日前
+                .mypage-tab-information__content__information__list__body__allow-right
+                  %i.fa.fa-chevron-right
+            .mypage-tab-information__content__information__list
+              .mypage-tab-information__content__information__list__body
+                .mypage-tab-information__content__information__list__body__image
+                  .mypage-tab-information__content__information__list__body__image__mercari
+                    =image_tag "mercari_profile.png", size: "60x60"
+                .mypage-tab-information__content__information__list__body__area
+                  .mypage-tab-information__content__information__list__body__area__text
+                    事務局からの個別メッセージ「ログイン通知」
+                  .mypage-tab-information__content__information__list__body__area__time
+                    .mypage-tab-information__content__information__list__body__area__time__image
+                      %i.fa.fa-history
+                    .mypage-tab-information__content__information__list__body__area__time__text
+                      2日前
+                .mypage-tab-information__content__information__list__body__allow-right
+                  %i.fa.fa-chevron-right
+            .mypage-tab-information__content__information__list
+              .mypage-tab-information__content__information__list__body
+                .mypage-tab-information__content__information__list__body__image
+                  .mypage-tab-information__content__information__list__body__image__mercari
+                    =image_tag "mercari_profile.png", size: "60x60"
+                .mypage-tab-information__content__information__list__body__area
+                  .mypage-tab-information__content__information__list__body__area__text
+                    明日、P999還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+                  .mypage-tab-information__content__information__list__body__area__time
+                    .mypage-tab-information__content__information__list__body__area__time__image
+                      %i.fa.fa-history
+                    .mypage-tab-information__content__information__list__body__area__time__text
+                      4日前
+                .mypage-tab-information__content__information__list__body__allow-right
+                  %i.fa.fa-chevron-right
+          .mypage-tab-information__content__showlist
+            .mypage-tab-information__content__showlist__btn
+              一覧を見る
+      .mypage-tab-transaction
+        .mypage-tab-transaction__header
+          購入した商品
+        .mypage-tab-transaction__tabs
+          .mypage-tab-transaction__tabs__active
+            .mypage-tab-transaction__tabs__active__text
+              .mypage-tab-transaction__tabs__active__text__border
+                取引中
+          .mypage-tab-transaction__tabs__inactive
+            .mypage-tab-transaction__tabs__inactive__text
+              .mypage-tab-transaction__tabs__inactive__text__border
+                過去の取引
+        .mypage-tab-transaction__content
+          .mypage-tab-transaction__content__trading
+            .mypage-tab-transaction__content__trading__area
+              .mypage-tab-transaction__content__trading__area__text
+                取引中の商品がありません
+  = render partial: "products/footer.html.haml"
