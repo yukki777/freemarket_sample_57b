@@ -51,7 +51,10 @@ def create
     first_name_kana: session[:first_name_kana], 
     birthday: session[:birthday],
     phone_number: session[:phone_number],
-    address_attributes: session[:address_attributes]
+    address_attributes: session[:address_attributes],
+    encrypted_password: session[:encrypted_password],
+    uid: session[:uid],
+    provider: session[:provider]
   )  
     if @user.save
       session[:user_id] = @user.id
