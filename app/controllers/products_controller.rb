@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   def index
+    @category = Category.all
+    @parents = @category.where(ancestry: nil)
   end
-
   def show
   end
 

@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
+  before_action :ddmenu
+
+  
   def index
   end
 
   def show
+   
   end
 
   def edit
@@ -38,4 +42,11 @@ class UsersController < ApplicationController
   def registration
   end
   # ここまで
+
+  private
+
+  def ddmenu
+    @category = Category.all
+    @parents = @category.where(ancestry: nil)
+  end
 end
