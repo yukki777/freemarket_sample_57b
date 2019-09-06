@@ -36,16 +36,18 @@
         %label.information-registration__base__main-box__click-area__input__information__label メールアドレス
         %span.information-registration__base__main-box__click-area__input__caveat 必須
         = f.text_field :email,value: "#{session[:email]}",placeholder: " 例）PC・携帯どちらでも",class:"information-registration__base__main-box__click-area__input__information__text"
+
+      .information-registration__base__main-box__click-area__input
+        - unless session[:encrypted_password].nil?
+          %label.information-registration__base__main-box__click-area__input__information__label パスワード
+          %span.information-registration__base__main-box__click-area__input__caveat 必須
+          = f.password_field :password,placeholder: " 例）７文字以上",class:"information-registration__base__main-box__click-area__input__information__text"
       
       .information-registration__base__main-box__click-area__input
-        %label.information-registration__base__main-box__click-area__input__information__label パスワード
-        %span.information-registration__base__main-box__click-area__input__caveat 必須
-        = f.password_field :password,placeholder: " 例）７文字以上",class:"information-registration__base__main-box__click-area__input__information__text"
-      
-      .information-registration__base__main-box__click-area__input
-        %label.information-registration__base__main-box__click-area__input__information__label パスワード(確認)
-        %span.information-registration__base__main-box__click-area__input__caveat 必須
-        = f.password_field :password_confirmation,placeholder: " 例）７文字以上",class:"information-registration__base__main-box__click-area__input__information__text"
+        - unless session[:encrypted_password].nil?
+          %label.information-registration__base__main-box__click-area__input__information__label パスワード(確認)
+          %span.information-registration__base__main-box__click-area__input__caveat 必須
+          = f.password_field :password_confirmation,placeholder: " 例）７文字以上",class:"information-registration__base__main-box__click-area__input__information__text"
 
       .information-registration__base__main-box__click-area__input
         %p.information-registration__base__main-box__click-area__input__information__label 本人確認
