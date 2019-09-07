@@ -9,9 +9,13 @@
       .information-registration-header__white__content-bottom__facebook
         %i.fa.fa-facebook-official
         = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
+      - if session[:value] == "facebook"
+        = render partial: "devise/registrations/notice" 
       .information-registration-header__white__content-bottom__google
         = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
         = image_tag "google.svg",class: "google"
+      - if session[:value] == "google"
+        = render partial: "devise/registrations/notice" 
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .information-registration-header__white__content-bottom__form
           .information-registration-header__white__content-bottom__form__mail

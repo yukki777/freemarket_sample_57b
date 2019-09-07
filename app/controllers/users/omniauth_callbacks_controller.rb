@@ -11,45 +11,29 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def callback_for(provider)
-    # @user = User.new
+    provider = provider.to_sym
+    
     @user = User.from_omniauth(request.env["omniauth.auth"])
-
+    # @user = User.new
+    # ↑SNSアカウントを持っていない場合の検証用
     if @user.persisted?
-      # trueの時点でSNSのアカウントを持っていることが確定
       # Active Record object がDB に保存済みかどうかを判定するメソッド です。
       sign_in_and_redirect @user, event: :authentication 
-      set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
-
-  # def set_flash_message(key, kind, options = {})
-  #   message = find_message(kind, options)
-  #   if options[:now]
-  #     flash.now[key] = message if message.present?
-  #   else
-  #     flash[key] = message if message.present?
-  #   end
-  
     else
-      # unless @user.uid.blank?
-
+      unless @user.provider.blank?
       session[:uid] = @user.uid
       session[:email] = @user.email
       session[:provider] = @user.provider
       session[:nickname] = @user.nickname
+      session[:password] = @user.password
       session[:first_name] = @user.first_name
       session[:family_name] = @user.family_name
-      session[:password] = @user.password
-      # session[:password_confirmation] = @user.encrypted_password
-
-      # session[:encrypted_password] = @user.encrypted_password
-
-
       # redirect_to new_user_registration_path
       redirect_to new1_signup_index_path
-      # else
-      #   new_user_session_path
-      # end
-
-
+      else
+        session[:value] = provider
+        redirect_to new_user_session_path, notice: "#{provider}での登録情報はありません。他の方法でログインをお試しください。"
+      end
     end
   end
 

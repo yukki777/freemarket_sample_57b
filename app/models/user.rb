@@ -24,7 +24,6 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.first_name = auth.info.first_name
       user.family_name = auth.info.last_name
-      user.encrypted_password = Devise.friendly_token[0, 20]
       user.password = Devise.friendly_token[0, 20]
       # binding.pry
     end

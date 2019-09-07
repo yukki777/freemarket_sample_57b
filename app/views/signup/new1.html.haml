@@ -44,7 +44,7 @@
           = f.password_field :password,placeholder: " 例）７文字以上",class:"information-registration__base__main-box__click-area__input__information__text"
         - unless session[:provider].blank?
           = f.hidden_field :password, value: session[:password]
-          
+      
       .information-registration__base__main-box__click-area__input
         - if session[:provider].blank?
           %label.information-registration__base__main-box__click-area__input__information__label パスワード(確認)
