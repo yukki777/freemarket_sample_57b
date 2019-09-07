@@ -11,7 +11,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def callback_for(provider)
-    
     # @user = User.new
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
@@ -30,20 +29,26 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   #   end
   
     else
+      # unless @user.uid.blank?
+
       session[:uid] = @user.uid
       session[:email] = @user.email
       session[:provider] = @user.provider
       session[:nickname] = @user.nickname
       session[:first_name] = @user.first_name
       session[:family_name] = @user.family_name
-      session[:password] = @user.encrypted_password
-      session[:password_confirmation] = @user.encrypted_password
+      session[:password] = @user.password
+      # session[:password_confirmation] = @user.encrypted_password
 
-      session[:encrypted_password] = @user.encrypted_password
+      # session[:encrypted_password] = @user.encrypted_password
 
 
       # redirect_to new_user_registration_path
       redirect_to new1_signup_index_path
+      # else
+      #   new_user_session_path
+      # end
+
 
     end
   end

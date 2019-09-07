@@ -38,17 +38,21 @@
         = f.text_field :email,value: "#{session[:email]}",placeholder: " 例）PC・携帯どちらでも",class:"information-registration__base__main-box__click-area__input__information__text"
 
       .information-registration__base__main-box__click-area__input
-        - if session[:password].blank?
+        - if session[:provider].blank?
           %label.information-registration__base__main-box__click-area__input__information__label パスワード
           %span.information-registration__base__main-box__click-area__input__caveat 必須
           = f.password_field :password,placeholder: " 例）７文字以上",class:"information-registration__base__main-box__click-area__input__information__text"
+        - unless session[:provider].blank?
+          = f.hidden_field :password, value: session[:password]
           
       .information-registration__base__main-box__click-area__input
-        - if session[:password_confirmation] .blank?
+        - if session[:provider].blank?
           %label.information-registration__base__main-box__click-area__input__information__label パスワード(確認)
           %span.information-registration__base__main-box__click-area__input__caveat 必須
           = f.password_field :password_confirmation,placeholder: " 例）７文字以上",class:"information-registration__base__main-box__click-area__input__information__text"
-
+        - unless session[:provider].blank?
+          = f.hidden_field :password_confirmation, value: session[:password]
+          
       .information-registration__base__main-box__click-area__input
         %p.information-registration__base__main-box__click-area__input__information__label 本人確認
         %p.information-registration__base__main-box__click-area__input__notes
