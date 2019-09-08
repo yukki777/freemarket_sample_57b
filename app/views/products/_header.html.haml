@@ -9,11 +9,38 @@
     .header__content__down
       .header__content__down__left
         %i.fa.fa-list-ul
-        %ul 
-          %li=link_to "カテゴリーから探す",root_path
+        %ul.header__content__down__left__ddmenu-start
+          %li
+            =link_to "カテゴリーから探す",root_path
+          %ul.header__content__down__left__ddmenu-start__parent
+            - @parents.each do |parent|
+              %li.parent
+                = link_to "#{parent.name}","#{parent.id}",class:"catemain"
+                %ul.header__content__down__left__ddmenu-start__parent__child
+                  - parent.children.each do |child|
+                    %li.child
+                      = link_to "#{child.name}", '#', class:"catesub"
+                      %ul.header__content__down__left__ddmenu-start__parent__child__grand
+                        - child.children.each do |grandchild|
+                          %li
+                            = link_to "#{grandchild.name}",'#'
         %i.fa.fa-tags
-        %ul 
-          %li=link_to "ブランドから探す",root_path
+        %ul.header__content__down__left__brand
+          %li
+            =link_to "ブランドから探す",root_path
+          %ul.header__content__down__left__brand__list
+            %li.list
+              =link_to "シャネル",root_path
+            %li
+              =link_to "ナイキ",root_path
+            %li
+              =link_to "ルイ ヴィトン",root_path
+            %li
+              =link_to "シュプリーム",root_path
+            %li
+              =link_to "アディダス",root_path
+            %li
+              =link_to "ブランド一覧",root_path
       .header__content__down__right
       - if user_signed_in?
         %ul.header__content__down__right__signin

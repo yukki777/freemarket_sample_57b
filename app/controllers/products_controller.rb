@@ -2,9 +2,10 @@ class ProductsController < ApplicationController
   require 'payjp'
 
   def index
+    @category = Category.all
+    @parents = @category.where(ancestry: nil)
     @products = Product.all
   end
-
   def show
   end
 
