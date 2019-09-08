@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   require 'payjp'
 
   def index
+    @products = Product.all
   end
 
   def show
