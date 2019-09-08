@@ -1,7 +1,9 @@
 class SignupController < ApplicationController
 
 before_action :validates_new1, only: :new2
-#before_action :validates_new4, only: :new5
+before_action :validates_new2, only: :new3
+before_action :validates_new3, only: :new4
+before_action :validates_new4, only: :new5
 def new1
   @user = User.new
 end
@@ -26,7 +28,6 @@ def new3
 end
 
 def new4
-  
   @user = User.new
   @user.build_address
 end
@@ -87,13 +88,58 @@ def validates_new1
   render '/signup/new1' unless @user.valid?
 end
 
+def validates_new2
+  session[:phone_number] = user_params[:phone_number]
+  @user = User.new(
+    nickname: session[:nickname], 
+    email: session[:email],
+    password: session[:password],
+    password_confirmation: session[:password_confirmation],
+    family_name: session[:family_name], 
+    first_name: session[:first_name], 
+    family_name_kana: session[:family_name_kana], 
+    first_name_kana: session[:first_name_kana], 
+    birthday: session[:birthday],
+    phone_number: session[:phone_number],
+  )
+  render '/signup/new2' unless @user.valid?
+ 
+end
+
+def validates_new3
+  @user = User.new(
+    nickname: session[:nickname], 
+    email: session[:email],
+    password: session[:password],
+    password_confirmation: session[:password_confirmation],
+    family_name: session[:family_name], 
+    first_name: session[:first_name], 
+    family_name_kana: session[:family_name_kana], 
+    first_name_kana: session[:first_name_kana], 
+    birthday: session[:birthday],
+    phone_number: session[:phone_number],
+  )
+  render '/signup/new3' unless @user.valid?
+ 
+end
+
 def validates_new4
   session[:address_attributes] = user_params[:address_attributes]
-
   @user = User.new(
+    nickname: session[:nickname], 
+    email: session[:email],
+    password: session[:password],
+    password_confirmation: session[:password_confirmation],
+    family_name: session[:family_name], 
+    first_name: session[:first_name], 
+    family_name_kana: session[:family_name_kana], 
+    first_name_kana: session[:first_name_kana], 
+    birthday: session[:birthday],
+    phone_number: session[:phone_number],
     address_attributes: session[:address_attributes]
   )
   render '/signup/new4' unless @user.valid?
+ 
 end
 
 private
