@@ -5,6 +5,9 @@ class WalletController < ApplicationController
   before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
   before_action :create, only: 
 
+  def index
+  end
+
   # カード登録
   def new
     # wallet = Wallet.where(user_id: current_user.id).first

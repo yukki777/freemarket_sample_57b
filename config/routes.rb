@@ -43,5 +43,6 @@ Rails.application.routes.draw do
 
   #クレカ関連
   resources :wallet, only: [:new, :show, :create, :destroy]
+  get 'users/registration' => 'wallet#index', as: "wallet_list"
 
 end
