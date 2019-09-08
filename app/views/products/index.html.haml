@@ -13,57 +13,125 @@
         %i.fa.fa-camera
 -# 商品一覧
 .wrapper3
+  .upper-category
+    = "人気のカテゴリー"
+  .lower-category
+    .lower-category__ladies
+      = "レディース"
+    .lower-category__mens
+      = "メンズ"
+    .lower-category__home
+      = "家電・スマホ・カメラ"
+    .lower-category__toy
+      = "おもちゃ・ホビー・グッズ"
+.wrapper4
   .product
     .upper-product
-      = "商品一覧"
-     
+      .left-product
+        = "レディース新着アイテム"
+      .right-product
+        = link_to "#" do
+          もっと見る
+          %i.fa.fa-chevron-right
     .middle-product-set
-      .middle-product
-        .middle-product__image
-          = image_tag "m19588550336_1.jpg", size: "200x200"
-        .middle-product__description
-          .middle-product__description__message
-            = "BEAMS ローファー　24cm"
-          .middle-product__description__value
-            %p.middle-product__description__value__money
-              = "¥1,900"
-            %p.middle-product__description__value__like
-              = "♡11"
-      .middle-product
-        .middle-product__image
-          = image_tag "m85693164901_1.jpg", size: "200x200"
-        .middle-product__description
-          .middle-product__description__message
-            = "コウペンちゃんトート　チョコななな"
-          .middle-product__description__value
-            %p.middle-product__description__value__money
-              = "¥3,000"
-            %p.middle-product__description__value__like
-              = "♡870"
-      .middle-product
-        .middle-product__image
-          = image_tag "m16577281625_1.jpg", size: "200x200"
-        .middle-product__description
-          .middle-product__description__message
-            = "プロを目指す人のためのRuby入門"
-          .middle-product__description__value
-            %p.middle-product__description__value__money
-              = "¥2,000"
-            %p.middle-product__description__value__like
-              = "♡7"
-      .middle-product
-        .middle-product__image
-          = image_tag "m69315901380_1.jpg", size: "200x200"
-        .middle-product__description
-          .middle-product__description__message
-            = "iPhoneXケース　天気の子"
-          .middle-product__description__value
-            %p.middle-product__description__value__money
-              = "¥2,500"
-            %p.middle-product__description__value__like
-              = "♡822"
-    .lower-product
-      =  link_to("すべての商品を見る", {})
-= render partial: "footer"
+      = render "shared/top_page/post-card"
+    .middle-product-set
 
-      
+  .product
+    .upper-product
+      .left-product
+        = "メンズ新着アイテム"
+      .right-product
+        = link_to "#" do
+          もっと見る
+          %i.fa.fa-chevron-right
+    .middle-product-set
+      = render "shared/top_page/post-card"
+    .middle-product-set
+
+  .product
+    .upper-product
+      .left-product
+        = "家電・スマホ・カメラ新着アイテム"
+      .right-product
+        = link_to "#" do
+          もっと見る
+          %i.fa.fa-chevron-right
+    .middle-product-set
+      = render "shared/top_page/post-card"
+    .middle-product-set
+
+  .product
+    .upper-product
+      .left-product
+        = "おもちゃ・ホビー・グッズ新着アイテム"
+      .right-product
+        = link_to "#" do
+          もっと見る
+          %i.fa.fa-chevron-right
+    .middle-product-set
+      = render "shared/top_page/post-card"
+    .middle-product-set
+
+.wrapper5
+  .upper-category
+    = "人気のブランド"
+  .lower-category
+    .lower-category__ladies
+      = "シャネル"
+    .lower-category__mens
+      = "ルイヴィトン"
+    .lower-category__home
+      = "シュプリーム"
+    .lower-category__toy
+      = "ナイキ"
+.wrapper6
+  .product
+    .upper-product
+      .left-product
+        = "シャネル新着アイテム"
+      .right-product
+        = link_to "#" do
+          もっと見る
+          %i.fa.fa-chevron-right
+    .middle-product-set
+      = render "shared/top_page/post-card"
+    .middle-product-set
+
+  .product
+    .upper-product
+      .left-product
+        = "ルイヴィトン新着アイテム"
+      .right-product
+        = link_to "#" do
+          もっと見る
+          %i.fa.fa-chevron-right
+    .middle-product-set
+      = render "shared/top_page/post-card"
+    .middle-product-set
+
+  .product
+    .upper-product
+      .left-product
+        = "シュプリーム新着アイテム"
+      .right-product
+        = link_to "#" do
+          もっと見る
+          %i.fa.fa-chevron-right
+    .middle-product-set
+      = render "shared/top_page/post-card"
+    .middle-product-set
+
+  .product
+    .upper-product
+      .left-product
+        = "ナイキ新着アイテム"
+      .right-product
+        = link_to "#" do
+          もっと見る
+          %i.fa.fa-chevron-right
+    .middle-product-set
+      = render "shared/top_page/post-card"
+    .middle-product-set
+
+= render partial: "footer"
