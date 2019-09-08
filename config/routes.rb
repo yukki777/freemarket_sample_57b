@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   end
 
   # スプリントレビュー後削除、ここから
-  get 'products/confirmation' =>'products#confirmation'
   get 'products/edit' =>'products#edit'
   get 'users/logout' =>'users#logout'
   get 'users/mypage' =>'users#mypage'
