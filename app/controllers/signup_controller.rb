@@ -37,7 +37,7 @@ end
 
 def new5
   @user = User.new
-  @user.build_wallet
+  # @user.build_wallet
   session[:address_attributes] = user_params[:address_attributes]
 end
 
@@ -46,7 +46,7 @@ def complete
 end
 
 def create
-  session[:wallet_attributes] = user_params[:wallet_attributes] #こっからチェック！
+  # session[:wallet_attributes] = user_params[:wallet_attributes] #こっからチェック！
 
   @user = User.new(
     nickname: session[:nickname], 
@@ -60,15 +60,15 @@ def create
     birthday: session[:birthday],
     phone_number: session[:phone_number],
     address_attributes: session[:address_attributes],
-    wallet_attributes: session[:wallet_attributes]
+    # wallet_attributes: session[:wallet_attributes]
   )  
     if @user.save
       session[:user_id] = @user.id
       # userが登録されるときに一緒にカード情報も登録
-      customer = Payjp::Customer.create(     
-        card: params['payjp-token'],
-      )
-      @wallet = Wallet.new(user_id: @user.id, customer_id: customer.id, card_id: customer.default_card)
+      # customer = Payjp::Customer.create(     
+      #   card: params['payjp-token'],
+      # )
+      # @wallet = Wallet.new(user_id: @user.id, customer_id: customer.id, card_id: customer.default_card)
       redirect_to complete_signup_index_path
     else
       render new1_signup_index_path
@@ -123,7 +123,7 @@ def user_params
     :birthday,
     :phone_number,
     address_attributes:[:id,:postal_code,:city,:address,:building_name,:building_phone_number,:prefecture_id],
-    wallet_attributes:[:card_id, :customer_id]
+    # wallet_attributes:[:card_id, :customer_id]
   )
   end
 end
