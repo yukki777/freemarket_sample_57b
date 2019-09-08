@@ -20,7 +20,9 @@
 @import "login";
 @import "new";
 
-@import "registration";
+@import "wallet/registration"; // カード追加
+@import "wallet/registration-list"; // カード情報
+@import "wallet/new"; // カード登録
 
 @import "mypage-left";
 @import "mypage";

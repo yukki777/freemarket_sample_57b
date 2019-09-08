@@ -42,7 +42,6 @@ Rails.application.routes.draw do
   get "products/:id/confirmation",to: "products#confirmation",as:"products_confirmation"
 
   #クレカ関連
-  resources :wallet, only: [:new, :show, :create, :destroy]
-  get 'users/registration' => 'wallet#index', as: "wallet_list"
+  resources :wallet, only: [:new, :show, :create, :destroy, :index]
 
 end

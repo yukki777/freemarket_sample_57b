@@ -1,0 +1,18 @@
+= render partial: "products/header"
+.wrapper2
+  .circle
+    .circle__message
+      = "出品"
+    .circle__awesome
+      = link_to "#" do
+        %i.fa.fa-camera
+.both
+  .wrapper
+    .mypage-size
+      = render partial: "users/mypage-left"
+      - if @wallet.present?
+        = render partial: 'registration-list'
+      - else
+        = render partial: 'registration'
+
+= render partial: "products/footer"

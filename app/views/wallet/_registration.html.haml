@@ -1,0 +1,17 @@
+.payment
+  .payment-way
+    = "支払い方法"
+  %hr.horizontal
+  .middle-payment
+    .card-list
+      = "クレジットカード一覧"
+    .add-card
+      = link_to new_wallet_path, class: "link-a" do
+        %i.fa.fa-credit-card
+        クレジットカードを追加する
+  .lower-payment
+    %hr.horizontal
+    .about-pay
+      = link_to root_path, class: "link-b" do
+        支払い方法について
+        %i.fa.fa-chevron-right
