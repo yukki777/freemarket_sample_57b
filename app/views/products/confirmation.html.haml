@@ -36,10 +36,4 @@
       .confirmation-container__content__credit__editbutton
         =link_to "変更する",root_path
         =link_to "",root_path,class:"fa fa-angle-right"
-  .confirmation-container__footer
-    %ul
-      %li=link_to "プライバシーポリシー",root_path
-      %li=link_to "メルカリ利用規約",root_path
-      %li=link_to "特定商取引に関する表記",root_path    
-    = link_to image_tag("logo-gray.svg",class: "footer-logo"),root_path 
-    %p © 2019 Mercari   
+  = render partial: "devise/registrations/form-footer"  

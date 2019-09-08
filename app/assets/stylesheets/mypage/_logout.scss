@@ -1,0 +1,25 @@
+.container{
+  &__mypage{
+    &__right-logout{
+      width: 70%;
+      padding-bottom: 40px;
+      margin-left: 40px;
+      background-color: #fff;
+      height: 100%;
+      &__submit{
+        padding: 40px 0;
+        text-align: center;
+        margin-top: 35px;
+        a{
+          padding: 25px 150px;
+          background-color: #EA352D;
+        
+          color: #fff;
+          border: none;
+          font-size: 14px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

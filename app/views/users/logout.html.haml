@@ -1,0 +1,10 @@
+= render partial: "products/header"
+- breadcrumb :logout
+= render "layouts/breadcrumbs"
+.container
+  .container__mypage
+    =render partial: "mypage-left"
+    .container__mypage__right-logout
+      .container__mypage__right-logout__submit
+        = link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'user-submit'  
+= render partial: "products/footer"
