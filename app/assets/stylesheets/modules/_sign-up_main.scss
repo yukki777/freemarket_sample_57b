@@ -25,6 +25,7 @@
     padding: 0 16px 40px;
     border-top: 1px solid#f5f5f5;
     font-size: 14px;
+      
       &__social__link-box{
         height: 100%;
         width: 350px;
@@ -109,13 +110,24 @@
       }
 
       // 名前、メアド、パス、誕生日、ロボット
-      
+      &__error-font{
+        font-size: 14px;
+        color: #EA352D;
+        width: 350px;
+        margin: 0 auto;
+        padding-top: 10px;
+        li{
+          text-align: left;
+        }
+      }
+     
       &__input{
         height: 100%;
         width: 350px;
         padding-top: 20px;
         margin: 0 auto;
         font-size: 14px;
+        
         &__flex-start{
           margin-top: 30px;
         }
@@ -375,5 +387,10 @@
     background-size: cover;
 
 
+  }
+}
+.field_with_errors {
+  input{
+    border: solid 1px red;
   }
 }

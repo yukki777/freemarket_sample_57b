@@ -1,6 +1,4 @@
 .header{
-  box-shadow:0px 6px 5px -3px rgba(0,0,0,0.2);
-  margin-bottom: 4px;
   &__content{
     width: 1000px;
     height: 100px;
@@ -64,9 +62,10 @@
         }
       }
       &__right{
-        position: relative;
+        
         margin-top: 5px;
         &__signin{
+          position: relative;
           a{
             color: #333333;
             text-decoration: none;
@@ -90,14 +89,15 @@
           .profile-content{
             display: inline-block;
             margin-left: 40px;
+           
           }
           .profile{
             width: 30px;
             height: 30px;
             border-radius: 50%;
             position: absolute;
-            top: 60px;
-            right: 280px;
+            top: -5px;
+            right: 80px;
             box-shadow: none;
           }
         }

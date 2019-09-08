@@ -34,20 +34,22 @@
           = i.label :post_code, "郵便番号",class: "information-registration__base__main-box__click-area__input__information__label"
           %span.information-registration__base__main-box__click-area__input__caveat 必須
           = i.text_field :postal_code,placeholder: " 例）123-4567",class: "information-registration__base__main-box__click-area__input__information__text"
+        = render partial: 'error-messages', locals: {user: @user, column: "postal_code"}
         .information-registration__base__main-box__click-area__input
           = i.label :prefecture_id,"都道府県", class: "information-registration__base__main-box__click-area__input__information__label" 
           %span.information-registration__base__main-box__click-area__input__caveat 必須
           = i.collection_select  :prefecture_id, Prefecture.all, :id, :name,class: "information-registration__base__main-box__click-area__input__information__prefecture"
+        = render partial: 'error-messages', locals: {user: @user, column: "prefecture_id"}
         .information-registration__base__main-box__click-area__input
           = i.label :city,"市区町村",class: "information-registration__base__main-box__click-area__input__information__label "
           %span.information-registration__base__main-box__click-area__input__caveat 必須
           = i.text_field :city,placeholder: " 例）横浜市緑区",class: "information-registration__base__main-box__click-area__input__information__text"
-
+        = render partial: 'error-messages', locals: {user: @user, column: "city"}
         .information-registration__base__main-box__click-area__input
           = i.label :address,"番地",class: "information-registration__base__main-box__click-area__input__information__label" 
           %span.information-registration__base__main-box__click-area__input__caveat 必須
           = i.text_field :address,placeholder: " 例）青山1-1-1",class: "information-registration__base__main-box__click-area__input__information__text"
-
+        = render partial: 'error-messages', locals: {user: @user, column: "address"}
         .information-registration__base__main-box__click-area__input
           = i.label :building_name,"建物名",class: "information-registration__base__main-box__click-area__input__information__label"
           %span.information-registration__base__main-box__click-area__input__caveat__arbitrarily 任意
