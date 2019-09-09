@@ -44,6 +44,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -85,3 +86,7 @@ gem 'gretel'
 gem 'rails-i18n'
 gem 'ancestry'
 gem 'jquery-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
