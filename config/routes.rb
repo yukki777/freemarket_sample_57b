@@ -39,5 +39,9 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:edit, :update, :show]
-  resources :products, only: [:edit, :update, :show, :new]
+  resources :products, only: [:edit, :update, :show, :new] do
+    collection do
+      get 'search'
+    end
+  end
 end

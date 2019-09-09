@@ -1,0 +1,12 @@
+= render partial: "header"
+.search-box
+  .left-box
+    .inner
+      %input{type: "text"}
+      .details
+        %p 詳細検索
+  .right-box
+    - @products.each do |product|
+      %span.color-sub= product.name
+    = render partial: "footer"
+

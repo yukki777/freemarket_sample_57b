@@ -6,4 +6,10 @@ class Product < ApplicationRecord
   belongs_to :user
 
   validates :name, :postage, :price, :description, :status, :shipping_date, presence: true
+
+  def self.search(search)
+    return Product.all unless search
+    Product.where(['name LIKE ?', "%#{search}%"]).limit(20)
+  end
+
 end

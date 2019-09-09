@@ -2,9 +2,10 @@
   .header__content
     .header__content__up
       = link_to image_tag('logo.svg',class: "logo"),root_path
-      = form_tag '/',class: "header-form", :method => 'get'  do
+      = form_tag search_products_path,method: 'get',class: "header-form", method: 'get'  do
         %i.fa.fa-search
-        = text_field_tag :search, params[:search] ,class: "header-field",placeholder: "何かお探しですか？"   
+
+        = text_field_tag :search,params[:search],class: "header-field",placeholder: "何かお探しですか？"   
         = submit_tag 'Search', :name => nil,class: "hidden"
     .header__content__down
       .header__content__down__left
