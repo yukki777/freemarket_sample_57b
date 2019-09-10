@@ -9,7 +9,7 @@ class Product < ApplicationRecord
 
   def self.search(search)
     return Product.all unless search
-    Product.where(['name LIKE ?', "%#{search}%"]).limit(20)
+    Product.where(['name LIKE ?', "%#{search}%"]).limit(132)
   end
 
 end

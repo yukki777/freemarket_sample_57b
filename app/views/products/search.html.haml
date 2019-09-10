@@ -13,7 +13,7 @@
     .right-box
       - if params[:search].blank?
         %p.result 新着商品
-        - @products.order('created_at DESC').limit(4).each do |product|
+        - @products.order('created_at DESC').limit(132).each do |product|
           .middle-product
             %a{href: "/products/#{product.id}"}
               .middle-product__image
@@ -34,7 +34,8 @@
               %a{href: "/products/#{product.id}"}
                 .middle-product__image
                   - if product.images.present?
-                    = image_tag("#{product.images.first.image_url}", size: "180x180")
+                    = image_tag("kutu.jpg", size: "180x180")
+                    -# = image_tag("#{product.images.first.image_url}", size: "180x180")
                 .middle-product__description
                   .middle-product__description__message
                     = product.name
