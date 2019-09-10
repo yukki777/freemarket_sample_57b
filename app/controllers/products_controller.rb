@@ -16,7 +16,8 @@ class ProductsController < ApplicationController
   def search
     @category = Category.all
     @parents = @category.where(ancestry: nil)
-    @products = Product.search(params[:search])
+    @products = Product.all
+    @search_products = Product.search(params[:search])
   end
 
   
