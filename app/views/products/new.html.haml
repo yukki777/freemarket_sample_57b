@@ -48,8 +48,8 @@
                     %option{value: 0} ---
                     %option{value: 0} ---
                   %i.fa.fa-angle-down
-                .select-wrap
-                  %select{class:"select-wrap__defaultcategory"}
+                .select-wrap-child
+                  %select{class:"select-wrap-child__defaultcategory-child"}
                     %option{value: 0} ---
                     %option{value: 1} トップス
                     %option{value: 2} ジャケット/アウター
@@ -64,9 +64,9 @@
                     %option{value: 1027} アクセサリー
                     %option{value: 1318} ヘアアクセサリー
                     %option{value: 10} その他
-                  %i.far.fa-angle-down
-                .select-wrap
-                  %select{class:"select-wrap__defaultcategory"}
+                  %i.far.fa-angle-down.childfa
+                .select-wrap-grandchild
+                  %select{class:"select-wrap-grandchild__defaultcategory-grandchild"}
                     %option{value: "0"} ---
                     %option{value: "1"} Tシャツ
                     %option{value: "2"} シャツ
@@ -81,7 +81,7 @@
                     %option{value: "1027"} ベスト
                     %option{value: "1318"} パーカー
                     %option{value: "10"} その他
-                  %i.far.fa-angle-down
+                  %i.far.fa-angle-down.grandfa
             .form-group.top-margin
               %label
                 サイズ

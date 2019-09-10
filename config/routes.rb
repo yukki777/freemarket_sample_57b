@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   # スプリントレビュー後削除、ここから
   get 'products/confirmation' =>'products#confirmation'
   get 'products/edit' =>'products#edit'
+  get 'products/product_edit' =>'products#product_edit'
   get 'users/logout' =>'users#logout'
   get 'users/mypage' =>'users#mypage'
   get 'users/profile' =>'users#profile'
@@ -39,5 +40,5 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:edit, :update, :show]
-  resources :products, only: [:edit, :update, :show, :new]
+  resources :products, only: [:edit, :update, :show, :new,:destroy]
 end

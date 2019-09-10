@@ -21,7 +21,6 @@
     }
     &__flex{
       display: flex;
-      
       &__left{
         width: 300px;
         background-color: #F5F5F5;
@@ -37,7 +36,6 @@
           font-size: 14px;
             tbody{
             tr{
-              
               border: solid 1px ;
               th{
                 width: 40%;
@@ -97,8 +95,7 @@
       padding-bottom: 40px;
       line-height: 15px;
       font-size: 18px;
-      font-weight: 400;
-      
+      font-weight: 400; 
     }
     .like-button{
       background-color: #F5F5F5;
@@ -201,14 +198,12 @@
         line-height: 30px;
       }
     }
-    
   }
   &__content{
     &__sns{
       height: 100px;
       text-align: center;
-      line-height: 120px;
-     
+      line-height: 120px;  
       a{
         color: #fff;
       }
@@ -232,8 +227,7 @@
         font-size: 30px;
         padding: 10px 10px;
         background-color: #AA262A;
-        border-radius: 5px;
-        
+        border-radius: 5px;  
       }
     }
   }
@@ -242,8 +236,7 @@
     height: 100%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 30px;
-    
+    margin-top: 30px;  
     h3{
       font-size: 22px;
       font-weight: 700;
@@ -263,8 +256,7 @@
         height: 350px;
         margin-right: 10px;
         margin-left: 10px;
-        background-color: #fff;
-        
+        background-color: #fff;    
         &__text{
           .images{
             width: 220px;
@@ -287,8 +279,7 @@
           .fa-heart-o{
             margin-top: 2px;
             font-weight: 500;
-            color: #999999;
-            
+            color: #999999;   
           }
           .like-number{
             font-size: 12px;
