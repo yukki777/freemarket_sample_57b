@@ -10,7 +10,7 @@
   .wrapper
     .mypage-size
       = render partial: "users/mypage-left"
-      - if @wallet.present?
+      - if @user.wallet.present?
         = render partial: 'registration-list'
       - else
         = render partial: 'registration'

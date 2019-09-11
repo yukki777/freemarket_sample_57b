@@ -1,17 +1,15 @@
 class WalletController < ApplicationController
   require 'payjp'
   # before_action :set_card
-  before_action :get_user_params, only: [:edit, :confirmation, :show]
+  before_action :set_user
+  # before_action :get_user_params, only: [:edit, :index, :show]
   before_action :get_payjp_info, only: [:new, :create, :create, :delete, :show, :index]
-  before_action :create, only: 
 
   def index
-    wallet = current_user.credit_cards.first
+    wallet = current_user.wallet
     if wallet.present?
-      customer = Payjp::Customer.retrieve(wallet.customer_id) # payjpでcustomerの情報を取得
+      customer = Payjp::Customer.retrieve(wallet.customer_id)
       @default_card_information = customer.cards.retrieve(wallet.card_id)
-    else
-      redirect_to action: "new", id: current_user.id
     end
   end
 
@@ -35,12 +33,8 @@ class WalletController < ApplicationController
         card: params["payjp-token"],
         metadata: {user_id: current_user.id}
       )
-      @wallet = Wallet.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      if @wallet.save
-        redirect_to action: 'index'
-      else
-        redirect_to action: 'new', id: current_user.id
-      end
+      @wallet = Wallet.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)     
+      redirect_to action: 'index'
     end
   end
 
@@ -77,5 +71,9 @@ class WalletController < ApplicationController
 
   def set_card
     @wallet = Wallet.where(user_id: current_user.id).first if Wallet.where(user_id: current_user.id).present?
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end

@@ -33,7 +33,10 @@ Rails.application.routes.draw do
  # ここまで
 
 
-  resources :users, only: [:edit, :update, :show]
+  resources :users, only: [:edit, :update, :show] do
+    resources :wallet, only: [:new, :show, :create, :destroy, :index]
+  end
+
   resources :products, only: [:edit, :update, :show, :new, :index, :create] do
     collection do
       post 'confirmation/:id' => 'products#pay', as: 'pay'
@@ -42,6 +45,5 @@ Rails.application.routes.draw do
   get "products/:id/confirmation",to: "products#confirmation",as:"products_confirmation"
 
   #クレカ関連
-  resources :wallet, only: [:new, :show, :create, :destroy, :index]
 
 end

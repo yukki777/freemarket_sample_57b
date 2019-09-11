@@ -15,7 +15,7 @@
           = "クレジットカード情報入力"
         %hr.horizontal
         .middle-payment
-          = form_tag(wallet_index_path, method: :post, action: "create", id: 'charge-form',  name: "inputForm") do
+          = form_tag(user_wallet_index_path, method: :post, action: "create", id: 'charge-form',  name: "inputForm") do
             .card-number-box
               .card-number
                 = "カード番号"

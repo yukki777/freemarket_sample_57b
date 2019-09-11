@@ -36,13 +36,13 @@
       background-color: black;
       height: 600px;
       width: 280px;
-      margin: 40px 40px 40px 100px;
+      margin: 0px 40px 40px 100px;
     }
-    .payment {
+    .payment2 {
+      margin-left: 50px;
       background-color: #fff;
       width: 700px;
       height: 358px;
-      margin-top: 40px;
       .payment-way {
         font-weight: 600;
         font-size: 24px;
@@ -65,30 +65,28 @@
           padding-bottom: 22px;
         }
         .personal-card {
-          display: flex;
           .display-card {
+            .destroy-card {
+              float: right;
+              color: #EA352D;
+              font-size: 14px;
+              margin-left: 100px;
+              bottom: 50px;
+              border: solid 1px #EA352D;
+              border-radius: 3px;
+              width: 70px;
+              height: 20px;
+              text-align: center;
+              .link-d {
+                text-decoration: none;
+                color: #EA352D;
+              }
+            }
             &__number {
-              font-size: 13px;
+              font-size: 16px;
             }
             &__deadline {
-              font-size: 13px;
-            }
-          }
-          .destroy-card {
-            color: #EA352D;
-            font-size: 14px;
-            margin-left: 150px;
-            border: solid 1px #EA352D;
-            border-radius: 3px;
-            width: 70px;
-            height: 20px;
-            text-align: center;
-            a {
-              display: block;
-            }
-            .link-d {
-              text-decoration: none;
-              color: #EA352D;
+              font-size: 16px;
             }
           }
         }
