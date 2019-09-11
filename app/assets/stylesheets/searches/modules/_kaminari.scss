@@ -1,0 +1,15 @@
+.first{
+  height: 45px;
+  width: 45px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: 1px solid $gray_border;
+  text-align: center;
+  display: block;
+  a{
+    line-height: 45px;
+    font-size: 2.0em;
+    text-decoration: none;
+    color: $main_font;
+  }
+}
