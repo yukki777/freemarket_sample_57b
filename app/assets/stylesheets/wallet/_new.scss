@@ -85,10 +85,14 @@
             }
           }
           .form-control {
-            border-radius: 3px;
-            width: 320px;
-            height: 50px;
-            text-decoration: none;
+            width: 309px;
+            height: 28px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
           }
           .personal-card {
             margin-top: 10px;
@@ -124,13 +128,16 @@
               display: inline-block;
               .month-box {
                 width: 120px;
-                height: 40px;
-                opacity: 0.6;
-                border-radius: 3px;
                 -webkit-appearance: none;
-                background: transparent;
-                position: relative;
                 z-index: 1;
+                position: relative;
+                height: 46px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                line-height: 1.5;
+                cursor: pointer;
               }
             }
             .selectWrap::after {
@@ -159,13 +166,16 @@
               display: inline-block;
               .year-box {
                 width: 120px;
-                height: 40px;
-                opacity: 0.6;
-                border-radius: 3px;
                 -webkit-appearance: none;
-                background: transparent;
-                position: relative;
                 z-index: 1;
+                position: relative;
+                height: 46px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                line-height: 1.5;
+                cursor: pointer;
               }
             }
             .selectWrap::after {
@@ -219,23 +229,17 @@
               color: #0099E8;
             }
           }
-          .add-card {
+          .link-a {
             clear: both;
-            width: 320px;
+            width: 340px;
             height: 50px;
             background-color: #EA352D;
             text-align: center;
             line-height: 50px;
-            margin-top: 50px;
-            a {
-              display: block;
-            }
-            .link-a {
-              text-decoration: none;
-              color: #fff;
-              font-size: 13px;
-            }
-          }
+            margin-top: 24px;
+            font-size: 13px;
+            color: #fff;
+          }       
         }
       }
     }

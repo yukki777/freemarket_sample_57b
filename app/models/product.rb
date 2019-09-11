@@ -5,5 +5,5 @@ class Product < ApplicationRecord
   belongs_to :address
   belongs_to :user
 
-  validates :name, :postage, :price, :description, :status, :shipping_date, presence: true
+  validates :name, :price, :description, presence: true
 end
