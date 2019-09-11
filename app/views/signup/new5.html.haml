@@ -90,7 +90,8 @@
         .information-registration__base__main-box__click-area__input
         .information-registration__base__main-box__click-area__input__empty-box
           .information-registration__base__main-box__click-area__rink-btn
-            = submit_tag "次へ進む", class: "information-registration__base__main-box__click-area__rink-btn", id: "token_submit"
+            = submit_tag "次へ進む", class: "information-registration__base__main-box__click-area__rink-btn"
+            -# , id: "token_submit"
         
         .information-registration__base__main-box__click-area__input__empty-box
 = render partial: "devise/registrations/form-footer" 

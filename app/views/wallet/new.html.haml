@@ -15,16 +15,16 @@
           = "クレジットカード情報入力"
         %hr.horizontal
         .middle-payment
+        = form_tag(wallet_index_path, method: :post, action: "create", id: 'charge-form',  name: "inputForm") do
           .card-number-box
             .card-number
               = "カード番号"
             .required
               = "必須"
           .form
-            = form_with url: wallet_index_path, method: :post, html: {name: 'inputForm'} do |f|
-              .form-group
-                -# = f.text_field :search, placeholder: "半角数字のみ" , class: 'form-control'
-                = text_field_tag "number", "", class: "form-control", placeholder: "半角数字のみ", maxlength: "16", type: "text", id: "card_number"
+            -# = form_with url: wallet_index_path, method: :post, html: {name: 'inputForm'} do |f|
+            .form-group
+              = text_field_tag "number", "", class: "form-control", placeholder: "半角数字のみ", maxlength: "16", type: "text", id: "card_number"
           .personal-card
             .display-card
               .display-card__logo-visa
@@ -84,13 +84,12 @@
             .required
               = "必須"
           .form
-            = form_with url: wallet_index_path, method: :post do |f|
-              .form-group
-                -# = f.text_field :search, placeholder: "カード背面4桁もしくは3桁の番号" , class: 'form-control'
-                = text_field_tag "cvc", "", class: "form-control", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+            .form-group
+              = text_field_tag "cvc", "", class: "form-control", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
           .about-back-number
             = link_to root_path, class: "link-p" do
               %i.fa.fa-question-circle
               カード裏面の番号とは？
-          %button{type: "button", class: "link-a", id: "token_submit"} 追加する
+          #card_token
+          = submit_tag "追加する", id: "token_submit", class: "link-a"
 = render partial: "products/footer"
