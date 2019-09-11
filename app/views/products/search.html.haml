@@ -13,34 +13,24 @@
     .right-box
       - if params[:search].blank?
         %p.result 新着商品
-        - @products.order('created_at DESC').limit(132).each do |product|
+      - else
+        %p.result 
+        = "#{params[:search]}の検索結果"
+      .middle-product-set
+        - @products.each do |product|
           .middle-product
             %a{href: "/products/#{product.id}"}
               .middle-product__image
                 - if product.images.present?
-                  = image_tag("#{product.images.first.image_url}", size: "180x180")
+                  = image_tag("kutu.jpg", size: "180x180")
+                  -# = image_tag("#{product.images.first.image_url}", size: "180x180")
               .middle-product__description
                 .middle-product__description__message
                   = product.name
                 .middle-product__description__value
                   %p.middle-product__description__value__money
                     = "¥" + product.price.to_s(:delimited, delimiter: ',')
-      - else
-        %p.result 
-        = "#{params[:search]}の検索結果"
-        .middle-product-set
-          - @search_products.each do |product|
-            .middle-product
-              %a{href: "/products/#{product.id}"}
-                .middle-product__image
-                  - if product.images.present?
-                    = image_tag("kutu.jpg", size: "180x180")
-                    -# = image_tag("#{product.images.first.image_url}", size: "180x180")
-                .middle-product__description
-                  .middle-product__description__message
-                    = product.name
-                  .middle-product__description__value
-                    %p.middle-product__description__value__money
-                      = "¥" + product.price.to_s(:delimited, delimiter: ',')
+      .pagenate              
+        = paginate(@products)
 = render partial: "footer"
 

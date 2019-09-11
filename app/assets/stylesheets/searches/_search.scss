@@ -1,0 +1,61 @@
+// サークル
+@import "modules/circle";
+// 詳細検索エリア
+.search-box{
+  // width: 1500px;
+  width: 100%;
+  height: 100%;
+  color: $main_font;
+  background-color: $f5;
+  border-top: 3px inset $f5;
+  box-sizing: border-box;
+
+  &__support{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    @import "modules/side_search";
+  // 検索結果
+    .right-box{
+      .result{
+        margin-left: 6px;
+        margin-top: 30px;
+      }
+      .middle-product-set {
+        display: flex;
+        flex-wrap: wrap;
+
+        .middle-product {
+          margin: 10px;
+          a {
+            text-decoration: none;
+          }
+          &__image {
+            width: 180px;
+            height: 180px;
+            background-color: gray;
+          }
+          &__description {
+            width: 180px;
+            height: 80px;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            padding: 10px;
+            color: black;
+            &__message {
+              min-height: 50px;
+              font-size: 15px;
+            }
+            &__value {
+              display: flex;
+              justify-content: space-between;
+              font-weight: 550;
+            }
+          }
+        }
+      }
+      // イナヅマ
+      @import "modules/kaminari";
+    }
+  }
+}
