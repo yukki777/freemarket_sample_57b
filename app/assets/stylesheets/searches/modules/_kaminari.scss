@@ -1,4 +1,4 @@
-.first{
+@mixin kaminari-config() {
   height: 45px;
   width: 45px;
   border-radius: 3px;
@@ -6,10 +6,77 @@
   border: 1px solid $gray_border;
   text-align: center;
   display: block;
-  a{
-    line-height: 45px;
-    font-size: 2.0em;
-    text-decoration: none;
-    color: $main_font;
-  }
+}
+
+@mixin kaminari-font(){
+  line-height: 45px;
+  font-size: 2.0em;
+  text-decoration: none;
+  color: $main_font;
+}
+.pagination{
+  display: flex;
+  .first{
+    @include kaminari-config();
+   
+     a{
+       @include kaminari-font();
+     }
+   }
+   
+   .gap{
+     @include kaminari-config();
+     a{
+       @include kaminari-font();
+     }
+   }
+   
+   .last{
+     @include kaminari-config();
+     a{
+       @include kaminari-font();
+     }
+   }
+   
+   .next{
+     @include kaminari-config();
+     a{
+       @include kaminari-font();
+     }
+   }
+
+  
+   
+   .page{
+     @include kaminari-config();
+     a{
+      @include kaminari-font();
+      font-size: 0.8em;  
+    }
+    &__current{
+      @include kaminari-config();
+      color: #ffffff;
+      line-height: 45px;
+      font-size: 0.8em; 
+      background-color: $main-red;
+    }
+    
+    
+     
+   }
+   
+   .pagination{
+     @include kaminari-config();
+     a{
+       @include kaminari-font();
+     }
+   }
+   
+   .prev{
+     @include kaminari-config();
+     a{
+       @include kaminari-font();
+     }
+   }
+
 }
