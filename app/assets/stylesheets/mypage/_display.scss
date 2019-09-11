@@ -26,9 +26,10 @@
           }
         }
         &__column-red{
-          width: 33%;
+          width: 33.3%;
           height: 75px;
           line-height: 75px;
+          padding-right: 5px;
           text-align:center;
           background-color: #fff;
           border-top: solid 2px #EA352D;
@@ -38,6 +39,52 @@
             text-decoration: none;
           }
         }
+        
+      }
+      &__bottom{
+        background-color: #fff;
+        position: relative;
+        .path{
+          text-decoration: none;
+        }
+        &__product{
+          font-size: 14px;
+          border-bottom: 1px solid #eeeeee;
+          display: flex;
+          img{
+            padding: 15px;
+            margin-right: 10px;
+            
+          }
+          &__column{
+            margin-top: 15px;
+            &__up{
+               color: #333333;
+          
+            }
+            &__down{
+              display: inline-block;
+              margin-top: 5px;
+              font-weight: 600;
+              .red-color{
+                margin-left: 5px;
+                border-radius: 2px;
+                padding: 3px 12px;
+                font-size: 13px;
+                color: #fff;
+                background-color: #EA352D;
+              } 
+              .fa{
+                color:#D1D1D1;
+                .number-color{
+                  color: #888888;
+                }
+              }
+  
+            }
+          }       
+        }
+      
       }
       &__content{
         padding: 50px 0;
