@@ -5,6 +5,7 @@ class WalletController < ApplicationController
   # before_action :get_user_params, only: [:edit, :index, :show]
   before_action :get_payjp_info, only: [:new, :create, :destroy, :show, :index]
 
+  # カード情報があれば表示して、なければ追加するボタン
   def index
     wallet = current_user.wallet
     if wallet.present?
@@ -13,13 +14,7 @@ class WalletController < ApplicationController
     end
   end
 
-  # カード登録
   def new
-    # wallet = Wallet.where(user_id: current_user.id).first
-    # redirect_to action: "index" if wallet.present?
-  end
-
-  def edit
   end
 
   def create
@@ -59,10 +54,12 @@ class WalletController < ApplicationController
     # end
   end
 
+  # ユーザーのカード情報をセット
   def set_card
     @wallet = Wallet.where(user_id: current_user.id).first if Wallet.where(user_id: current_user.id).present?
   end
 
+  # ユーザーをセット
   def set_user
     @user = User.find(params[:user_id])
   end

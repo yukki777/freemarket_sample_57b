@@ -14,16 +14,14 @@
         = @product.price
         %p.small-font 送料込み
       .confirmation-container__content__block__form2
-        =link_to "ポイントはありません",root_path
+        =link_to "ポイントはありません", "#"
       .confirmation-container__content__block__form3
         %p 支払い金額
         .price-font 
           ¥
           = @product.price
       .confirmation-container__content__block__form4
-        -# = form_with url: pay_products_path do
-        = form_tag(action: :pay, method: :post) do
-          %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => 'pk_test_bd8507bffbc91664686778aa'}
+        = link_to "購入する", pay_products_path, method: :post
     %hr
     .confirmation-container__content__shipping-address
       %h4 配送先
@@ -34,13 +32,22 @@
       %p
       = @product.user.first_name + " " + @product.user.family_name
       .confirmation-container__content__shipping-address__editbutton
-        =link_to "変更する",root_path
-        =link_to "",root_path,class:"fa fa-angle-right"
+        =link_to "変更する","#"
+        =link_to "", "#", class:"fa fa-angle-right"
     %hr
     .confirmation-container__content__credit
       %h4 支払い方法
-      %p クレジット情報
+      .personal-card
+      .display-card
+        .display-card__logo
+          = image_tag "master-card.svg", size: "40x20"
+        .display-card__number
+          = "**** **** **** " + @default_card_information.last4
+        .display-card__deadline
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
       .confirmation-container__content__credit__editbutton
-        =link_to "変更する",root_path
-        =link_to "",root_path,class:"fa fa-angle-right"
+        =link_to "変更する","#"
+        =link_to "", "#", class:"fa fa-angle-right"
   = render partial: "devise/registrations/form-footer"  

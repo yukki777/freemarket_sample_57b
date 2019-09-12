@@ -43,10 +43,10 @@ Rails.application.routes.draw do
 
   resources :products, only: [:edit, :update, :show, :new, :index, :create, :destroy] do
     collection do
-      post 'confirmation/:id' => 'products#pay', as: 'pay'
+      post ':id/confirmation' => 'products#pay', as: 'pay'
+      get ':id/confirmation' => 'products#confirmation'
     end
   end
-  get "products/:id/confirmation",to: "products#confirmation",as:"products_confirmation"
 
   #クレカ関連
 

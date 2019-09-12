@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   require 'payjp'
   before_action :ddmenu
+  before_action :set_card
+  before_action :get_payjp_info, only: [:confirmation, :pay]
+
 
   def index
     @products = Product.all
@@ -34,12 +37,16 @@ class ProductsController < ApplicationController
 
   
 # スプリントレビュー後削除、ここから
-  def confirmation
+  def confirmation(product_params)
     @product = Product.find(params[:id])
+    wallet = current_user.wallet
+    if wallet.present?
+      customer = Payjp::Customer.retrieve(wallet.customer_id)
+      @default_card_information = customer.cards.retrieve(wallet.card_id)
+    end
   end
 
   def pay
-    Payjp::api_key = ENV['PAYJP_PRIVATE_KEY']
     charge = Payjp::Charge.create(
     :amount => @product.price,
     :card => params['payjp-token'],
@@ -57,5 +64,19 @@ class ProductsController < ApplicationController
     @category = Category.all
     @parents = @category.where(ancestry: nil)
   end
+
+  def set_card
+    @wallet = Wallet.where(user_id: current_user.id).first if Wallet.where(user_id: current_user.id).present?
+  end
+
+  def get_payjp_info
+    # credentials.yml使うときコメントアウト外す
+    # if Rails.env == 'development'
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    # else
+    #   Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+    # end
+  end
+
 
 end
