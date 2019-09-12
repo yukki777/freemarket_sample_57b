@@ -1,8 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
-
+  before_action :ddmenu
   private
+
+  def ddmenu
+    @category = Category.all
+    @parents = @category.where(ancestry: nil)
+  end
 
   def production?
     Rails.env.production?

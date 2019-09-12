@@ -1,15 +1,16 @@
 class ProductsController < ApplicationController
-  before_action :ddmenu
-
 
   def index
     @products = Product.all
   end
+
   def show
   end
 
   def new
     @product = Product.new
+    @childs = @category.where(ancestry: "1")
+    @grandchilds = @category.where(ancestry: "1/2")
   end
 
   def create
@@ -37,11 +38,6 @@ class ProductsController < ApplicationController
   end
 # ここまで
 
-  private
 
-  def ddmenu
-    @category = Category.all
-    @parents = @category.where(ancestry: nil)
-  end
 
 end

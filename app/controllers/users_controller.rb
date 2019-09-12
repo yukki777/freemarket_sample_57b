@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :ddmenu
+
 
   
   def index
@@ -49,10 +49,5 @@ class UsersController < ApplicationController
   end
   # ここまで
 
-  private
-
-  def ddmenu
-    @category = Category.all
-    @parents = @category.where(ancestry: nil)
-  end
+  
 end
