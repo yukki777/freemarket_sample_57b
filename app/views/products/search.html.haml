@@ -20,7 +20,7 @@
         .middle-product-set
           - @products.each do |product|
             .middle-product
-              %a{href: "/products/#{product.id}"}
+              = link_to product_path(product.id) do
                 .middle-product__image
                   - if product.images.present?
                     = image_tag("#{product.images.first.image_url}", size: "180x180")
