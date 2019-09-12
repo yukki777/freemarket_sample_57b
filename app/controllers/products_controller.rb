@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
 
   
 # スプリントレビュー後削除、ここから
-  def confirmation(product_params)
+  def confirmation
     @product = Product.find(params[:id])
     wallet = current_user.wallet
     if wallet.present?
@@ -47,11 +47,13 @@ class ProductsController < ApplicationController
   end
 
   def pay
+    @product = Product.find(params[:id])
     charge = Payjp::Charge.create(
     :amount => @product.price,
-    :card => params['payjp-token'],
+    :customer => @wallet.customer_id,
     :currency => 'jpy',
     )
+    
   end
 
   private
