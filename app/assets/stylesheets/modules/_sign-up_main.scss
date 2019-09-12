@@ -99,6 +99,15 @@
           }
         }
       }
+      .notification{
+        height: 50px;
+        color: #ea352d;
+        text-align: left;
+        .notice{
+          text-align: left;
+          color: #ea352d;
+        }
+      }
 
       // 名前、メアド、パス、誕生日、ロボット
       &__error-font{

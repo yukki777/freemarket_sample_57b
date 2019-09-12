@@ -47,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -88,3 +89,7 @@ gem 'ancestry'
 gem 'jquery-rails'
 gem 'seed-fu'
 gem 'owlcarousel-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"

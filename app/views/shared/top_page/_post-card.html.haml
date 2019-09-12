@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - @products.order('created_at DESC').where(category_id:(1..218)).limit(4).each do |product|
   .middle-product
     %a{href: "/products/#{product.id}"}
@@ -10,3 +11,17 @@
         .middle-product__description__value
           %p.middle-product__description__value__money
             = "¥" + product.price.to_s(:delimited, delimiter: ',')
+=======
+-# - @products.order('created_at DESC').limit(4).each do |product|
+-#   .middle-product
+-#     %a{href: "/products/#{product.id}"}
+-#       .middle-product__image
+-#         - if product.images.present?
+-#           = image_tag("#{product.images.first.image_url}", size: "200x200")
+-#       .middle-product__description
+-#         .middle-product__description__message
+-#           = product.name
+-#         .middle-product__description__value
+-#           %p.middle-product__description__value__money
+-#             = "¥" + product.price.to_s(:delimited, delimiter: ',')
+>>>>>>> 586a16af361860280b56678cb1e6d79957d4f3b0
