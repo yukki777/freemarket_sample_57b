@@ -32,9 +32,15 @@ class ProductsController < ApplicationController
   end
 
   def search
+    i = 1
     @category = Category.all
     @parents = @category.where(ancestry: nil)
-    @products = Product.search(params[:search]).order("created_at DESC").page(params[:page]).per(1)
+    @products = Product.search(params[:search]).order("created_at DESC").page(params[:page]).per(i)
+    
+    @total_page =  Product.search(params[:search]).page(params[:page]).per(i).total_pages
+    @first_page =  Product.search(params[:search]).page(params[:page]).per(i).first_page?
+    @last_page =  Product.search(params[:search]).page(params[:page]).per(i).last_page?
+
   end
   
 # スプリントレビュー後削除、ここから
