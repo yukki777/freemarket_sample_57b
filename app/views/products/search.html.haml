@@ -31,8 +31,16 @@
                   .middle-product__description__value
                     %p.middle-product__description__value__money
                       = "¥" + product.price.to_s(:delimited, delimiter: ',')
-      .pagination-box            
-        = paginate(@products)
+      .pagination-box 
+        - num = @total_page - 1
+        - if @first_page   
+          = paginate(@products, left: 5)
+        - elsif @last_page 
+          = paginate(@products, right: 5)
+        - elsif params[:page] == "2" || params[:page] == num.to_s
+          = paginate(@products, window: 3)
+        - else 
+          = paginate(@products, window: 2)
 .empty-box
 .search-box_footer
   .return 
