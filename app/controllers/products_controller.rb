@@ -5,6 +5,9 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
   def show
+    # @products= Products.find(params[:id])
+    @products= Product.find(1)
+    @images = Image.where(product_id:1)
   end
 
   def new
