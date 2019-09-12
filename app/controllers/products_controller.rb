@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    i = 1
+    i = 132
     @category = Category.all
     @parents = @category.where(ancestry: nil)
     @products = Product.search(params[:search]).order("created_at DESC").page(params[:page]).per(i)
