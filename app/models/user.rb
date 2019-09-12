@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook google_oauth2]
 
   has_many :products
   has_one :address
@@ -15,5 +15,16 @@ class User < ApplicationRecord
   validates :password_confirmation, length: { minimum: 7, maximum: 128}
   validates :email, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
   validates :nickname, :email, :password, :password_confirmation, :first_name, :first_name_kana ,:family_name, :family_name_kana, presence: true
-  
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.uid = auth.uid
+      user.provider = auth.provider
+      user.nickname = auth.info.name
+      user.email = auth.info.email
+      user.first_name = auth.info.first_name
+      user.family_name = auth.info.last_name
+      user.password = Devise.friendly_token[0, 20]
+    end
+  end
 end

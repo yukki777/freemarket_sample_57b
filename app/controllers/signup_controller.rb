@@ -6,7 +6,6 @@ before_action :validates_new3, only: :new4
 before_action :validates_new4, only: :new5
 def new1
   @user = User.new
-  
 end
 
 def new2
@@ -54,8 +53,10 @@ def create
     first_name_kana: session[:first_name_kana], 
     birthday: session[:birthday],
     phone_number: session[:phone_number],
-    address_attributes: session[:address_attributes]
-  )  
+    address_attributes: session[:address_attributes],
+    uid: session[:uid],
+    provider: session[:provider]
+  )
     if @user.save
       session[:user_id] = @user.id
       redirect_to complete_signup_index_path
