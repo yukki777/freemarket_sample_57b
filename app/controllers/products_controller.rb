@@ -2,10 +2,10 @@ class ProductsController < ApplicationController
   require 'payjp'
   before_action :ddmenu
 
-
   def index
     @products = Product.all
   end
+
   def show
   end
 
@@ -52,11 +52,6 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :price, :description)
   end
-
-end
-# ここまで
-
-  private
 
   def ddmenu
     @category = Category.all

@@ -63,7 +63,6 @@ def create
     phone_number: session[:phone_number],
     address_attributes: session[:address_attributes],
     # wallet_attributes: session[:wallet_attributes]
-  )  
     uid: session[:uid],
     provider: session[:provider]
   )
