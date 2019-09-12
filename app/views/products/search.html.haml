@@ -23,8 +23,7 @@
               %a{href: "/products/#{product.id}"}
                 .middle-product__image
                   - if product.images.present?
-                    = image_tag("kutu.jpg", size: "180x180")
-                    -# = image_tag("#{product.images.first.image_url}", size: "180x180")
+                    = image_tag("#{product.images.first.image_url}", size: "180x180")
                 .middle-product__description
                   .middle-product__description__message
                     = product.name
