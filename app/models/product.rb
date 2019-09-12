@@ -1,9 +1,8 @@
 class Product < ApplicationRecord
   has_many   :images, dependent: :destroy
-  has_many   :product_categories
-  has_many   :categories, through: :product_categories
+
   belongs_to :address
   belongs_to :user
-
-  validates :name, :postage, :price, :description, :status, :shipping_date, presence: true
+  has_many   :categories
+  validates :name, :postage_id, :price, :description, :shipping_date_id, presence: true
 end
