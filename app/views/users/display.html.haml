@@ -15,7 +15,7 @@
         .container__mypage__display__flex__column
           = link_to "売却済み",users_sell_path
       .container__mypage__display__bottom
-        - @products.order('created_at DESC').limit(4).each do |product|
+        - @products.order('created_at DESC').each do |product|
           - if product.images.present?   
             = link_to(edit_product_path(product), class: 'path') do
               .container__mypage__display__bottom__product
@@ -31,7 +31,6 @@
                       %span.number-color 3
                     %span.red-color 
                       公開中
-              
           - else
             .container__mypage__display__content
               =image_tag "m-icon.png",class: "image"

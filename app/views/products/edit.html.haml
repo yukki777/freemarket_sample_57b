@@ -1,7 +1,7 @@
 = render partial: "header"
 .edit-container 
   .edit-container__content
-    %h1 白スリムストレートデニム
+    %h1=@product.name
     .edit-container__content__flex
       .edit-container__content__flex__left
         ああ
@@ -11,22 +11,22 @@
             %tr
               %th 出品者
               %td 
-                %p 名前
-                %p aaaaa
+                %p= link_to  "#{@product.user.nickname}",root_path
+                
             %tr
               %th カテゴリー
               %td 
-                スボン
+             
                 %p aaaaa
             %tr
               %th ブランド
-              %td aaaaaaaa
+              %td=@product.brand_id
             %tr
               %th 商品のサイズ
-              %td a
+              %td=@product.size_id
             %tr
               %th 商品の状態
-              %td aaa
+              %td=@product.condition_id
             %tr
               %th 配送料の負担
               %td aaaaaa
@@ -35,53 +35,40 @@
               %td aaaaaaa
             %tr
               %th 配送元地域
-              %td aaaaaaa
+              %td=@product.postage_id
             %tr
               %th 発送日の目安
               %td aaaaaaaaa
     .edit-container__content__price     
-      %span.price-left ¥400
+      %span.price-left 
+        ¥
+        =@product.price
       %span.price-right (税込)
       %span.price-right-postage 送料込み
-      .edit-container__content__price__btn-buy
-        = link_to  "購入画面に進む",root_path,class: "link"
+      
     .edit-container__content__text
-      %p  WEEKEND MaxMara 
-      %br ウィークエンド マックスマーラ
-      %br カットソー Tシャツ
-      %br
-      %br SIZE:おそらくMぐらい
-      %br 肩幅:38cm
-      %br 身幅:43(×2)cm
-      %br 袖丈:16cm
-      %br 着丈:58cm
-      %br ※素人採寸のため、多少の誤差はご容赦下さい。
-      %br
-      %br 状態:汚れ、ダメージとありませんが
-      %br 服内側のケアラベルを切ってしまったため
-      %br 正確なサイズを忘れてしまいました。
-      %br おそらくMくらい。
-      %br
-      %br ※中古品ですので、神経質な方はご遠慮下さい。
-    %span.like-button
-      %i.fa.fa-heart-o
-        = link_to  "いいね!",root_path
-    %span.report
-      %i.fa.fa-flag
-      = link_to  "不適切な商品の報告",root_path
-    %span.security
-      %i.fa.fa-lock
-      = link_to  "あんしん・あんぜんへの取り組み",root_path
+      %p=@product.description 
+
+
 
   .edit-container__edit-content
     .edit-container__edit-content__btn
-      = link_to  "商品の編集",root_path,class: "link"
+      = link_to  "商品の編集",products_product_edit_path(@product),class: "link"
     %p or
     .edit-container__edit-content__btn
       = link_to  "出品を再開する",root_path,class: "link"
     .edit-container__edit-content__btn-delete
-      = link_to  "この商品を削除する",root_path,class: "link"
-
+      %button#modal-open-btn この商品を削除する
+      = link_to  "",product_path(@product.id),method: :delete,id: 'item-delete-btn'
+      #overlay
+        #modalWindow
+          .modal-message-box
+            %p.bold  確認
+            %p  削除すると二度と復活できません。
+            %p  削除する代わりに停止することもできます。
+            %p.realy 本当に削除しますか？
+          %button#modal-close-btn キャンセル
+          %button#delete-comformation-btn 削除する
   .edit-container__edit-content
     .edit-container__edit-content__comment
       .edit-container__edit-content__comment__text
