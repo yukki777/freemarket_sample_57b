@@ -44,24 +44,43 @@
               %div
                 .select-wrap
                   %select{class:"select-wrap__defaultcategory"}
-                    %option{value: "0"} ---
-                    - @parents.each do |parent|
-                      %option{value: "#{parent.id}"} 
-                        =parent.name
+                    %option{value: 0} ---
+                    %option{value: 0} ---
+                    %option{value: 0} ---
                   %i.fa.fa-angle-down
                 .select-wrap-child
                   %select{class:"select-wrap-child__defaultcategory-child"}
-                    %option{value: "0"} ---
-                    - @childs.each do |child|
-                      %option{value: "#{child.parent.id}"}
-                        =child.name
+                    %option{value: 0} ---
+                    %option{value: 1} トップス
+                    %option{value: 2} ジャケット/アウター
+                    %option{value: 3} パンツ
+                    %option{value: 4} スカート
+                    %option{value: 5} ワンピース
+                    %option{value: 1328} 靴
+                    %option{value: 6} ルームウェア/パジャマ
+                    %option{value: 7} レッグウェア
+                    %option{value: 8} 帽子
+                    %option{value: 9}バッグ
+                    %option{value: 1027} アクセサリー
+                    %option{value: 1318} ヘアアクセサリー
+                    %option{value: 10} その他
                   %i.far.fa-angle-down.childfa
                 .select-wrap-grandchild
                   %select{class:"select-wrap-grandchild__defaultcategory-grandchild"}
                     %option{value: "0"} ---
-                    - @grandchilds.each do |grandchild|
-                      %option{value: "#{grandchild.id}"}
-                        =grandchild.name
+                    %option{value: "1"} Tシャツ
+                    %option{value: "2"} シャツ
+                    %option{value: "3"} ポロシャツ
+                    %option{value: "4"} キャミソール
+                    %option{value: "5"} タンクトップ
+                    %option{value: "1328"} ホルターネック
+                    %option{value: "6"} ニット/セーター
+                    %option{value: "7"} チュニック
+                    %option{value: "8"} カーディガン
+                    %option{value: "9"} アンサンブル
+                    %option{value: "1027"} ベスト
+                    %option{value: "1318"} パーカー
+                    %option{value: "10"} その他
                   %i.far.fa-angle-down.grandfa
             .form-group.top-margin
               %label
@@ -90,7 +109,8 @@
                 .select-wrap
                   %select{class:"select-wrap__defaultcategory"}
                     %option{value: 0} ---
-                   
+                    %option{value: 0} ---
+                    %option{value: 0} ---
                   %i.fa.fa-angle-down
             .form-group.top-margin
               %label
@@ -173,20 +193,14 @@
                   ¥
                   %div.sell-price-input__form
                     %input(type="text"){class: "input--price__default", placeholder: "例）300"}
-            %li.clearfix.flex
+            %li.clearfix
               .l-left
-                .small 
-                  販売手数料（10%）
-                %input(type= "text"){style: "display: none", id: "price2"}
-                
-              .l-right3
-                
+                .small 販売手数料（10%）
+              .l-right -
             %li.clearfix.bold
-              .l-left 
-              販売利益
-              %input(type= "text"){style: "display: none", id: "price"}
-              .l-right2 
-                
+              .l-left 販売利益
+              .l-right -
+      
       .modal{role: "dialog", tabindex: "--1"}
         .modal--inner
       .sell-content.sell-btn-box
@@ -209,7 +223,7 @@
               加盟店規約
             に同意したことになります。
           .actions
-            %input(type="submit"){value: "出品する", class: "btn--red"}
+            %input(type="submit"){value: "変更する", class: "btn--red"}
         %a.btn-default.btn--gray もどる
 
   .sell__footer
