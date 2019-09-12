@@ -1,9 +1,9 @@
 class WalletController < ApplicationController
   require 'payjp'
-  # before_action :set_card
+  before_action :set_card
   before_action :set_user
   # before_action :get_user_params, only: [:edit, :index, :show]
-  before_action :get_payjp_info, only: [:new, :create, :create, :delete, :show, :index]
+  before_action :get_payjp_info, only: [:new, :create, :destroy, :show, :index]
 
   def index
     wallet = current_user.wallet
@@ -38,24 +38,14 @@ class WalletController < ApplicationController
     end
   end
 
-  def delete
-    wallet = current_user.credit_cards.first  # current_userのカードの1番目の要素を取得
+  def destroy
+    wallet = @user.wallet # current_userのカードの1番目の要素を取得
     if wallet.present?  # カード情報あれば削除
       customer = Payjp::Customer.retrieve(wallet.customer_id) # payjpでcustomerの情報を取得
       customer.delete
       wallet.delete
     end
-      redirect_to action: "confirmation", id: current_user.id
-  end
-
-  def show
-    # wallet = current_user.credit_cards.first
-    # if wallet.present?
-    #   customer = Payjp::Customer.retrieve(wallet.customer_id) # payjpでcustomerの情報を取得
-    #   @default_card_information = customer.cards.retrieve(wallet.card_id)
-    # else
-    #   redirect_to action: "confirmation", id: current_user.id
-    # end
+      redirect_to action: "index", id: current_user.id
   end
 
   private

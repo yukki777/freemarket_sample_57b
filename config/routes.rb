@@ -38,7 +38,7 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:edit, :update, :show] do
-    resources :wallet, only: [:new, :show, :create, :destroy, :index]
+    resources :wallet, only: [:new, :create, :destroy, :index]
   end
 
   resources :products, only: [:edit, :update, :show, :new, :index, :create, :destroy] do
