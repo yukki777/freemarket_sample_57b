@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users 
+  devise_for :users,
+  controllers: {
+   registrations: 'users/registrations',
+   omniauth_callbacks: 'users/omniauth_callbacks'
+   }
     
   root to: 'products#index'
   
@@ -16,6 +20,7 @@ Rails.application.routes.draw do
 
   # スプリントレビュー後削除、ここから
   get 'products/edit' =>'products#edit'
+  get 'products/product_edit' =>'products#product_edit'
   get 'users/logout' =>'users#logout'
   get 'users/mypage' =>'users#mypage'
   get 'users/profile' =>'users#profile'
@@ -37,7 +42,7 @@ Rails.application.routes.draw do
     resources :wallet, only: [:new, :show, :create, :destroy, :index]
   end
 
-  resources :products, only: [:edit, :update, :show, :new, :index, :create] do
+  resources :products, only: [:edit, :update, :show, :new, :index, :create, :destroy] do
     collection do
       post 'confirmation/:id' => 'products#pay', as: 'pay'
     end

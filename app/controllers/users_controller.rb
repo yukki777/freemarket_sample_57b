@@ -10,6 +10,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @users = User.all
+    @products = Product.all
+  end
+
+  def display
+    @products = Product.all
   end
 # スプリントレビュー後削除、ここから
   def logout
