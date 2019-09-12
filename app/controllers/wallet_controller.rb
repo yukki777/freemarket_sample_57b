@@ -33,7 +33,7 @@ class WalletController < ApplicationController
         card: params["payjp-token"],
         metadata: {user_id: current_user.id}
       )
-      @wallet = Wallet.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)     
+      @wallet = Wallet.create(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)     
       redirect_to action: 'index'
     end
   end
