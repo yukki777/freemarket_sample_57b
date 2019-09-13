@@ -29,17 +29,17 @@
         = fa_icon 'chevron-right'
     .sidebar__list__points
       .sidebar__list__points__text
-        = link_to "出品した商品ー出品中",users_display_path
+        = link_to "出品した商品ー出品中",display_user_path(@user)
       .sidebar__list__points__allow-right
         = fa_icon 'chevron-right'
     .sidebar__list__points
       .sidebar__list__points__text
-        = link_to "出品した商品ー取引中",users_transaction_path
+        = link_to "出品した商品ー取引中",transaction_user_path(@user)
       .sidebar__list__points__allow-right
         = fa_icon 'chevron-right'
     .sidebar__list__points
       .sidebar__list__points__text
-        =link_to "出品した商品ー売却済み",users_sell_path
+        =link_to "出品した商品ー売却済み",sell_user_path(@user)
       .sidebar__list__points__allow-right
         = fa_icon 'chevron-right'
     .sidebar__list__points
@@ -90,7 +90,7 @@
   .sidebar__list
     .sidebar__list__points
       .sidebar__list__points__text
-        = link_to "プロフィール",users_profile_path
+        = link_to "プロフィール",profile_user_path(@user)
       .sidebar__list__points__allow-right
         = fa_icon 'chevron-right'
     .sidebar__list__points
@@ -120,6 +120,6 @@
         = fa_icon 'chevron-right'
     .sidebar__list__points
       .sidebar__list__points__text
-        =link_to "ログアウト",users_logout_path
+        =link_to "ログアウト",logout_user_path
       .sidebar__list__points__allow-right
         = fa_icon 'chevron-right'
