@@ -47,5 +47,18 @@ Rails.application.routes.draw do
       end
     end
 
+  resources :users, only: [:edit, :update, :show]
+  resources :products, only: [:edit, :update, :show, :new,:destroy] do
+    collection do
+      get 'search'
+    end
   end
 end
+# ルーティング調整中のため一時コメント化
+# resources :users, only: [:edit, :update, :show]
+#   resources :products, only: [:edit, :update, :show, :new,:destroy] do
+#     collection do
+#       get 'search'
+#     end
+#   end
+# end
