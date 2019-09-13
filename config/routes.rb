@@ -18,16 +18,9 @@ Rails.application.routes.draw do
   end
 
   # スプリントレビュー後削除、ここから
-  get 'products/confirmation' =>'products#confirmation'
   get 'products/edit' =>'products#edit'
-  get 'products/product_edit' =>'products#product_edit'
-  get 'users/logout' =>'users#logout'
+  
   get 'users/mypage' =>'users#mypage'
-  get 'users/profile' =>'users#profile'
-  get 'users/display' =>'users#display'
-  get 'users/display' =>'users#display'
-  get 'users/transaction' =>'users#transaction'
-  get 'users/sell' =>'users#sell'
   get 'users/telephone' =>'users#telephone'
   get 'users/telephonesecond' =>'users#telephonesecond'
   get 'users/address' =>'users#address'
@@ -38,10 +31,37 @@ Rails.application.routes.draw do
  # ここまで
 
 
-  resources :users, only: [:edit, :update, :show]
-  resources :products, only: [:edit, :update, :show, :new,:destroy] do
+  resources :users, only: [:edit, :update, :show]  do
+    member do
+      get 'display' => 'users#display' ,as: 'display'
+      get 'logout'  => 'users#logout', as: 'logout'
+      get 'transaction' =>'users#transaction', as: 'transaction'
+      get 'sell'    =>'users#sell', as: 'sell'
+      get 'profile' =>'users#profile', as: 'profile'
+    end
+    resources :wallet, only: [:new, :create, :destroy, :index]
+    resources :products, only: [:edit, :update, :show, :new, :destroy] do
+      member do
+        get 'product_edit' =>'products#product_edit',as: 'product_edit'
+      end
+    end
+  end
+  resources :products, only: [:edit, :update, :show, :new,:destroy, :index] do
     collection do
+      get 'finish' => 'products#finish'
       get 'search'
+    end
+    member do
+      post 'confirmation' => 'products#pay', as: 'pay'
+      get 'confirmation' => 'products#confirmation'
     end
   end
 end
+# ルーティング調整中のため一時コメント化
+# resources :users, only: [:edit, :update, :show]
+#   resources :products, only: [:edit, :update, :show, :new,:destroy] do
+#     collection do
+#       get 'search'
+#     end
+#   end
+# end

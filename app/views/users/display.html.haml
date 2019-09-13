@@ -9,15 +9,15 @@
         出品した商品
       .container__mypage__display__flex
         .container__mypage__display__flex__column-red
-          = link_to "出品中",users_display_path
+          = link_to "出品中",display_user_path(@user)
         .container__mypage__display__flex__column
-          = link_to "取引中",users_transaction_path
+          = link_to "取引中",transaction_user_path(@user)
         .container__mypage__display__flex__column
-          = link_to "売却済み",users_sell_path
+          = link_to "売却済み",sell_user_path(@user)
       .container__mypage__display__bottom
         - @products.order('created_at DESC').each do |product|
           - if product.images.present?   
-            = link_to(edit_product_path(product), class: 'path') do
+            = link_to(edit_user_product_path(@user,product), class: 'path') do
               .container__mypage__display__bottom__product
                 .container__mypage__display__bottom__product__image
                   = image_tag("#{product.images.first.image_url}", size: "50x50")
