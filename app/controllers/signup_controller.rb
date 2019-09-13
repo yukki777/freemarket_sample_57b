@@ -1,6 +1,11 @@
 class SignupController < ApplicationController
+require 'payjp'
 
 before_action :validates_new1, only: :new2
+#before_action :validates_new4, only: :new5
+# payjpのapiキーをアクションが実行される前に有功化させる
+before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
+
 before_action :validates_new2, only: :new3
 before_action :validates_new3, only: :new4
 before_action :validates_new4, only: :new5
@@ -34,6 +39,7 @@ end
 
 def new5
   @user = User.new
+  # @user.build_wallet
   session[:address_attributes] = user_params[:address_attributes]
 end
 
@@ -42,6 +48,8 @@ def complete
 end
 
 def create
+  # session[:wallet_attributes] = user_params[:wallet_attributes] #こっからチェック！
+
   @user = User.new(
     nickname: session[:nickname], 
     email: session[:email],
@@ -54,15 +62,22 @@ def create
     birthday: session[:birthday],
     phone_number: session[:phone_number],
     address_attributes: session[:address_attributes],
+    # wallet_attributes: session[:wallet_attributes]
     uid: session[:uid],
     provider: session[:provider]
   )
     if @user.save
       session[:user_id] = @user.id
+      # userが登録されるときに一緒にカード情報も登録
+      # customer = Payjp::Customer.create(     
+      #   card: params['payjp-token'],
+      # )
+      # @wallet = Wallet.new(user_id: @user.id, customer_id: customer.id, card_id: customer.default_card)
       redirect_to complete_signup_index_path
     else
       render new1_signup_index_path
     end
+    
 end
 
 def validates_new1
@@ -156,9 +171,12 @@ def user_params
     :first_name_kana, 
     :birthday,
     :phone_number,
-    address_attributes:[:id,:postal_code,:city,:address,:building_name,:building_phone_number,:prefecture_id]
+    address_attributes:[:id,:postal_code,:city,:address,:building_name,:building_phone_number,:prefecture_id],
+    # wallet_attributes:[:card_id, :customer_id]
   )
   end
+end
 
-
+def get_payjp_info
+  Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
 end
