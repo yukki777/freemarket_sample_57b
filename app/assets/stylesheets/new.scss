@@ -173,11 +173,24 @@
           margin-top: 40px;
         }
         .sell-price {
+         
           .clearfix {
             @include clearfix();
             padding: 0 0 24px;
             .l-left {
-              padding-top: 17px;
+              padding-top: 30px;
+            }
+            .l-right2{
+              color: #333333;
+              margin-top: 20px;
+              font-size: 30px;
+              font-weight: 600;
+              float: right;
+            }
+            .l-right3{
+              font-size: 12px;
+              margin-top: 30px;
+              float: right;
             }
             .l-right.sell-price-input {
               width: 50%;

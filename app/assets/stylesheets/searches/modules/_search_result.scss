@@ -1,0 +1,56 @@
+.right-box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  &__inner{
+    margin: 10px;
+    width: 100%;
+    .result{
+      margin-left: 10px;
+      margin-top: 30px;
+    }
+    .middle-product-set {
+      display: flex;
+      flex-wrap: wrap;
+
+      .middle-product {
+        margin: 10px;
+        a {
+          text-decoration: none;
+        }
+        &__image {
+          width: 180px;
+          height: 180px;
+          background-color: gray;
+        }
+        &__description {
+          width: 180px;
+          height: 80px;
+          background-color: #ffffff;
+          box-sizing: border-box;
+          padding: 10px;
+          color: black;
+          &__message {
+            min-height: 50px;
+            font-size: 15px;
+          }
+          &__value {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 550;
+          }
+        }
+      }
+    }
+  }
+  // イナヅマ
+  .pagination-box {
+    height: 50px;
+    width: 100%;
+    
+    // justify-content: flex-end;
+    margin-top: auto;
+    @import "kaminari";
+  }
+}

@@ -44,6 +44,9 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
   gem 'pry-rails'
 end
 
@@ -64,9 +67,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'rails-controller-testing'
+  
 end
 
 group :production do
@@ -88,7 +89,10 @@ gem 'payjp'
 gem 'rails-i18n'
 gem 'ancestry'
 gem 'jquery-rails'
+gem 'seed-fu'
+gem 'owlcarousel-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
+gem 'kaminari'

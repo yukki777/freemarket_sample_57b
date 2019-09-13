@@ -47,13 +47,12 @@ Rails.application.routes.draw do
   resources :products, only: [:edit, :update, :show, :new, :index, :create, :destroy] do
     collection do
       get 'finish' => 'products#finish'
+      get 'search'
     end
     member do
       post 'confirmation' => 'products#pay', as: 'pay'
       get 'confirmation' => 'products#confirmation'
     end
   end
-
-  #クレカ関連
 
 end

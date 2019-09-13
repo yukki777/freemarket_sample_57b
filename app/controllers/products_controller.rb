@@ -14,6 +14,8 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @childs = @category.where(ancestry: "1")
+    @grandchilds = @category.where(ancestry: "1/2")
   end
 
   def create
@@ -35,6 +37,17 @@ class ProductsController < ApplicationController
     redirect_to users_display_path, notice: '出品した商品を削除しました'
   end
 
+  def search
+    i = 132
+    @category = Category.all
+    @parents = @category.where(ancestry: nil)
+    @products = Product.search(params[:search]).order("created_at DESC").page(params[:page]).per(i)
+    
+    @total_page =  Product.search(params[:search]).page(params[:page]).per(i).total_pages
+    @first_page =  Product.search(params[:search]).page(params[:page]).per(i).first_page?
+    @last_page =  Product.search(params[:search]).page(params[:page]).per(i).last_page?
+
+  end
   
 # スプリントレビュー後削除、ここから
   def confirmation
@@ -59,7 +72,6 @@ class ProductsController < ApplicationController
     redirect_to finish_products_path
   end
 
-  private
 
   def product_params
     params.require(:product).permit(:name, :price, :description)
