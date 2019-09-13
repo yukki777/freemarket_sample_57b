@@ -1,0 +1,65 @@
+// サークル
+@import "modules/circle";
+// 詳細検索エリア
+.search-box{
+  // width: 1500px;
+  width: 100%;
+  min-height: 100vh;
+  color: $main_font;
+  background-color: $f5;
+  border-top: 3px inset $f5;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  &__support{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    // 検索ボックス
+    @import "modules/side_search";
+    // 検索結果
+    @import "modules/search_result";
+  }
+}
+
+.empty-box{
+  height: 60px;
+  width: 100%;
+  background-color: $f5;
+}
+
+.search-box_footer{
+  height: 60px;
+  width: 100%;
+  border-top: 1px inset #EEEEEE;
+  background-color: $f5;
+  margin-top: auto;
+  
+  .return{
+    display: flex;
+
+    a{
+      font-size: 0.8em;
+      margin-left: 150px;
+      text-decoration: none;
+      color: $main_font;
+      display: block;
+    }
+
+    p{
+      font-weight: 900;
+      font-size: 0.8em;
+      margin-left: 2px;
+      color: $main_font;
+
+    }
+    
+    .now{
+      font-weight: 900;
+      font-size: 0.8em;
+      color: $main_font;
+
+    }
+  }
+}
