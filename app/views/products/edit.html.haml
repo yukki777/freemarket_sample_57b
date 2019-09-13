@@ -53,13 +53,13 @@
 
   .edit-container__edit-content
     .edit-container__edit-content__btn
-      = link_to  "商品の編集",products_product_edit_path(@product),class: "link"
+      = link_to  "商品の編集",product_edit_user_product_path(current_user,@product),class: "link"
     %p or
     .edit-container__edit-content__btn
       = link_to  "出品を再開する",root_path,class: "link"
     .edit-container__edit-content__btn-delete
       %button#modal-open-btn この商品を削除する
-      = link_to  "",product_path(@product.id),method: :delete,id: 'item-delete-btn'
+      = link_to  "",user_product_path(@product),method: :delete,id: 'item-delete-btn'
       #overlay
         #modalWindow
           .modal-message-box
