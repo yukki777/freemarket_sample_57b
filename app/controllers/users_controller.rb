@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
-
+  before_action :set_user
 
   
   def index
   end
 
   def show
-   
+    @user = User.find(params[:id])
+    @products = Product.all
   end
 
   def edit
@@ -15,7 +16,9 @@ class UsersController < ApplicationController
   end
 
   def display
+    @user = User.find(params[:id])
     @products = Product.all
+    
   end
 # スプリントレビュー後削除、ここから
   def logout
@@ -48,6 +51,11 @@ class UsersController < ApplicationController
   def registration
   end
   # ここまで
+  private
 
+  def set_user
+    @user = User.find(params[:id])
+  end
+ 
   
 end

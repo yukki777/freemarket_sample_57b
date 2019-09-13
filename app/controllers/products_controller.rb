@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_product
 
   def index
     @products = Product.all
@@ -6,6 +7,12 @@ class ProductsController < ApplicationController
 
   def show
   end
+
+  def update
+    @user = User.find_by(id: params[:id]) 
+    @product = Product.find(params[:id])
+  end
+
 
   def new
     @product = Product.new
@@ -18,18 +25,18 @@ class ProductsController < ApplicationController
    
   def edit
     @user = User.find_by(id: params[:id]) 
-    @product = Product.find_by(id: params[:id])
+    @product = Product.find(params[:id])
   end
 
   def product_edit
-    @product = Product.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
+    @product = Product.find(params[:id])
   end
 
   def destroy
     @product = Product.find(params[:id])
-    @products = Product.all
     @product.destroy
-    redirect_to users_display_path, notice: '出品した商品を削除しました'
+    redirect_to display_user_path(current_user), notice: '出品した商品を削除しました'
   end
 
   
@@ -38,6 +45,9 @@ class ProductsController < ApplicationController
   end
 # ここまで
 
-
+  private
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
 end
