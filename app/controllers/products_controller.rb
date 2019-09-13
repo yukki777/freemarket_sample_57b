@@ -3,8 +3,8 @@ class ProductsController < ApplicationController
   before_action :ddmenu
   before_action :set_card, only: [:confirmation, :pay]
   before_action :get_payjp_info, only: [:confirmation, :pay]
-  before_action :set_product, [:pay, :destroy]
-
+  before_action :set_product,only: [:pay, :destroy, :edit, :product_edit, :update]
+  before_action :set_user,only: [:update, :edit, :product_edit]
 
   def index
     @products = Product.all
@@ -12,6 +12,10 @@ class ProductsController < ApplicationController
 
   def show
   end
+
+  def update
+  end
+
 
   def new
     @product = Product.new
@@ -23,18 +27,14 @@ class ProductsController < ApplicationController
   end
    
   def edit
-    @user = User.find_by(id: params[:id]) 
-    @product = Product.find_by(id: params[:id])
   end
 
   def product_edit
-    @product = Product.find_by(id: params[:id])
   end
 
   def destroy
-    @products = Product.all
     @product.destroy
-    redirect_to users_display_path, notice: '出品した商品を削除しました'
+    redirect_to display_user_path(current_user), notice: '出品した商品を削除しました'
   end
 
   def search
@@ -71,6 +71,7 @@ class ProductsController < ApplicationController
     redirect_to finish_products_path
   end
 
+  private
 
   def product_params
     params.require(:product).permit(:name, :price, :description)
@@ -98,5 +99,8 @@ class ProductsController < ApplicationController
     @products = Product.find(params[:id])
   end
 
+  def set_user
+    @user = User.find_by(id: params[:id]) 
+  end
 
 end
