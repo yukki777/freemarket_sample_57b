@@ -78,7 +78,7 @@ class ProductsController < ApplicationController
   end
 
   def ddmenu
-    @category = Category.all
+    @category = Categories.all
     @parents = @category.where(ancestry: nil)
   end
 
