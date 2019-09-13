@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   require 'payjp'
   before_action :ddmenu
-  before_action :set_card
+  before_action :set_card, only: [:confirmation, :pay]
   before_action :get_payjp_info, only: [:confirmation, :pay]
 
 
@@ -46,6 +46,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def finish
+  end
+
   def pay
     @product = Product.find(params[:id])
     charge = Payjp::Charge.create(
@@ -53,7 +56,7 @@ class ProductsController < ApplicationController
     :customer => @wallet.customer_id,
     :currency => 'jpy',
     )
-    
+    redirect_to finish_products_path
   end
 
   private

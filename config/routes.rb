@@ -38,13 +38,19 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:edit, :update, :show] do
+    member do
+      get 'logout' => 'users#logout', as: 'logout'
+    end
     resources :wallet, only: [:new, :create, :destroy, :index]
   end
 
   resources :products, only: [:edit, :update, :show, :new, :index, :create, :destroy] do
     collection do
-      post ':id/confirmation' => 'products#pay', as: 'pay'
-      get ':id/confirmation' => 'products#confirmation'
+      get 'finish' => 'products#finish'
+    end
+    member do
+      post 'confirmation' => 'products#pay', as: 'pay'
+      get 'confirmation' => 'products#confirmation'
     end
   end
 
