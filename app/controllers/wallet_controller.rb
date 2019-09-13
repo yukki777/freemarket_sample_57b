@@ -2,7 +2,6 @@ class WalletController < ApplicationController
   require 'payjp'
   before_action :set_card
   before_action :set_user
-  # before_action :get_user_params, only: [:edit, :index, :show]
   before_action :get_payjp_info, only: [:new, :create, :destroy, :show, :index]
 
   # カード情報があれば表示して、なければ追加するボタン

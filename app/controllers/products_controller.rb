@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :ddmenu
   before_action :set_card, only: [:confirmation, :pay]
   before_action :get_payjp_info, only: [:confirmation, :pay]
+  before_action :set_product, [:pay, :destroy]
 
 
   def index
@@ -31,7 +32,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
     @products = Product.all
     @product.destroy
     redirect_to users_display_path, notice: '出品した商品を削除しました'
@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
 
   def search
     i = 132
-    @category = Category.all
+    @categories = Category.all
     @parents = @category.where(ancestry: nil)
     @products = Product.search(params[:search]).order("created_at DESC").page(params[:page]).per(i)
     
@@ -51,7 +51,7 @@ class ProductsController < ApplicationController
   
 # スプリントレビュー後削除、ここから
   def confirmation
-    @product = Product.find(params[:id])
+    # @product = Product.find(params[:id])
     wallet = current_user.wallet
     if wallet.present?
       customer = Payjp::Customer.retrieve(wallet.customer_id)
@@ -63,11 +63,10 @@ class ProductsController < ApplicationController
   end
 
   def pay
-    @product = Product.find(params[:id])
     charge = Payjp::Charge.create(
-    :amount => @product.price,
-    :customer => @wallet.customer_id,
-    :currency => 'jpy',
+    amount: @product.price,
+    customer: @wallet.customer_id,
+    currency: 'jpy',
     )
     redirect_to finish_products_path
   end
@@ -78,7 +77,7 @@ class ProductsController < ApplicationController
   end
 
   def ddmenu
-    @category = Categories.all
+    @categories = Category.all
     @parents = @category.where(ancestry: nil)
   end
 
@@ -93,6 +92,10 @@ class ProductsController < ApplicationController
     # else
     #   Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
     # end
+  end
+
+  def set_product
+    @products = Product.find(params[:id])
   end
 
 
