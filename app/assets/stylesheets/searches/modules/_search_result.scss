@@ -45,12 +45,5 @@
     }
   }
   // イナヅマ
-  .pagination-box {
-    height: 50px;
-    width: 100%;
-    
-    // justify-content: flex-end;
-    margin-top: auto;
-    @import "kaminari";
-  }
+  @import "modules/kaminari";
 }
