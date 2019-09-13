@@ -19,8 +19,8 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @childs = @category.where(ancestry: "1")
-    @grandchilds = @category.where(ancestry: "1/2")
+    @childs = @categories.where(ancestry: "1")
+    @grandchilds = @categoies.where(ancestry: "1/2")
   end
 
   def create
@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
   def search
     i = 132
     @categories = Category.all
-    @parents = @category.where(ancestry: nil)
+    @parents = @categories.where(ancestry: nil)
     @products = Product.search(params[:search]).order("created_at DESC").page(params[:page]).per(i)
     
     @total_page =  Product.search(params[:search]).page(params[:page]).per(i).total_pages
@@ -79,7 +79,7 @@ class ProductsController < ApplicationController
 
   def ddmenu
     @categories = Category.all
-    @parents = @category.where(ancestry: nil)
+    @parents = @categories.where(ancestry: nil)
   end
 
   def set_card
