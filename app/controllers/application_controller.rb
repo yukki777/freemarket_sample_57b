@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   private
 
   def ddmenu
-    @category = Category.all
-    @parents = @category.where(ancestry: nil)
+    @categories = Category.all
+    @parents = @categories.where(ancestry: nil)
   end
 
   def production?
