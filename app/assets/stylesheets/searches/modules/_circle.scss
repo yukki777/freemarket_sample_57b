@@ -1,0 +1,28 @@
+.wrapper2 {
+  position: relative;
+  .circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: #EA352D;
+    color: #ffffff;
+    float: right;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    position: fixed;
+    &__message {
+      text-align: center;
+      font-size: 22px;
+      margin: 40px 0 0;
+      line-height: 20%;
+    }
+    &__awesome {
+      text-align: center;
+      font-size: 55px;
+      .fa {
+        color: #ffffff;
+      }
+    }
+  }
+}

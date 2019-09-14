@@ -46,5 +46,21 @@ Rails.application.routes.draw do
         get 'product_edit' =>'products#product_edit',as: 'product_edit'
       end
     end
+
+
+  resources :users, only: [:edit, :update, :show]
+  resources :products, only: [:edit, :update, :show, :new,:destroy] do
+    collection do
+      get 'search'
+    end
+
   end
 end
+# ルーティング調整中のため一時コメント化
+# resources :users, only: [:edit, :update, :show]
+#   resources :products, only: [:edit, :update, :show, :new,:destroy] do
+#     collection do
+#       get 'search'
+#     end
+#   end
+# end
