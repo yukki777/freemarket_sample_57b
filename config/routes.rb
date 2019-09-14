@@ -30,8 +30,8 @@ Rails.application.routes.draw do
   get 'users/sociallink' =>'users#sociallink'
   get 'users/registration' =>'users#registration'
  # ここまで
-
-
+ 
+  resources :categories 
   resources :users, only: [:edit, :update, :show]  do
     member do
       get 'display' => 'users#display' ,as: 'display'
@@ -46,6 +46,5 @@ Rails.application.routes.draw do
         get 'product_edit' =>'products#product_edit',as: 'product_edit'
       end
     end
-
   end
 end
