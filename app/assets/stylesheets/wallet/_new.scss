@@ -1,0 +1,247 @@
+.wrapper2 {
+  position: relative;
+  .circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: #EA352D;
+    color: #ffffff;
+    float: right;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    position: fixed;
+    &__message {
+      text-align: center;
+      font-size: 22px;
+      margin: 40px 0 0;
+      line-height: 20%;
+    }
+    &__awesome {
+      text-align: center;
+      font-size: 55px;
+      .fa {
+        color: #ffffff;
+      }
+    }
+  }
+}
+.both {
+  .wrapper {
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 1450px;
+    display: flex;
+    .mypage-size{
+      padding: 30px 30px 24px 30px;
+      width: 1000px;
+      height:auto;
+      display: flex;
+      margin: 0 auto;
+      .left-wrapper {
+        background-color: black;
+        height: 600px;
+        width: 280px;
+        margin: 40px 40px 40px 100px;
+      }
+      .payment {
+        background-color: #fff;
+        width: 700px;
+        height: 560px;
+        margin-top: 0px;
+        .payment-input {
+          font-weight: 600;
+          font-size: 24px;
+          opacity: 0.8;
+          text-align: center;
+          padding-top: 6px;
+        }
+        .horizontal {
+          opacity: 0.2;
+          text-align: center;
+        }
+        .middle-payment {
+          padding-top: 30px;
+          width: 320px;
+          margin: 0 auto;
+          .card-number-box {
+            display: flex;
+            .card-number {
+              font-weight: 600;
+              font-size: 14px;
+              opacity: 0.8;
+            }
+            .required {
+              background-color: #EA352D;
+              border: solid 1px #EA352D;
+              border-radius: 2px;
+              width: 30px;
+              height: 16px;
+              line-height: 16px;
+              text-align: center;
+              color: #fff;
+              font-size: 11px;
+              margin-left: 10px;
+            }
+          }
+          .form-control {
+            width: 309px;
+            height: 28px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+          .personal-card {
+            margin-top: 10px;
+            .display-card {
+              display: flex;
+            }
+          }
+          .expiration-date-box {
+            margin-top: 20px;
+            display: flex;
+            .expiration-date {
+              font-weight: 600;
+              font-size: 14px;
+            }
+            .required {
+              background-color: #EA352D;
+              border: solid 1px #EA352D;
+              border-radius: 2px;
+              width: 30px;
+              height: 16px;
+              line-height: 16px;
+              text-align: center;
+              color: #fff;
+              font-size: 11px;
+              margin-left: 10px;
+            }
+          }
+          .expiration-date-both {
+            display: flex;
+            font-size: 14px;
+            .selectWrap {
+              position: relative;
+              display: inline-block;
+              .month-box {
+                width: 120px;
+                -webkit-appearance: none;
+                z-index: 1;
+                position: relative;
+                height: 46px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                line-height: 1.5;
+                cursor: pointer;
+              }
+            }
+            .selectWrap::after {
+              content: '';
+              width: 6px;
+              height: 6px;
+              border: 0px;
+              border-bottom: solid 2px #b4b3b3;
+              border-right: solid 2px #b4b3b3;
+              -ms-transform: rotate(45deg);
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              position: absolute;
+              top: 50%;
+              right: 10px;
+              margin-top: -4px;
+            }
+            .month {
+              width: 35px;
+              height: 40px;
+              text-align: center;
+              line-height: 40px;
+            }
+            .selectWrap {
+              position: relative;
+              display: inline-block;
+              .year-box {
+                width: 120px;
+                -webkit-appearance: none;
+                z-index: 1;
+                position: relative;
+                height: 46px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                line-height: 1.5;
+                cursor: pointer;
+              }
+            }
+            .selectWrap::after {
+              content: '';
+              width: 6px;
+              height: 6px;
+              border: 0px;
+              border-bottom: solid 2px #b4b3b3;
+              border-right: solid 2px #b4b3b3;
+              -ms-transform: rotate(45deg);
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              position: absolute;
+              top: 50%;
+              right: 10px;
+              margin-top: -4px;
+            }
+            .year {
+              width: 35px;
+              height: 40px;
+              text-align: center;
+              line-height: 40px;
+            }
+          }
+          .security-code-box {
+            margin-top: 20px;
+            display: flex;
+            .security-code {
+              font-weight: 600;
+              font-size: 14px;
+            }
+            .required {
+              background-color: #EA352D;
+              border: solid 1px #EA352D;
+              border-radius: 2px;
+              width: 30px;
+              height: 16px;
+              line-height: 16px;
+              text-align: center;
+              color: #fff;
+              font-size: 11px;
+              margin-left: 10px;
+            }
+          }
+          .about-back-number {
+            float: right;
+            font-size: 14px;
+            margin-top: 5px;
+            .link-p {
+              text-decoration: none;
+              color: #0099E8;
+            }
+          }
+          .link-a {
+            clear: both;
+            width: 340px;
+            height: 50px;
+            background-color: #EA352D;
+            text-align: center;
+            line-height: 50px;
+            margin-top: 24px;
+            font-size: 13px;
+            color: #fff;
+          }       
+        }
+      }
+    }
+  }
+}

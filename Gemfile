@@ -58,6 +58,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :test do
@@ -84,6 +85,7 @@ gem 'fog-aws'
 gem 'active_hash'
 gem 'devise'
 gem 'gretel'
+gem 'payjp'
 gem 'rails-i18n'
 gem 'ancestry'
 gem 'jquery-rails'

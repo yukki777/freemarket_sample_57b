@@ -4,7 +4,7 @@ Rails.application.routes.draw do
    omniauth_callbacks: 'users/omniauth_callbacks'
    }
     
-  root to: 'products#index'
+  root 'products#index'
   
   resources :signup do
     collection do
@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   end
 
   # スプリントレビュー後削除、ここから
-  get 'products/confirmation' =>'products#confirmation'
   get 'products/edit' =>'products#edit'
   
   get 'users/mypage' =>'users#mypage'
@@ -40,8 +39,10 @@ Rails.application.routes.draw do
       get 'sell'    =>'users#sell', as: 'sell'
       get 'profile' =>'users#profile', as: 'profile'
     end
-  
-  
+
+
+    resources :wallet, only: [:new, :create, :destroy, :index]
+
     resources :products, only: [:edit, :update, :show, :new, :destroy] do
       member do
         get 'product_edit' =>'products#product_edit',as: 'product_edit'
@@ -50,9 +51,14 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:edit, :update, :show]
-  resources :products, only: [:edit, :update, :show, :new,:destroy] do
+  resources :products, only: [:edit, :update, :show, :new,:destroy, :index] do
     collection do
+      get 'finish' => 'products#finish'
       get 'search'
+    end
+    member do
+      post 'confirmation' => 'products#pay', as: 'pay'
+      get 'confirmation' => 'products#confirmation'
     end
   end
 end
