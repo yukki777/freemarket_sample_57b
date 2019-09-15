@@ -39,7 +39,6 @@ end
 
 def new5
   @user = User.new
-  # @user.build_wallet
   session[:address_attributes] = user_params[:address_attributes]
 end
 
@@ -48,7 +47,6 @@ def complete
 end
 
 def create
-  # session[:wallet_attributes] = user_params[:wallet_attributes] #こっからチェック！
 
   @user = User.new(
     nickname: session[:nickname], 
@@ -62,7 +60,6 @@ def create
     birthday: session[:birthday],
     phone_number: session[:phone_number],
     address_attributes: session[:address_attributes],
-    # wallet_attributes: session[:wallet_attributes]
     uid: session[:uid],
     provider: session[:provider]
   )    
@@ -173,7 +170,6 @@ def user_params
     :birthday,
     :phone_number,
     address_attributes:[:id,:postal_code,:city,:address,:building_name,:building_phone_number,:prefecture_id],
-    # wallet_attributes:[:card_id, :customer_id]
   )
   end
 end
