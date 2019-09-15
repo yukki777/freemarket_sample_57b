@@ -40,6 +40,7 @@ Rails.application.routes.draw do
       get 'sell'    =>'users#sell', as: 'sell'
       get 'profile' =>'users#profile', as: 'profile'
     end
+  end
   
     resources :products, only: [:edit, :update, :show, :new, :destroy] do
       member do
@@ -53,7 +54,6 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
-
   end
 end
 # ルーティング調整中のため一時コメント化
