@@ -1,11 +1,11 @@
 .header{
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   &__content{
     width: 1000px;
     height: 100px;
     padding-top: 5px;
     margin-right: auto;
     margin-left: auto;
-
     &__up{
       display: flex;
       .logo{

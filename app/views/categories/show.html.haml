@@ -1,0 +1,29 @@
+= render partial: "products/header"
+
+.wrapper2
+  .circle
+    .circle__message
+      = "出品"
+    .circle__awesome
+      = link_to "#" do
+        %i.fa.fa-camera
+.category-header
+  - @category.children.limit(9).each do |child|
+    = link_to "#{child.name}", category_path(child.id), class:"catesub"
+%p.category-name
+  ="#{@category.name}の商品一覧"
+.category
+  - @products.order('created_at DESC').where(category_id:(@category)).each do |product|
+    .category__middle-product
+      %a{href: "/products/#{product.id}"}
+        .category__middle-product__image
+          - if product.images.present?
+            = image_tag("#{product.images.first.image_url}", size: "200x200")
+        .category__middle-product__description
+          .category__middle-product__description__message
+            = product.name
+          .category__middle-product__description__value
+            %p.category__middle-product__description__value__money
+              = "¥" + product.price.to_s(:delimited, delimiter: ',')
+
+= render partial: "products/footer"
