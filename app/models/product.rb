@@ -3,7 +3,7 @@ class Product < ApplicationRecord
 
   belongs_to :address
   belongs_to :user
-  has_many   :categories
+  belongs_to :category
   validates :name, :postage_id, :price, :description, :shipping_date_id, presence: true
 
   def self.search(search)
