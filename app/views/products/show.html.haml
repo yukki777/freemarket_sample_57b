@@ -9,7 +9,7 @@
           %ul#slider
             - @images.each do |image|
               %li.slide-item
-                = image_tag image.image_url
+                = image_tag image.image_url,"data-turbolinks"=>"false"do
 
           %ul#thumbnail-list
             - @images.each do |image|
@@ -21,35 +21,35 @@
           %tbody
             %tr
               %th 出品者
-              %td 
-                %p #{@products.user.nickname}
+              %td  
+                =link_to "#{@products.user.nickname}",user_path(@products.user.id)
             %tr
               %th カテゴリー
               %td 
-                -# #{@products.category.name}
-                %p aaaaa
+                -# =link_to"#{@products.categories.name}",root_path
             %tr
               %th ブランド
               %td 
+                =link_to"#{@products.brand.name}",root_path
             %tr
               %th 商品のサイズ
-              %td #{@products.size_id}
+              %td #{@products.size.name}
             %tr
               %th 商品の状態
-              %td #{@products.condition_id}
+              %td #{@products.condition.name}
             %tr
               %th 配送料の負担
-              %td #{@products.postage_id}
+              %td #{@products.postage.name}
             %tr
               %th 配送の方法
-              %td #{@products.shipping_method_id}
+              %td #{@products.shipping_method.name}
             %tr
               %th 配送元地域
-              %td #{@products.address.prefecture.name}
-      
+              %td 
+                =link_to"#{@products.address.prefecture.name}",root_path
             %tr
               %th 発送日の目安
-              %td  #{@products.shipping_date_id}
+              %td  #{@products.shipping_date.name}
     .container__content__price     
       %span.price-left ¥#{@products.price}
       %span.price-right (税込)
