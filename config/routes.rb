@@ -4,7 +4,7 @@ Rails.application.routes.draw do
    omniauth_callbacks: 'users/omniauth_callbacks'
    }
     
-  root to: 'products#index'
+  root 'products#index'
   
   resources :signup do
     collection do
