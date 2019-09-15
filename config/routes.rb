@@ -40,14 +40,14 @@ Rails.application.routes.draw do
       get 'sell'    =>'users#sell', as: 'sell'
       get 'profile' =>'users#profile', as: 'profile'
     end
-  end
+  
   
     resources :products, only: [:edit, :update, :show, :new, :destroy] do
       member do
         get 'product_edit' =>'products#product_edit',as: 'product_edit'
       end
     end
-
+  end
 
   resources :users, only: [:edit, :update, :show]
   resources :products, only: [:edit, :update, :show, :new,:destroy] do
