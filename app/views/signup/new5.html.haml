@@ -28,11 +28,8 @@
     .information-registration__base__main-box__inner-header
       お支払い方法
     .information-registration__base__main-box__click-area
-    -# = form_for @wallet, url: wallet_index_path, method: :post, html: {class: 'form', name: 'inputForm'} do |f|
-      -# = f.hidden_field :wallet, value: @wallet
     = form_for @user, url: signup_index_path, method: :post, html: {class: 'form', name: 'inputForm'} do |f|
-      -# = f.hidden_field :user, value: @user
-      = f.fields_for :wallet do |i| 
+      = f.fields_for :wallet do |i|
         .information-registration__base__main-box__click-area__input
           %label.information-registration__base__main-box__click-area__input__information__label カード番号
           %span.information-registration__base__main-box__click-area__input__caveat 必須
@@ -89,8 +86,8 @@
         .information-registration__base__main-box__click-area__input
         .information-registration__base__main-box__click-area__input__empty-box
           .information-registration__base__main-box__click-area__rink-btn
-            = submit_tag "次へ進む", class: "information-registration__base__main-box__click-area__rink-btn"
-            -# , id: "token_submit"
+            #card_token
+            = submit_tag "次へ進む", class: "information-registration__base__main-box__click-area__rink-btn", id: "token_submit"
         
         .information-registration__base__main-box__click-area__input__empty-box
 = render partial: "devise/registrations/form-footer" 

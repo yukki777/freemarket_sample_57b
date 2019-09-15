@@ -4,7 +4,7 @@ require 'payjp'
 before_action :validates_new1, only: :new2
 #before_action :validates_new4, only: :new5
 # payjpのapiキーをアクションが実行される前に有功化させる
-before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
+before_action :get_payjp_info, only: :create
 
 before_action :validates_new2, only: :new3
 before_action :validates_new3, only: :new4
@@ -65,14 +65,15 @@ def create
     # wallet_attributes: session[:wallet_attributes]
     uid: session[:uid],
     provider: session[:provider]
-  )
+  )    
     if @user.save
       session[:user_id] = @user.id
-      # userが登録されるときに一緒にカード情報も登録
-      # customer = Payjp::Customer.create(     
-      #   card: params['payjp-token'],
-      # )
-      # @wallet = Wallet.new(user_id: @user.id, customer_id: customer.id, card_id: customer.default_card)
+      customer = Payjp::Customer.create(     
+        email: @user.email,
+        card: params["payjp-token"],
+        metadata: {user_id: @user.id}
+      )
+      @wallet = Wallet.create(user_id: @user.id, customer_id: customer.id, card_id: customer.default_card)
       redirect_to complete_signup_index_path
     else
       render new1_signup_index_path
