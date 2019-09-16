@@ -99,6 +99,15 @@
           }
         }
       }
+      .notification{
+        height: 50px;
+        color: #ea352d;
+        text-align: left;
+        .notice{
+          text-align: left;
+          color: #ea352d;
+        }
+      }
 
       // 名前、メアド、パス、誕生日、ロボット
       &__error-font{
@@ -209,6 +218,16 @@
             display: block;
 
           }
+        }
+        #card_number {
+          height: 50px;
+          padding: 0 10px;
+          width: 350px;
+          margin-top: 30px;
+          border-radius: 3px;
+          border: 1px solid#cccc; 
+          display: block;
+          @include clearfix();
         }
         &__notes{
           margin-top: 30px;

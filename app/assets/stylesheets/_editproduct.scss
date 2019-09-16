@@ -2,6 +2,7 @@
   background-color: #F5F5F5;
   height: 100%;
   padding-top: 20px;
+  padding-bottom: 5px;
   color: #333333;
   &__content{
     background-color: #fff;
@@ -49,6 +50,10 @@
                 background-color: #fff;
                 border: solid 1px rgb(240, 240, 240);
                 padding: 10px;
+                a{
+                  color: #0099E8;
+                  text-decoration: none;
+                }
               }
             }
           } 
@@ -170,18 +175,16 @@
     &__btn-delete{
       margin-top: 25px;
       text-align: center;
-      a{
+      #modal-open-btn{
+        width: 100%;
+        height: 50px;
+        border: none;
+        background-color: #AAAAAA;
         color: #fff;
         font-size: 14px;
-        text-decoration: none;
-        display: block;
-        background-color: #AAAAAA;
-        padding: 13px 0;
+        cursor: pointer;
       }
-      a:hover{
-        opacity: 0.8;
-        transition: 1s;
-      }
+      
     }
     &__comment{
       padding: 10px 5px;
@@ -247,6 +250,7 @@
     
   }
   &__content{
+ 
     &__sns{
       height: 100px;
       text-align: center;

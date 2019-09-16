@@ -1,0 +1,53 @@
+= render partial: "header"
+.wrapper2
+  .circle
+    .circle__message
+      = "出品"
+    .circle__awesome
+      = link_to "#" do
+        %i.fa.fa-camera
+.search-box
+  .search-box__support
+    .left-box
+      = render partial: "search_side_bar"
+    .right-box
+      .right-box__inner
+        - if params[:search].blank?
+          %p.result 新着商品
+        - else
+          %p.result 
+            = "#{params[:search]}の検索結果"
+        .middle-product-set
+          - @products.each do |product|
+            .middle-product
+              = link_to product_path(product) do
+                .middle-product__image
+                  - if product.images.present?
+                    = image_tag("#{product.images.first.image_url}", size: "180x180")
+                .middle-product__description
+                  .middle-product__description__message
+                    = product.name
+                  .middle-product__description__value
+                    %p.middle-product__description__value__money
+                      = "¥" + product.price.to_s(:delimited, delimiter: ',')
+      .pagination-box 
+        - num = @total_page - 1
+        - if @first_page   
+          = paginate(@products, left: 5)
+        - elsif @last_page 
+          = paginate(@products, right: 5)
+        - elsif params[:page] == "2" || params[:page] == num.to_s
+          = paginate(@products, window: 3)
+        - else 
+          = paginate(@products, window: 2)
+.empty-box
+.search-box_footer
+  .return 
+    = link_to "メルカリ", root_path
+    - unless params[:search].blank? 
+      %p >
+      %p.now
+        = "#{params[:search]}"
+
+= render partial: "footer"
+

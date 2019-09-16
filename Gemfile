@@ -44,6 +44,10 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -53,6 +57,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :test do
@@ -61,9 +67,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'rails-controller-testing'
+  
 end
 
 group :production do
@@ -81,7 +85,15 @@ gem 'fog-aws'
 gem 'active_hash'
 gem 'devise'
 gem 'gretel'
+gem 'payjp'
 gem 'rails-i18n'
 gem 'ancestry'
 gem 'jquery-rails'
-gem 'pry-rails'
+gem 'seed-fu'
+gem 'owlcarousel-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+gem 'kaminari'
+

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :ddmenu
+  before_action :set_user
+  before_action :set_product, only: [:show, :edit, :display]
 
   
   def index
@@ -7,9 +8,14 @@ class UsersController < ApplicationController
 
   def show
     @users= User.find(params[:id])
+
   end
 
   def edit
+    @users = User.all
+  end
+
+  def display
   end
 # スプリントレビュー後削除、ここから
   def logout
@@ -42,11 +48,14 @@ class UsersController < ApplicationController
   def registration
   end
   # ここまで
-
   private
 
-  def ddmenu
-    @category = Category.all
-    @parents = @category.where(ancestry: nil)
+  def set_user
+    @user = User.find(params[:id])
   end
+
+  def set_product
+    @products = Product.all
+  end
+ 
 end

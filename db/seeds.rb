@@ -3,9 +3,9 @@ lady_grandchild_array = [['すべて','Tシャツ/カットソー(半袖/袖な�
 
 parent = Category.create(name: 'レディース')
 lady_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  lady_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end
 
@@ -15,9 +15,9 @@ mens_grandchild_array = [['すべて','Tシャツ/カットソー(半袖/袖な�
 
 parent = Category.create(name: 'メンズ')
 mens_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  mens_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end
 
@@ -27,9 +27,9 @@ baby_grandchild_array = [['すべて','トップス','アウター','パンツ',
 
 parent = Category.create(name: 'ベビー・キッズ')
 baby_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  baby_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end
 
@@ -39,9 +39,9 @@ interior_grandchild_array = [['すべて','食器','調理器具','収納/キッ
 
 parent = Category.create(name: 'インテリア・住まい・小物')
 interior_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  interior_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end
 
@@ -51,9 +51,9 @@ book_grandchild_array = [['すべて','文学/小説','人文/社会','ノンフ
 
 parent = Category.create(name: '本・音楽・ゲーム')
 book_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  book_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end
 
@@ -63,9 +63,9 @@ goods_grandchild_array = [['すべて','キャラクターグッズ','ぬいぐ�
 
 parent = Category.create(name: 'おもちゃ・ホビー・グッズ')
 goods_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  goods_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end
 
@@ -75,9 +75,9 @@ beauty_grandchild_array = [['すべて','ファンデーション','化粧下地
 
 parent = Category.create(name: 'コスメ・香水・美容')
 beauty_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  beauty_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end
 
@@ -87,9 +87,9 @@ appliance_grandchild_array = [['すべて','スマートフォン本体','バッ
 
 parent = Category.create(name: '家電・スマホ・カメラ')
 appliance_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  appliance_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end
 
@@ -99,9 +99,9 @@ sports_grandchild_array = [['すべて','クラブ','ウエア(男性用)','ウ�
 
 parent = Category.create(name: 'スポーツ・レジャー')
 sports_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  sports_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end
 
@@ -111,9 +111,9 @@ handmade_grandchild_array = [['すべて','ピアス','イヤリング','ネッ�
 
 parent = Category.create(name: 'ハンドメイド')
 handmade_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  handmade_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end
 
@@ -123,9 +123,9 @@ ticket_grandchild_array = [['すべて','男性アイドル','女性アイドル
 
 parent = Category.create(name: 'チケット')
 ticket_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  ticket_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end
 
@@ -135,9 +135,9 @@ car_grandchild_array = [['すべて','国内自動車本体','外国自動車本
 
 parent = Category.create(name: '自動車・オートバイ')
 car_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  car_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end
 
@@ -148,8 +148,8 @@ other_grandchild_array = [['すべて'], ['すべて','ペットフード','犬�
 
 parent = Category.create(name: 'その他')
 other_child_array.each.each_with_index do |c, i|
- child = parent.children.build.save(name: c)
+ child = parent.children.create(name: c)
  other_grandchild_array[i].each do |g|
-   child.children.build.save(name: g)
+   child.children.create(name: g)
  end
 end

@@ -1,5 +1,6 @@
 @import "font-awesome";
 @import "reset";
+@import "config/colors";
 
 @import "mixins/form-require";
 @import "mixins/input-default";
@@ -11,6 +12,7 @@
 @import "modules/sign-up_header";
 @import "modules/header";
 @import "modules/footer";
+@import "modules/modal";
 
 @import "products";
 @import "editproduct";
@@ -20,6 +22,9 @@
 @import "login";
 @import "new";
 
+@import "wallet/registration"; // カード追加
+@import "wallet/registration-list"; // カード情報
+@import "wallet/new"; // カード登録
 
 @import "mypage-left";
 @import "mypage";
@@ -27,6 +32,14 @@
 @import "mypage/profile";
 @import "mypage/logout";
 @import "mypage/display";
+
+
+@import "owl.carousel";
+@import "owl.theme.default";
+@import "searches/search";
+
+@import "category";
+
 
 @import "slick-theme"; 
 @import "slick";

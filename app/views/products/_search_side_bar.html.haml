@@ -1,0 +1,62 @@
+.left-box__support
+  %input{type: "text",class: "sort"}
+  .details
+    .details__support
+      %p.font-status 詳細検索
+      %p.font-status__1 キーワードを追加する
+      %input{type: "text",class: "input"}
+      %p.font-status__1 カテゴリーを追加する
+      %input{type: "text",class: "input"}
+      %p.font-status__1 ブランド名から探す
+      %input{type: "text",class: "input"}
+      %p.font-status__1 サイズを指定する
+      %input{type: "text",class: "input"}
+      %p.font-status__1 価格
+      %input{type: "text",class: "input"}
+      .min-max
+        %input{type: "text",class: "input"}
+        .min-max__box ~
+        %input{type: "text",class: "input"}
+
+      %p.font-status__1 商品の状態
+      .check-box
+        .check-box__flex
+          %td
+            %input{:name => "kamoku", :type => "checkbox", :value => "すべて"}>/
+            %p すべて
+            %input{:name => "kamoku", :type => "checkbox", :value => "未使用に近い"}/
+            %span 未使用に近い
+            %input{:name => "kamoku", :type => "checkbox", :value => "やや傷や汚れあり"}/
+            %span やや傷や汚れあり
+            %input{:name => "kamoku", :type => "checkbox", :value => "全体的に状態が悪い"}/
+            %span 全体的に状態が悪い
+        .checkbox__flex
+          %td
+            %input{:name => "kamoku", :type => "checkbox", :value => "新品、未使用"}/
+            %span 新品、未使用
+            %input{:name => "kamoku", :type => "checkbox", :value => "目立った傷や汚れなし"}/
+            %span 目立った傷や汚れなし
+            %input{:name => "kamoku", :type => "checkbox", :value => "傷や汚れあり"}/
+            %span 傷や汚れあり
+
+      %p.font-status__1 配送料の負担
+      .check-box
+        %td
+          %input{:name => "kamoku", :type => "checkbox", :value => "すべて"}>/
+          %span すべて
+          %input{:name => "kamoku", :type => "checkbox", :value => "新品、未使用"}/
+          %span 新品、未使用
+          %input{:name => "kamoku", :type => "checkbox", :value => "未使用に近い"}/
+          %span 未使用に近い
+      %p.font-status__1 販売状況
+      .check-box
+        %td
+          %input{:name => "kamoku", :type => "checkbox", :value => "すべて"}>/
+          %span すべて
+          %input{:name => "kamoku", :type => "checkbox", :value => "新品、未使用"}/
+          %span 新品、未使用
+          %input{:name => "kamoku", :type => "checkbox", :value => "未使用に近い"}/
+          %span 未使用に近い
+      .botan-box
+        %a(href=""){class: "left"} クリア
+        %a(href=""){class: "right"} 完了

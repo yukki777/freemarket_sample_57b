@@ -1,0 +1,94 @@
+= render partial: "products/header"
+.wrapper2
+  .circle
+    .circle__message
+      = "出品"
+    .circle__awesome
+      = link_to "#" do
+        %i.fa.fa-camera
+.both
+  .wrapper
+    .mypage-size
+      = render partial: "users/mypage-left"
+      .payment
+        .payment-input
+          = "クレジットカード情報入力"
+        %hr.horizontal
+        .middle-payment
+          = form_tag(user_wallet_index_path, method: :post, action: "create", id: 'charge-form',  name: "inputForm") do
+            .card-number-box
+              .card-number
+                = "カード番号"
+              .required
+                = "必須"
+            .form
+              .form-group
+                = text_field_tag "number", "", class: "form-control", placeholder: "半角数字のみ", maxlength: "16", type: "text", id: "card_number"
+            .personal-card
+              .display-card
+                .display-card__logo-visa
+                  = image_tag "visa.svg", size: "40x20"
+                .display-card__logo-master
+                  = image_tag "master-card.svg", size: "40x20"
+                .display-card__logo-saison
+                  = image_tag "saison-card.svg", size: "40x20"
+                .display-card__logo-jcb
+                  = image_tag "jcb.svg", size: "40x20"
+                .display-card__logo-american
+                  = image_tag "american_express.svg", size: "40x20"
+                .display-card__logo-diners
+                  = image_tag "dinersclub.svg", size: "40x20"
+                .display-card__logo-discover
+                  = image_tag "discover.svg", size: "40x20"
+            .expiration-date-box
+              .expiration-date
+                = "有効期限"
+              .required
+                = "必須"
+            .expiration-date-both
+              .selectWrap
+                %select.month-box{name: "exp_month", type: "text", id: "exp_month"}
+                  %option{value: "1"}01
+                  %option{value: "2"}02
+                  %option{value: "3"}03
+                  %option{value: "4"}04
+                  %option{value: "5"}05
+                  %option{value: "6"}06
+                  %option{value: "7"}07
+                  %option{value: "8"}08
+                  %option{value: "9"}09
+                  %option{value: "10"}10
+                  %option{value: "11"}11
+                  %option{value: "12"}12
+              .month
+                = "月"
+              .selectWrap
+                %select.year-box{name: "exp_year", type: "text", id: "exp_year"}
+                  %option{value: "2019"}19
+                  %option{value: "2020"}20
+                  %option{value: "2021"}21
+                  %option{value: "2022"}22
+                  %option{value: "2023"}23
+                  %option{value: "2024"}24
+                  %option{value: "2025"}25
+                  %option{value: "2026"}26
+                  %option{value: "2027"}27
+                  %option{value: "2028"}28
+                  %option{value: "2029"}29
+              .year
+                = "年"
+            .security-code-box
+              .security-code
+                = "セキュリティコード"
+              .required
+                = "必須"
+            .form
+              .form-group
+                = text_field_tag "cvc", "", class: "form-control", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+            .about-back-number
+              = link_to root_path, class: "link-p" do
+                %i.fa.fa-question-circle
+                カード裏面の番号とは？
+            #card_token
+            = submit_tag "追加する", id: "token_submit", class: "link-a"
+= render partial: "products/footer"

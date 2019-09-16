@@ -5,6 +5,15 @@
     color: #333;
   }
   div {
+    .form-active{
+      display:block;
+    }
+    .form-active2{
+      display: inline-block;
+    }
+    .form-active3{
+      display: block;
+    }
     .select-wrap {
       margin: 8px 0 0;
       background: #fff;
@@ -29,5 +38,65 @@
         transform: translate(0, -50%);
       }
     }
-  }
+    .select-wrap-child {  
+      margin: 8px 0 0;
+      background: #fff;
+      position: relative;
+      &__defaultcategory-child, #prefecture_prefecture_id {
+        display: none;
+        width: 400px;
+        height: 48px;
+        border: 1px solid #ccc;
+        position: relative;
+        background: 0;
+        -webkit-appearance: none;
+        padding: 0 16px;
+      }
+      .childfa{
+        display: none;
+      }
+      .fa-angle-down {
+        font: normal 25px FontAwesome;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        z-index: 2;
+        color: #888;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+      }
+    }
+    .select-wrap-grandchild {  
+      margin: 8px 0 0;
+      background: #fff;
+      position: relative;
+      &__defaultcategory-grandchild, #prefecture_prefecture_id {
+        display: none;
+        width: 400px;
+        height: 48px;
+        border: 1px solid #ccc;
+        position: relative;
+        background: 0;
+        -webkit-appearance: none;
+        padding: 0 16px;
+      }
+      .grandfa{
+        display: none;
+      }
+      .fa-angle-down {
+        font: normal 25px FontAwesome;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        z-index: 2;
+        color: #888;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+      }
+    }
+  } 
 }
+.form-active{
+  display:block!important;
+}
+

@@ -1,4 +1,5 @@
 .header{
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   &__content{
     width: 1000px;
     height: 100px;
@@ -58,6 +59,7 @@
           margin-left: 20px;
         }
         &__ddmenu-start{
+          z-index:99;
           display: inline-block;
           position: relative;
           width: 100%;
@@ -116,9 +118,8 @@
                   background-color: #EDECEA;
                   color: black;
                 }
-                }
-               
               }
+            }
               &__grand{
                 width: 260px;
                 height: 100%;
@@ -143,6 +144,7 @@
           }
         }
         &__brand{
+          z-index:99;
           display: inline-block;
           font-weight: 600;
           position: relative;
@@ -187,15 +189,22 @@
         margin-top: 5px;
         &__signin{
           position: relative;
+          
           a{
             color: #333333;
             text-decoration: none;
             display: inline-block;
+            &:hover{
+              color: #0099e8;;
+            }
           }
           .fa{
             font-size: 16px;
             color: #999999;
             margin-right: 20px;
+            &:hover{
+              color: #0099e8;;
+            }
             .bell-text{
               
               font-size: 14px;
