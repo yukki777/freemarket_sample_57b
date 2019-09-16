@@ -28,23 +28,6 @@
         margin-right: 10px;
 
         &__slider{
-          &__triangle{
-            height:20px;
-            border-top: 120px solid red;
-            border-right: 120px solid transparent;
-            z-index:1;
-            position: absolute;
-            &__sold-out-badge{
-              top:-100px;
-              left: auto;
-              font-size: 28px;
-              position: absolute;
-              color:#eee;
-              transform: rotate(-40deg);
-              letter-spacing: 2px;
-              font-weight: bold;
-            }
-          }
           #slider{
             min-height: 300px;
             position: relative;
@@ -54,6 +37,7 @@
           }
           .slide-item{
             img{
+              position: relative;
               width: auto;
               height: 300px;
               margin: auto;
@@ -123,6 +107,30 @@
           } 
         }
       }
+    }
+    .ratings{
+      display: flex;
+      &__good{
+        margin-right:10px;
+      }
+      &__okay{
+        margin-right:10px;
+      }
+      &__soso{
+        margin-right:10px;
+      }
+    }
+    .fa-grin{
+      font-size:16px;
+      color:#FF6699;
+    }
+    .fa-meh{
+      font-size:16px;
+      color:#FFD700;
+    }
+    .fa-frown-o{
+      font-size:16px;
+      color:#1E90FF;
     }
     &__price{
       margin-top: 30px;

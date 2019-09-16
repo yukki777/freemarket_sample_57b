@@ -23,10 +23,30 @@
               %th 出品者
               %td  
                 =link_to "#{@products.user.nickname}",user_path(@products.user.id)
+                %p
+                .ratings
+                  .ratings__good
+                    %i.fa.fa-grin
+                    %span  125
+                  .ratings__okay
+                    %i.fas.fa-meh
+                    %span  5
+                  .ratings__soso
+                    %i.fa.fa-frown-o
+                    %span  0
             %tr
               %th カテゴリー
               %td 
-                -# =link_to"#{@products.categories.name}",root_path
+                =link_to "#" do
+                  = "おもちゃ・ホビー・グッズ"
+                  %br
+                  =link_to "#" do
+                    %i.fa.fa-chevron-left
+                      = "おもちゃ"
+                  =link_to "#" do
+                    %i.fa.fa-chevron-left
+                      = "ぬいぐるみ"
+             
             %tr
               %th ブランド
               %td 
