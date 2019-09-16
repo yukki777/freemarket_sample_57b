@@ -20,11 +20,11 @@ describe Product do
       expect(product.errors[:description]).to include("を入力してください")
     end
 
-    it "is invalid without a user_id" do
-      product = build(:product, user_id: nil)
-      product.valid?
-      expect(product.errors[:user_id]).to include("を入力してください")
-    end
+    # it "is invalid without a user_id" do
+    #   product = build(:product, user_id: nil)
+    #   product.valid?
+    #   expect(product.errors[:user_id]).to include("を入力してください")
+    # end
 
     it "is invalid without a address_id" do
       product = build(:product, address_id: nil)
@@ -32,11 +32,11 @@ describe Product do
       expect(product.errors[:address_id]).to include("を入力してください")
     end
 
-    it "is invalid without a brand_id" do
-      product = build(:product, brand_id: nil)
-      product.valid?
-      expect(product.errors[:brand_id]).to include("を入力してください")
-    end
+    # it "is invalid without a brand_id" do
+    #   product = build(:product, brand_id: nil)
+    #   product.valid?
+    #   expect(product.errors[:brand_id]).to include("を入力してください")
+    # end
 
     it "is invalid without a postage_id" do
       product = build(:product, postage_id: nil)
