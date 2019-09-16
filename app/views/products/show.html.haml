@@ -38,14 +38,14 @@
               %th カテゴリー
               %td 
                 =link_to "#" do
-                  = "おもちゃ・ホビー・グッズ"
+                  = "#{@products.category.parent.parent.name}"
                   %br
                   =link_to "#" do
                     %i.fa.fa-chevron-left
-                      = "おもちゃ"
+                      = "#{@products.category.parent.name}"
                   =link_to "#" do
                     %i.fa.fa-chevron-left
-                      = "ぬいぐるみ"
+                      = "#{@products.category.name}"
              
             %tr
               %th ブランド
