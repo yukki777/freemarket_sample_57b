@@ -2,7 +2,7 @@
   .header__content
     .header__content__up
       = link_to image_tag('logo.svg',class: "logo"),root_path
-      = form_tag search_products_path,method: 'get',class: "header-form", method: 'get'  do
+      = form_tag search_products_path,class: "header-form", method: 'get'  do
         %i.fa.fa-search
         = text_field_tag :search,params[:search],class: "header-field",placeholder: "何かお探しですか？"   
         = submit_tag 'Search', name: nil,class: "hidden"
@@ -15,15 +15,15 @@
           %ul.header__content__down__left__ddmenu-start__parent
             - @parents.each do |parent|
               %li.parent
-                = link_to "#{parent.name}","#{parent.id}",class:"catemain"
+                = link_to "#{parent.name}",category_path(parent.id),class:"catemain"
                 %ul.header__content__down__left__ddmenu-start__parent__child
                   - parent.children.each do |child|
                     %li.child
-                      = link_to "#{child.name}", '#', class:"catesub"
+                      = link_to "#{child.name}", category_path(child.id), class:"catesub"
                       %ul.header__content__down__left__ddmenu-start__parent__child__grand
                         - child.children.each do |grandchild|
                           %li
-                            = link_to "#{grandchild.name}",'#'
+                            = link_to "#{grandchild.name}",category_path(grandchild.id)
         %i.fa.fa-tags
         %ul.header__content__down__left__brand
           %li
