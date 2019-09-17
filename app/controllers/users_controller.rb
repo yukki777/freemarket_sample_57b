@@ -1,11 +1,21 @@
 class UsersController < ApplicationController
+  before_action :set_user
+  before_action :set_product, only: [:show, :edit, :display]
+
+  
   def index
   end
 
   def show
+    @users= User.find(params[:id])
+
   end
 
   def edit
+    @users = User.all
+  end
+
+  def display
   end
 # スプリントレビュー後削除、ここから
   def logout
@@ -38,4 +48,14 @@ class UsersController < ApplicationController
   def registration
   end
   # ここまで
+  private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def set_product
+    @products = Product.all
+  end
+ 
 end

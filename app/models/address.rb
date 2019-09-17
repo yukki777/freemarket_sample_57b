@@ -6,8 +6,7 @@ class Address < ApplicationRecord
   validates :postal_code, :city, :address, :prefecture_id, presence: true
   
   # active_hashで都道府県データを導入する
-  class Address < ApplicationRecord
     extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to_active_hash :prefecture
-  end
 end
+

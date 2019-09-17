@@ -1,70 +1,80 @@
 = render partial: "header"
 .container 
   .container__content
-    %h1 白スリムストレートデニム
+    %h1 #{@products.name}
     .container__content__flex
       .container__content__flex__left
-        ああ
+        .container__content__flex__left__slider
+
+          %ul#slider
+            - @images.each do |image|
+              %li.slide-item
+                = image_tag image.image_url
+
+          %ul#thumbnail-list
+            - @images.each do |image|
+              %li.thumbnail-item
+                = image_tag image.image_url
+      
       .container__content__flex__right
         %table
           %tbody
             %tr
               %th 出品者
-              %td 
-                %p 名前
-                %p aaaaa
+              %td  
+                =link_to "#{@products.user.nickname}",user_path(@products.user.id)
+                %p
+                .ratings
+                  .ratings__good
+                    %i.fa.fa-grin
+                    %span  125
+                  .ratings__okay
+                    %i.fas.fa-meh
+                    %span  5
+                  .ratings__soso
+                    %i.fa.fa-frown-o
+                    %span  0
             %tr
               %th カテゴリー
               %td 
-                スボン
-                %p aaaaa
+                =link_to "#" do
+                  = "#{@products.category.name}"
+             
             %tr
               %th ブランド
-              %td aaaaaaaa
+              %td 
+                =link_to"#{@products.brand.name}",root_path
             %tr
               %th 商品のサイズ
-              %td a
+              %td #{@products.size.name}
             %tr
               %th 商品の状態
-              %td aaa
+              %td #{@products.condition.name}
             %tr
               %th 配送料の負担
-              %td aaaaaa
+              %td #{@products.postage.name}
             %tr
               %th 配送の方法
-              %td aaaaaaa
+              %td #{@products.shipping_method.name}
             %tr
               %th 配送元地域
-              %td aaaaaaa
+              %td 
+                =link_to"#{@products.address.prefecture.name}",root_path
             %tr
               %th 発送日の目安
-              %td aaaaaaaaa
+              %td  #{@products.shipping_date.name}
     .container__content__price     
-      %span.price-left ¥400
+      %span.price-left ¥#{@products.price}
       %span.price-right (税込)
       %span.price-right-postage 送料込み
       .container__content__price__btn-buy
-        = link_to  "購入画面に進む",root_path,class: "link"
+        = link_to  "購入画面に進む",confirmation_product_path,class: "link"
     .container__content__text
-      %p  WEEKEND MaxMara 
-      %br ウィークエンド マックスマーラ
-      %br カットソー Tシャツ
-      %br
-      %br SIZE:おそらくMぐらい
-      %br 肩幅:38cm
-      %br 身幅:43(×2)cm
-      %br 袖丈:16cm
-      %br 着丈:58cm
-      %br ※素人採寸のため、多少の誤差はご容赦下さい。
-      %br
-      %br 状態:汚れ、ダメージとありませんが
-      %br 服内側のケアラベルを切ってしまったため
-      %br 正確なサイズを忘れてしまいました。
-      %br おそらくMくらい。
-      %br
-      %br ※中古品ですので、神経質な方はご遠慮下さい。
+
+      %p #{@products.description}
+     
     %span.like-button
-      %i.fa.fa-heart-o
+      %i.fa.fa-heart
         = link_to  "いいね!",root_path
     %span.report
       %i.fa.fa-flag
@@ -89,11 +99,12 @@
   .container__content
     .container__content__sns
       = link_to root_path do
-        %i.fa.fa-facebook
+        %i.fab.fa-facebook
       = link_to root_path do  
-        %i.fa.fa-twitter
+        %i.fab.fa-twitter
       = link_to root_path do
-        %i.fa.fa-pinterest
+        %i.fab.fa-pinterest
+        
   .container__product
     %h3=link_to "riririさんのその他の出品",root_path
     .container__product__side
@@ -189,6 +200,4 @@
           .colum-price ¥2.300
           %i.fa.fa-heart-o
   %hr.footer-hr
-  .container__breadcrumb-list
-    メルカリ
 = render partial: "footer"

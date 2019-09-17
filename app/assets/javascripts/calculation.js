@@ -1,5 +1,5 @@
 $(function(){
-  $('.input--price__default').on('input', function(){
+  $('.input--price__default').on('input', function(){   
     var data = $('.input--price__default').val();
     var profit = Math.round(data * 0.9)
     var fee = (data - profit)

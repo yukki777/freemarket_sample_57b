@@ -21,23 +21,77 @@
     }
     &__flex{
       display: flex;
-      
       &__left{
         width: 300px;
         background-color: #F5F5F5;
         margin-right: 10px;
+
+        &__slider{
+          #slider{
+            min-height: 300px;
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding: 0 0 100%;
+          }
+          .slide-item{
+            img{
+              position: relative;
+              width: auto;
+              height: 300px;
+              margin: auto;
+            }  
+          }
+          #thumbnail-list{
+            width: 300px;
+            margin: 10px 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap:wrap;
+          }
+          .thumbnail-item{
+            flex: 0 1 30%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            position:relative;
+            &:after{
+              content:'';
+              background-color: rgba(0,0,0,0.5);
+              position:absolute;
+              display: block;
+              top: 0;
+              left: 0;
+              width: 60px;
+              height: 60px;
+              opacity: 1;
+              transition: .3s opacity linear;
+            }
+            &.thumbnail-current:after{
+              opacity: 0;
+            }
+            img{
+              width: 60px;
+              height: 60px;
+              margin: 0 auto;
+            } 
+          }
+
+        }
       }
       &__right{
         width: 300px;
         background-color: #F5F5F5;
         margin-left: 10px;
         table{
+          a{
+            text-decoration: none;
+            color: #0099E8;
+          }
           max-width: 300px;
           width: 100%;
           font-size: 14px;
             tbody{
             tr{
-              
               border: solid 1px ;
               th{
                 width: 40%;
@@ -56,6 +110,30 @@
         }
       }
     }
+    .ratings{
+      display: flex;
+      &__good{
+        margin-right:10px;
+      }
+      &__okay{
+        margin-right:10px;
+      }
+      &__soso{
+        margin-right:10px;
+      }
+    }
+    .fa-grin{
+      font-size:16px;
+      color:#FF6699;
+    }
+    .fa-meh{
+      font-size:16px;
+      color:#FFD700;
+    }
+    .fa-frown-o{
+      font-size:16px;
+      color:#1E90FF;
+    }
     &__price{
       margin-top: 30px;
       text-align: center;
@@ -68,6 +146,29 @@
       }
       .price-right-postage{
         font-size: 16px;
+      }
+      &__btn-no-buy{
+        width: 100%;
+        height: 60px;
+        margin-top: 10px;
+        line-height: 60px;
+        font-size: 24px;
+        font-weight: 600;
+        background-color:#888;
+        position:relative;
+        color:#fff;
+        a{
+          color:#fff;
+          text-decoration: none;
+        }
+        .link{
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
       }
       &__btn-buy{
         width: 100%;
@@ -95,10 +196,10 @@
     &__text{
       margin-top: 60px;
       padding-bottom: 40px;
-      line-height: 15px;
+      line-height: 20px;
       font-size: 18px;
       font-weight: 400;
-      
+      white-space: pre-wrap
     }
     .like-button{
       background-color: #F5F5F5;
@@ -201,14 +302,12 @@
         line-height: 30px;
       }
     }
-    
   }
   &__content{
     &__sns{
       height: 100px;
       text-align: center;
-      line-height: 120px;
-     
+      line-height: 120px;  
       a{
         color: #fff;
       }
@@ -232,8 +331,7 @@
         font-size: 30px;
         padding: 10px 10px;
         background-color: #AA262A;
-        border-radius: 5px;
-        
+        border-radius: 5px;  
       }
     }
   }
@@ -242,8 +340,7 @@
     height: 100%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 30px;
-    
+    margin-top: 30px;  
     h3{
       font-size: 22px;
       font-weight: 700;
@@ -263,8 +360,7 @@
         height: 350px;
         margin-right: 10px;
         margin-left: 10px;
-        background-color: #fff;
-        
+        background-color: #fff;    
         &__text{
           .images{
             width: 220px;
@@ -287,8 +383,7 @@
           .fa-heart-o{
             margin-top: 2px;
             font-weight: 500;
-            color: #999999;
-            
+            color: #999999;   
           }
           .like-number{
             font-size: 12px;
