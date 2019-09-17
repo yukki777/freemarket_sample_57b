@@ -11,6 +11,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @products= Product.find(params[:id])
+    @images = Image.where(product_id:params[:id])
   end
 
   def update

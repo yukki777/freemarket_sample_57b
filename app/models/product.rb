@@ -10,4 +10,28 @@ class Product < ApplicationRecord
     return Product.all unless search
     Product.where(['name LIKE ?', "%#{search}%"])
   end
+ 
+  # active_hashでbrandデータを導入する
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :brand
+
+   # active_hashでsizeデータを導入する
+   extend ActiveHash::Associations::ActiveRecordExtensions
+   belongs_to_active_hash :size
+
+   # active_hashでconditionデータを導入する
+   extend ActiveHash::Associations::ActiveRecordExtensions
+   belongs_to_active_hash :condition
+
+    # active_hashでpostageデータを導入する
+    extend ActiveHash::Associations::ActiveRecordExtensions
+    belongs_to_active_hash :postage
+
+    # active_hashでshipping_methodデータを導入する
+    extend ActiveHash::Associations::ActiveRecordExtensions
+    belongs_to_active_hash :shipping_method
+
+     # active_hashでshipping_methodデータを導入する
+     extend ActiveHash::Associations::ActiveRecordExtensions
+     belongs_to_active_hash :shipping_date
 end
