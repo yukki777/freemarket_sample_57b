@@ -22,13 +22,15 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @childs = @categories.where(ancestry: "1")
-    @grandchilds = @categoies.where(ancestry: "1/2")
+    @grandchilds = @categories.where(ancestry: "1/2")
   end
 
   def create
   end
    
   def edit
+    @products= Product.find(params[:id])
+    @images = Image.where(product_id:params[:id])
   end
 
   def product_edit

@@ -1,53 +1,77 @@
 = render partial: "header"
 .edit-container 
   .edit-container__content
-    %h1=@products.name
+    %h1 #{@products.name}
     .edit-container__content__flex
       .edit-container__content__flex__left
-        ああ
+        .edit-container__content__flex__left__slider
+
+          %ul#slider
+            - @images.each do |image|
+              %li.slide-item
+                = image_tag image.image_url
+
+          %ul#thumbnail-list
+            - @images.each do |image|
+              %li.thumbnail-item
+                = image_tag image.image_url
+      
       .edit-container__content__flex__right
         %table
           %tbody
             %tr
               %th 出品者
-              %td 
-                %p= link_to  "#{@products.user.nickname}",root_path
-                
+              %td  
+                =link_to "#{@products.user.nickname}",user_path(@products.user.id)
+                %p
+                .ratings
+                  .ratings__good
+                    %i.fa.fa-grin
+                    %span  125
+                  .ratings__okay
+                    %i.fas.fa-meh
+                    %span  5
+                  .ratings__soso
+                    %i.fa.fa-frown-o
+                    %span  0
             %tr
               %th カテゴリー
               %td 
+                =link_to "#" do
+                  = "#{@products.category.name}"
              
-                %p aaaaa
             %tr
               %th ブランド
-              %td=@products.brand_id
+              %td 
+                =link_to"#{@products.brand.name}",root_path
             %tr
               %th 商品のサイズ
-              %td=@products.size_id
+              %td #{@products.size.name}
             %tr
               %th 商品の状態
-              %td=@products.condition_id
+              %td #{@products.condition.name}
             %tr
               %th 配送料の負担
-              %td aaaaaa
+              %td #{@products.postage.name}
             %tr
               %th 配送の方法
-              %td aaaaaaa
+              %td #{@products.shipping_method.name}
             %tr
               %th 配送元地域
-              %td=@products.postage_id
+              %td 
+                =link_to"#{@products.address.prefecture.name}",root_path
             %tr
               %th 発送日の目安
-              %td aaaaaaaaa
+              %td  #{@products.shipping_date.name}
     .edit-container__content__price     
-      %span.price-left 
-        ¥
-        =@products.price
+      %span.price-left ¥#{@products.price}
       %span.price-right (税込)
       %span.price-right-postage 送料込み
-      
+      .edit-container__content__price__btn-buy
+        = link_to  "購入画面に進む",confirmation_product_path,class: "link"
     .edit-container__content__text
-      %p=@products.description 
+
+      %p #{@products.description}
 
 
 
