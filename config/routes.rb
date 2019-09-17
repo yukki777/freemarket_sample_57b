@@ -43,7 +43,7 @@ Rails.application.routes.draw do
 
     resources :wallet, only: [:new, :create, :destroy, :index]
 
-    resources :products, only: [:edit, :update, :show, :new, :destroy] do
+    resources :products, only: [:edit, :update, :new, :destroy] do
       member do
         get 'product_edit' =>'products#product_edit',as: 'product_edit'
       end
