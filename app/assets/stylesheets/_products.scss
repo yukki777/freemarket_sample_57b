@@ -32,6 +32,10 @@
     right: 30px;
     bottom: 30px;
     position: fixed;
+    z-index: 1;
+    a {
+      display: block;
+    }
     &__message {
       text-align: center;
       font-size: 22px;

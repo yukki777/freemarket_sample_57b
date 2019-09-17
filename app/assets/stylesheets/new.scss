@@ -52,16 +52,9 @@
         text-align: center;
         &__child {
           margin-top: 60px;
-          .dropzone__grand-child {
-            height: 162px;
-            width: 620px;
-            cursor: pointer;
-            position: absolute;
-            top: 0px;
-            z-index: 1;
-            display: block;
-            opacity: 0;
-          }
+          font-size: 12px;
+          font-weight: bold;
+          opacity: 0.7;
         }
       }
     }
@@ -75,18 +68,18 @@
           font-weight: 600;
           display: inline-block;
           color: #333;
-          .form-require {
-            @include form-require();
-          }
-          .form-optional {
-            background: gray;
-            margin: 0 0 0 8px;
-            padding: 2px 4px;
-            border-radius: 2px;
-            color: #fff;
-            font-size: 12px;
-            vertical-align: top;
-          }
+        }
+        .form-require {
+          @include form-require();
+        }
+        .form-optional {
+          background: gray;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          vertical-align: top;
         }
         div{
           .input-default {
@@ -155,7 +148,19 @@
             @include clearfix();
             padding: 0 0 24px;
             .l-left {
-              padding-top: 17px;
+              padding-top: 30px;
+            }
+            .l-right2{
+              color: #333333;
+              margin-top: 20px;
+              font-size: 30px;
+              font-weight: 600;
+              float: right;
+            }
+            .l-right3{
+              font-size: 12px;
+              margin-top: 30px;
+              float: right;
             }
             .l-right.sell-price-input {
               width: 50%;
@@ -239,6 +244,7 @@
         font-size: 14px;
         transition: all ease-out .3s;
         text-align: center;
+        text-decoration: none;
       }
     }
   }
@@ -276,4 +282,20 @@
       margin: 0 auto;
     }
   }
+}
+.upload-image {
+  height: 162px;
+  width: 620px;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  z-index: 1;
+  display: block;
+  opacity: 0;
+}
+.shipping_method {
+  display: none;
+}
+.dropzone-area2 {
+  display: none;
 }
