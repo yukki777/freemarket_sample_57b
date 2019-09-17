@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load',function(){
+$(function(){
   var slider = "#slider"; // スライダー
   var thumbnailItem = "#thumbnail-list .thumbnail-item"; // サムネイル画像アイテム
   
