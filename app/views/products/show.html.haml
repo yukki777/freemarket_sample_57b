@@ -38,14 +38,7 @@
               %th カテゴリー
               %td 
                 =link_to "#" do
-                  = "#{@products.category.parent.parent.name}"
-                  %br
-                  =link_to "#" do
-                    %i.fa.fa-chevron-left
-                      = "#{@products.category.parent.name}"
-                  =link_to "#" do
-                    %i.fa.fa-chevron-left
-                      = "#{@products.category.name}"
+                  = "#{@products.category.name}"
              
             %tr
               %th ブランド
