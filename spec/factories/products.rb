@@ -9,8 +9,9 @@ FactoryBot.define do
     size_id	            {"1"}
     shipping_date_id    {"1"}
     condition_id        {"1"}
-    category_id         {"1"}
+    created_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
     # binding.pry
+
     association :user, factory: :user
     association :address, factory: :address
     
