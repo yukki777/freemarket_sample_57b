@@ -53,9 +53,7 @@ class ProductsController < ApplicationController
 
   end
   
-# スプリントレビュー後削除、ここから
   def confirmation
-    # @product = Product.find(params[:id])
     wallet = current_user.wallet
     if wallet.present?
       customer = Payjp::Customer.retrieve(wallet.customer_id)
