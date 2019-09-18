@@ -95,8 +95,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true, null: false|
-|customer_id|integer|null: false|
-|card_id|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Association
 - belongs_to: product
