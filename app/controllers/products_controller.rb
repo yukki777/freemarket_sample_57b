@@ -16,6 +16,9 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @products= Product.find(params[:id])
+   
+      redirect_to edit_user_product_path(@user,product)
   end
 
 
@@ -45,9 +48,14 @@ class ProductsController < ApplicationController
   def edit
     @products= Product.find(params[:id])
     @images = Image.where(product_id:params[:id])
+    
   end
 
   def product_edit
+    @images = Image.where(product_id:params[:id])
+    @category_parent = Category.all.where(ancestry: nil)
+    @category_children = Category.all.where(ancestry: '1')
+    @category_gchildren = Category.all.where(ancestry: '1/2')
   end
 
   def destroy
@@ -68,6 +76,7 @@ class ProductsController < ApplicationController
   end
   
   def confirmation
+    @images = Image.where(product_id:params[:id])
     wallet = current_user.wallet
     if wallet.present?
       customer = Payjp::Customer.retrieve(wallet.customer_id)
@@ -88,10 +97,6 @@ class ProductsController < ApplicationController
   end
 
   private
-  def ddmenu
-    @categories = Category.all
-    @parents = @categories.where(ancestry: nil)
-  end
 
   def set_card
     @wallet = Wallet.where(user_id: current_user.id).first if Wallet.where(user_id: current_user.id).present?
@@ -129,6 +134,6 @@ class ProductsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by(id:params[:id])
   end
 end

@@ -59,7 +59,7 @@
             %tr
               %th 配送元地域
               %td 
-                =link_to"#{@products.address.prefecture.name}",root_path
+                =link_to"#{@products.prefecture.name}",root_path
             %tr
               %th 発送日の目安
               %td  #{@products.shipping_date.name}
@@ -67,8 +67,6 @@
       %span.price-left ¥#{@products.price}
       %span.price-right (税込)
       %span.price-right-postage 送料込み
-      .edit-container__content__price__btn-buy
-        = link_to  "購入画面に進む",confirmation_product_path,class: "link"
     .edit-container__content__text
 
       %p #{@products.description}
