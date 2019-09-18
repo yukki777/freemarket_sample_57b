@@ -68,6 +68,7 @@ class ProductsController < ApplicationController
   end
   
   def confirmation
+    @images = Image.where(product_id:params[:id])
     wallet = current_user.wallet
     if wallet.present?
       customer = Payjp::Customer.retrieve(wallet.customer_id)
