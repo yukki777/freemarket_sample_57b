@@ -20,14 +20,14 @@
             = link_to(edit_user_product_path(@user,product), class: 'path') do
               .container__mypage__display__bottom__product
                 .container__mypage__display__bottom__product__image
-                  = image_tag("#{product.images.first.image_url}", size: "50x50")
+                  = image_tag("#{product.images.first.image}", size: "50x50")
                 .container__mypage__display__bottom__product__column
                   .container__mypage__display__bottom__product__column__up
                     = product.name
                   .container__mypage__display__bottom__product__column__down
-                    %i.fa.fa-heart-o 
+                    %i.fa.fa-heart
                       %span.number-color 0
-                    %i.fa.fa-comment-o
+                    %i.fa.fa-comment
                       %span.number-color 3
                     %span.red-color 
                       公開中

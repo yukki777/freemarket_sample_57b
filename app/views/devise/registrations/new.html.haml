@@ -8,10 +8,10 @@
       .information-registration__base__main-box__click-area__social__link-box
         .information-registration__base__main-box__click-area__social__link-box__configuration
           .information-registration__base__main-box__click-area__social__link-box__configuration__social__mail
-            %i.fa.fa-envelope-o
+            %i.fa.fa-envelope
             = link_to 'メールアドレスで登録する',new1_signup_index_path
           .information-registration__base__main-box__click-area__social__link-box__configuration__social__facebook
-            %i.fa.fa-facebook-official
+            %i.fab.fa-facebook
             = link_to 'facebookで登録する',user_facebook_omniauth_authorize_path, method: :post
           .information-registration__base__main-box__click-area__social__link-box__configuration__social__google
             = link_to 'Googleで登録する',user_google_oauth2_omniauth_authorize_path, method: :post
