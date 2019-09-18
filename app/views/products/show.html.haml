@@ -68,7 +68,10 @@
       %span.price-right (税込)
       %span.price-right-postage 送料込み
       .container__content__price__btn-buy
-        = link_to  "購入画面に進む",confirmation_product_path,class: "link"
+        - if @products.user_id == current_user&.id
+          = link_to  "購入画面に進む",confirmation_product_path,class: "link"
+        -else
+          = link_to  "購入画面に進む",new_user_session_path,class: "link"
     .container__content__text
 
       %p #{@products.description}
