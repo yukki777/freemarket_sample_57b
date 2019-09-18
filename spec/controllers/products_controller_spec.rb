@@ -35,6 +35,17 @@ describe ProductsController, type: :controller do
   #   ends
   # end
 
+#   describe 'delete #destroy' do
+#   expect do
+#     delete :destroy, params: { id: product }
+#   end.to change(Product, :count).by(-1)
+# end
+    # it "deletes the product" do
+    #   product = create(:product)
+    #   expect{delete :destroy, id: product}.to change(Product).by(-1)
+    #   binding.pry
+    # end
+  # end
   # describe 'DELETE #destroy' do
   #   it "renders the :destroy template" do
   #     get :destroy, params: { id: product }
@@ -43,6 +54,11 @@ describe ProductsController, type: :controller do
   # end
 
   describe 'GET #search' do
+  it "populates an array of products ordered by Category.all" do
+    categories = create_list(:category, 3) 
+    get :search
+    expect(assigns(:categories)).to match(categories)
+  end
     it "populates an array of products ordered by created_at DESC" do
       products = create_list(:product, 3) 
       get :search
