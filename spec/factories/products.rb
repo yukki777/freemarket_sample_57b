@@ -13,8 +13,5 @@ FactoryBot.define do
     association :category, factory: :category
     association :user, factory: :user
     association :address, factory: :address
-    
-    
-
   end
 end

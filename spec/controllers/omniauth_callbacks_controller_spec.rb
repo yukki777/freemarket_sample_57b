@@ -1,36 +1,25 @@
 require 'rails_helper'
 describe Users::OmniauthCallbacksController, type: :controller do
-    let(:user) { create(:user) }
-  
-    describe '#passthru' do
-  
-      context 'log in' do
-        before do
-          login user
-          get :index, params: { group_id: group.id }
-        end
-  
-        it 'assigns @message' do
-          expect(assigns(:message)).to be_a_new(Message)
-        end
-  
-        it 'assigns @group' do
-          expect(assigns(:group)).to eq group
-        end
-  
-        it 'redners index' do
-          expect(response).to render_template :index
-        end
-      end
-  
-      context 'not log in' do
-        before do
-          get :index, params: { group_id: group.id }
-        end
-  
-        it 'redirects to new_user_session_path' do
-          expect(response).to redirect_to(new_user_session_path)
-        end
-      end
+  before do
+    stub_env_for_omniauth
+  end
+
+  describe "GET #facebook" do
+    context "as a guest user" do
+      before { get :facebook }
+      it { should redirect_to my_edit_user_registration_path }
     end
   end
+
+
+  def stub_env_for_omniauth(uid="1234567890")
+    # devise を使っている場合
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+
+    request.env["omniauth.auth"] = OmniAuth::AuthHash.new({
+      "provider"=>"facebook",
+      "uid"=>uid,
+      ...
+    })
+  end
+end
