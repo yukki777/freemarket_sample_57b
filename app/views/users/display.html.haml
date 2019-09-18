@@ -20,7 +20,7 @@
             = link_to(edit_user_product_path(@user,product), class: 'path') do
               .container__mypage__display__bottom__product
                 .container__mypage__display__bottom__product__image
-                  = image_tag("#{product.images.first.image_url}", size: "50x50")
+                  = image_tag("#{product.images.first.image}", size: "50x50")
                 .container__mypage__display__bottom__product__column
                   .container__mypage__display__bottom__product__column__up
                     = product.name

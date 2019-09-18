@@ -3,7 +3,7 @@
     %a{href: "/products/#{product.id}"}
       .middle-product__image
         - if product.images.present?
-          = image_tag("#{product.images.first.image_url}", size: "200x200")
+          = image_tag("#{product.images.first.image}", size: "200x200")
       .middle-product__description
         .middle-product__description__message
           = product.name
