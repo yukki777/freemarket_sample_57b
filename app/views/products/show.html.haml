@@ -59,7 +59,7 @@
             %tr
               %th 配送元地域
               %td 
-                =link_to"#{@products.address.prefecture.name}",root_path
+                =link_to"#{@products.prefecture.name}",root_path
             %tr
               %th 発送日の目安
               %td  #{@products.shipping_date.name}

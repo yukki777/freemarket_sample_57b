@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :ddmenu
   before_action :set_card, only: [:confirmation, :pay]
   before_action :get_payjp_info, only: [:confirmation, :pay]
-  before_action :set_product,only: [:pay, :destroy, :edit, :product_edit, :update]
+  before_action :set_product,only: [:pay, :destroy, :edit, :product_edit, :update, :confirmation]
   before_action :set_user,only: [:update, :edit, :product_edit]
 
   def index
@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
+    @products.destroy
     redirect_to display_user_path(current_user), notice: '出品した商品を削除しました'
   end
 
@@ -66,7 +66,7 @@ class ProductsController < ApplicationController
 
   def pay
     charge = Payjp::Charge.create(
-    amount: @product.price,
+    amount: @products.price,
     customer: @wallet.customer_id,
     currency: 'jpy',
     )

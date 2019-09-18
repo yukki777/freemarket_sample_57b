@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   has_many   :images, dependent: :destroy
 
+  belongs_to :address
   belongs_to :user
   belongs_to :category
   validates :name, :postage_id, :price, :description, :shipping_date_id, :shipping_method_id, :condition_id, :size_id, :category_id, :brand_id, :prefecture_id, presence: true
@@ -33,4 +34,7 @@ class Product < ApplicationRecord
      # active_hashでshipping_methodデータを導入する
      extend ActiveHash::Associations::ActiveRecordExtensions
      belongs_to_active_hash :shipping_date
+
+    extend ActiveHash::Associations::ActiveRecordExtensions
+    belongs_to_active_hash :prefecture
 end
