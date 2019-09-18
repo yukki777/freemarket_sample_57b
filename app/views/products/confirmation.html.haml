@@ -7,7 +7,7 @@
     %hr
     .confirmation-container__content__block
       .confirmation-container__content__block__item
-        = image_tag "kutu.jpg", class: "item-icon"
+        = image_tag @images.first.image_url, class: "item-icon"
         = @products.name
       .confirmation-container__content__block__form
         ¥
