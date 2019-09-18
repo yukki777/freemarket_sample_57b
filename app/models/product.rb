@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :images
   belongs_to :user
   belongs_to :category
+  validates :name, :postage_id, :price, :description, :shipping_date_id, :shipping_method_id, :condition_id, :size_id, :category_id, :brand_id, :prefecture_id, presence: true
 
   def self.search(search)
     return Product.all unless search
@@ -32,4 +33,7 @@ class Product < ApplicationRecord
      # active_hashでshipping_methodデータを導入する
      extend ActiveHash::Associations::ActiveRecordExtensions
      belongs_to_active_hash :shipping_date
+
+    extend ActiveHash::Associations::ActiveRecordExtensions
+    belongs_to_active_hash :prefecture
 end

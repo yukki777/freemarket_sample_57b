@@ -8,10 +8,10 @@
     .confirmation-container__content__block
       .confirmation-container__content__block__item
         = image_tag "kutu.jpg", class: "item-icon"
-        = @product.name
+        = @products.name
       .confirmation-container__content__block__form
         ¥
-        = @product.price
+        = @products.price
         %p.small-font 送料込み
       .confirmation-container__content__block__form2
         =link_to "ポイントはありません", "#"
@@ -19,18 +19,18 @@
         %p 支払い金額
         .price-font 
           ¥
-          = @product.price
+          = @products.price
       .confirmation-container__content__block__form4
         = link_to "購入する", pay_product_path, method: :post
     %hr
     .confirmation-container__content__shipping-address
       %h4 配送先
       %a 〒
-      = @product.address.postal_code
+      = current_user.address.postal_code
       %p
-      = @product.address.city + @product.address.address + @product.address.building_name
+      = current_user.address.city + current_user.address.address + current_user.address.building_name
       %p
-      = @product.user.first_name + " " + @product.user.family_name
+      = current_user.first_name + " " + current_user.family_name
       .confirmation-container__content__shipping-address__editbutton
         =link_to "変更する","#"
         =link_to "", "#", class:"fa fa-angle-right"

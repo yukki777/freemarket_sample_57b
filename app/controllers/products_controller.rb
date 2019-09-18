@@ -51,7 +51,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
+    @products.destroy
     redirect_to display_user_path(current_user), notice: '出品した商品を削除しました'
   end
 
@@ -66,7 +66,7 @@ class ProductsController < ApplicationController
     @last_page =  Product.search(params[:search]).page(params[:page]).per(i).last_page?
 
   end
-
+  
   def confirmation
     wallet = current_user.wallet
     if wallet.present?
@@ -80,7 +80,7 @@ class ProductsController < ApplicationController
 
   def pay
     charge = Payjp::Charge.create(
-    amount: @product.price,
+    amount: @products.price,
     customer: @wallet.customer_id,
     currency: 'jpy',
     )
