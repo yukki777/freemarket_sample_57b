@@ -3,9 +3,9 @@
     .header__content__up
       = link_to image_tag('logo.svg',class: "logo"),root_path
       = form_tag search_products_path,class: "header-form", method: 'get'  do
-        %i.fa.fa-search
+        %button.fa.fa-search{type: "submit"}
         = text_field_tag :search,params[:search],class: "header-field",placeholder: "何かお探しですか？"   
-        = submit_tag 'Search', name: nil,class: "hidden"
+        -# = submit_tag 'Search', name: nil,class: "hidden"
     .header__content__down
       .header__content__down__left
         %i.fa.fa-list-ul
