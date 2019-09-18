@@ -14,5 +14,5 @@
 //= require rails-ujs
 //= require activestorage
 //= require owl.carousel
-// require turbolinks
+//= require turbolinks
 //= require_tree .

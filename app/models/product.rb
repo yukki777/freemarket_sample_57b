@@ -1,12 +1,9 @@
 class Product < ApplicationRecord
   has_many   :images, dependent: :destroy
   accepts_nested_attributes_for :images
-  has_many   :product_categories
-  has_many   :categories, through: :product_categories
-  belongs_to :address
   belongs_to :user
   belongs_to :category
-  validates :name, :postage_id, :price, :description, :shipping_date_id, presence: true
+  # validates :name, :postage_id, :price, :description, :shipping_date_id, presence: true
 
   def self.search(search)
     return Product.all unless search

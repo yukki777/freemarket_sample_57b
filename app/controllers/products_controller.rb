@@ -91,9 +91,9 @@ class ProductsController < ApplicationController
 
   private
 
-  def product_params
-    params.require(:product).permit(:name, :price, :description)
-  end
+  # def product_params
+  #   params.require(:product).permit(:name, :price, :description)
+  # end
 
   def ddmenu
     @categories = Category.all
@@ -104,12 +104,12 @@ class ProductsController < ApplicationController
     @wallet = Wallet.where(user_id: current_user.id).first if Wallet.where(user_id: current_user.id).present?
   end
 
-  private
   def product_params
     params.require(:product).permit(
       :name,
       :price,
       :description,
+      :category_id,
       :brand_id,
       :postage_id,
       :shipping_method_id,
@@ -117,7 +117,6 @@ class ProductsController < ApplicationController
       :shipping_date_id,
       :condition_id,
       :prefecture_id,
-      :category_id,
       images_attributes: {images: []}
       )
       .merge(user_id: current_user.id)
@@ -137,6 +136,6 @@ class ProductsController < ApplicationController
   end
 
   def set_user
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
   end
 end
