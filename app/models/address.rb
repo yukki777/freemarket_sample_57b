@@ -1,6 +1,4 @@
 class Address < ApplicationRecord
-
-  has_one :product
   belongs_to :user, optional: true
 
   validates :postal_code, :city, :address, :prefecture_id, presence: true

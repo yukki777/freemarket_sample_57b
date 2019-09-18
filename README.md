@@ -48,7 +48,7 @@
 |price|integer|null: false|
 |description|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|address_id|integer|null: false, foreign_key: true|
+|prefecture_id|integer|null: false|
 |brand_id|integer|-|
 |postage_id|integer|null: false|
 |shipping_method_id|integer|null: false|
@@ -70,7 +70,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|image_url|string|null: false|
+|image|string|null: false|
 |product_id|integer|null: false, foreign_key: true|
 
 ### Association

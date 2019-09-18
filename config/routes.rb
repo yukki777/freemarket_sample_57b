@@ -61,6 +61,10 @@ Rails.application.routes.draw do
       get 'confirmation' => 'products#confirmation'
     end
   end
+
+  resources :products do
+    resources :images, only: [:index, :new, :create, :delete]
+  end
 end
 # ルーティング調整中のため一時コメント化
 # resources :users, only: [:edit, :update, :show]
