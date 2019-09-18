@@ -3,7 +3,6 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :images
   belongs_to :user
   belongs_to :category
-  # validates :name, :postage_id, :price, :description, :shipping_date_id, presence: true
 
   def self.search(search)
     return Product.all unless search

@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :ddmenu
   before_action :set_card, only: [:confirmation, :pay]
   before_action :get_payjp_info, only: [:confirmation, :pay]
-  before_action :set_product,only: [:pay, :destroy, :edit, :product_edit, :update]
+  before_action :set_product,only: [:pay, :destroy, :edit, :product_edit, :update, :confirmation]
   before_action :set_user,only: [:update, :edit, :product_edit]
   def index
     @products = Product.all
@@ -67,9 +67,7 @@ class ProductsController < ApplicationController
 
   end
 
-# スプリントレビュー後削除、ここから
   def confirmation
-    # @product = Product.find(params[:id])
     wallet = current_user.wallet
     if wallet.present?
       customer = Payjp::Customer.retrieve(wallet.customer_id)
@@ -90,11 +88,6 @@ class ProductsController < ApplicationController
   end
 
   private
-
-  # def product_params
-  #   params.require(:product).permit(:name, :price, :description)
-  # end
-
   def ddmenu
     @categories = Category.all
     @parents = @categories.where(ancestry: nil)
