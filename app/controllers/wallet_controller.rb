@@ -1,6 +1,6 @@
 class WalletController < ApplicationController
   require 'payjp'
-  before_action :set_card
+  before_action :set_card, except: :new
   before_action :set_user
   before_action :get_payjp_info, only: [:new, :create, :destroy, :show, :index]
 
