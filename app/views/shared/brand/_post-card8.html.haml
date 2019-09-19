@@ -1,4 +1,4 @@
-- @products.order('created_at DESC').where(brand_id: 3).limit(4).each do |product|
+- @products.order('created_at DESC').where(brand_id: 2).limit(4).each do |product|
   .middle-product
     %a{href: "/products/#{product.id}"}
       .middle-product__image
