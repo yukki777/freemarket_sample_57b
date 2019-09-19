@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user
-  before_action :set_product, only: [:show, :edit, :display]
-
+  before_action :set_product, only: [:show, :edit]
+  before_action :set_image
   
   def index
   end
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def display
+    @products = Product.where(id: current_user.id)
   end
 # スプリントレビュー後削除、ここから
   def logout
@@ -58,4 +59,7 @@ class UsersController < ApplicationController
     @products = Product.all
   end
  
+  def set_image
+    @images = Image.where(product_id:params[:id])
+  end
 end
