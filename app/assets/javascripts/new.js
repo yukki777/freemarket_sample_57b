@@ -63,7 +63,7 @@ $(function(){
       return;
     }
     var new_image = $(`<input multiple= "multiple" name="images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
-    input_area.prepend(new_image);
+    input_area.append(new_image);
   });
   // 削除ボタンを押すと発火
   $(document).on('click', '.delete', function() {
@@ -124,6 +124,9 @@ $(function(){
       })
     }
   })
+});
+
+$(function(){
   $("#postage").click(function() { //配送料の負担がクリックされたら発火
     $(".shipping_method").fadeIn();
   });
