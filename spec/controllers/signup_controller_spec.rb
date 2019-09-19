@@ -1,52 +1,52 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-describe SignupController , type: :controller do
-  let(:user) { create(:user) }
+# describe SignupController , type: :controller do
+#   let(:user) { create(:user) }
 
-  context 'log in' do
-    before do
-      login user
-    end
+#   context 'log in' do
+#     before do
+#       login user
+#     end
 
-    describe 'GET #new1' do
-      it "assigns the requested tweet to @user" do
+#     describe 'GET #new1' do
+#       it "assigns the requested tweet to @user" do
         
-      end
-    end
+#       end
+#     end
 
-    describe 'GET #new2' do
-      it "assigns the requested tweet to @user" do
+#     describe 'GET #new2' do
+#       it "assigns the requested tweet to @user" do
         
-      end
-    end
+#       end
+#     end
 
-    describe 'GET #new3' do
-      it "assigns the requested tweet to @user" do
+#     describe 'GET #new3' do
+#       it "assigns the requested tweet to @user" do
         
-      end
-    end
+#       end
+#     end
 
-    describe 'GET #new4' do
-      it "assigns the requested tweet to @user" do
+#     describe 'GET #new4' do
+#       it "assigns the requested tweet to @user" do
         
-      end
-    end
+#       end
+#     end
 
-    describe 'GET #new5' do
-      it "assigns the requested tweet to @user" do
+#     describe 'GET #new5' do
+#       it "assigns the requested tweet to @user" do
         
-      end
-    end
+#       end
+#     end
 
-    describe 'GET #complete' do
-    it "assigns the requested tweet to @user" do
+#     describe 'GET #complete' do
+#     it "assigns the requested tweet to @user" do
       
-      end
-    end
+#       end
+#     end
 
-    describe '#create' do
+#     describe '#create' do
     
-    end
+#     end
 
 
 
@@ -57,4 +57,4 @@ describe SignupController , type: :controller do
 
 
 
-end
+# end

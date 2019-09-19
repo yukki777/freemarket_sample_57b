@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe CategoriesController, type: :controller do
 
   describe 'GET #show' do
-    let(:params) { { id: 1 }
+    let(:params) { { id: 1 } }
 
     it 'has a 200 status code' do
       get :show,params
