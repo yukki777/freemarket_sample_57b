@@ -50,6 +50,24 @@
         background: #f5f5f5;
         border: 1px dashed #ccc;
         text-align: center;
+        
+        .dropzone-area p{
+          position: absolute;
+          top: 50px;
+          left: 150px;
+        }
+        .dropzone-container{
+          position: absolute;
+          width: 100%;
+          top:0;
+        }
+        #preview{
+          display:flex;
+     
+          .img_view{
+           position: relative;
+          }
+        }
         &__child {
           margin-top: 60px;
           font-size: 12px;
@@ -223,6 +241,7 @@
         }
       }
       .btn--red {
+        cursor: pointer;
         margin: 40px 0 0;
         background: #ea352d;
         border: 1px solid #ea352d;
@@ -299,4 +318,28 @@
 }
 .dropzone-area2 {
   display: none;
+}
+.btn_wrapper{
+  display: flex;
+  position: absolute;
+  top: 130px;
+  padding-bottom: 10px;
+}
+.btn.edit{
+  color: #209DE9;
+  background-color: #F5F5F5;
+  padding: 4px 15px 4px 15px;
+  border: solid 1px #EEEEEE;
+  font-size: 14px;
+  z-index: 70;
+  cursor: pointer;
+}
+.btn.delete{
+  color: #209DE9;
+  border: solid 1px #EEEEEE;
+  background-color: #F5F5F5;
+  padding: 4px 15px 4px 15px;
+  font-size: 14px;
+  z-index: 70;
+  cursor: pointer;
 }

@@ -8,27 +8,7 @@
     .sell__main__container
       %h2.single-head
         商品の情報を入力
-    = form_with model: @product, html: {class: "sell-form dropzone", id: "item-dropzone"}, local: true do |f|
-      .sell__main__upload--box
-        %h3.sell-upload-head
-          出品画像
-          %span.form-require 必須
-        %p 最大10枚までアップロードできます
-        .dropzone
-          .preview
-          .dropzone__child
-          = f.fields_for :images do |i|
-            .dropzone-container.clearfix
-              #preview
-              .dropzone-area
-                = i.label :image, class: "dropzone-box", for: "upload-image" do
-                  .input_area
-                    = i.file_field :image, multiple: true, type: 'file', name: "images[image][]", id: "upload-image", class: "upload-image", 'data-image': 0
-                  %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
-              #preview2
-              .dropzone-area2
-                = i.label :image, class: "dropzone-box", for: "upload-image" do
-                  %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+    = form_with model: [@products], html: {class: "sell-form dropzone", id: "item-dropzone"}, local: true do |f|
       .sell-content
         .form-group
           = f.label :name, "商品名"
@@ -170,7 +150,7 @@
               加盟店規約
             に同意したことになります。
           .actions
-            = f.submit "編集する", class: "btn--red"
+            = f.submit "変更する", class: "btn--red"
         = link_to "もどる", root_path, class: "btn-default btn--gray"
 
   .sell__footer

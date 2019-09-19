@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   before_action :get_payjp_info, only: [:confirmation, :pay]
   before_action :set_product,only: [:pay, :destroy, :edit, :product_edit, :update, :confirmation]
   before_action :set_user,only: [:update, :edit, :product_edit]
+  
   def index
     @products = Product.all
   end
@@ -16,9 +17,9 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @products= Product.find(params[:id])
-   
-      redirect_to edit_user_product_path(@user,product)
+    @images = Image.where(product_id:params[:id])
+    @products.update(product_params)
+    redirect_to edit_user_product_path(current_user,@products)
   end
 
 
@@ -48,10 +49,10 @@ class ProductsController < ApplicationController
   def edit
     @products= Product.find(params[:id])
     @images = Image.where(product_id:params[:id])
-    
   end
 
   def product_edit
+  
     @images = Image.where(product_id:params[:id])
     @category_parent = Category.all.where(ancestry: nil)
     @category_children = Category.all.where(ancestry: '1')
@@ -136,4 +137,6 @@ class ProductsController < ApplicationController
   def set_user
     @user = User.find_by(id:params[:id])
   end
+
+ 
 end

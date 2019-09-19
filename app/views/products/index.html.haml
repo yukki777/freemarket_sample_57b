@@ -6,15 +6,9 @@
     =link_to image_tag("top-banner.jpg")
     =link_to image_tag("top-banner-main.jpg")
 -# 出品ボタン
-.wrapper2
-  .circle
-    .circle__message
-      = "出品"
-    .circle__awesome
-      = link_to "products/new" do
-        %i.fa.fa-camera
+= render partial: "exhibit_button"
 -# 商品一覧
-.wrapper3
+.wrapper2
   .upper-category
     = "人気のカテゴリー"
   .lower-category
@@ -26,13 +20,13 @@
       = link_to "家電・スマホ・カメラ","#camera"
     .lower-category__toy
       = link_to "おもちゃ・ホビー・グッズ","#toy"
-.wrapper4
+.wrapper3
   .product#ladies
     .upper-product
       .left-product
         = "#{Category.find(1).name}新着アイテム"
       .right-product
-        = link_to "#" do
+        = link_to "/categories/1" do
           もっと見る
           %i.fa.fa-chevron-right
     .middle-product-set
@@ -44,7 +38,7 @@
       .left-product
         = "#{Category.find(219).name}新着アイテム"
       .right-product
-        = link_to "#" do
+        = link_to "/categories/219" do
           もっと見る
           %i.fa.fa-chevron-right
     .middle-product-set
@@ -56,7 +50,7 @@
       .left-product
         = "#{Category.find(983).name}新着アイテム"
       .right-product
-        = link_to "#" do
+        = link_to "/categories/983" do
           もっと見る
           %i.fa.fa-chevron-right
     .middle-product-set
@@ -68,14 +62,14 @@
       .left-product
         = "#{Category.find(748).name}新着アイテム"
       .right-product
-        = link_to "#" do
+        = link_to "/categories/748" do
           もっと見る
           %i.fa.fa-chevron-right
     .middle-product-set
       = render "shared/top_page/post-card4"
     .middle-product-set
 
-.wrapper5
+.wrapper4
   .upper-category
     = "人気のブランド"
   .lower-category
@@ -87,7 +81,7 @@
       = link_to "シュプリーム", "#supreme"
     .lower-category__toy
       = link_to "ナイキ","#nike"
-.wrapper6
+.wrapper5
   .product#chanel
     .upper-product
       .left-product
