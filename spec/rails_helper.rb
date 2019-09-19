@@ -64,3 +64,4 @@ RSpec.configure do |config|
 end
 require 'devise'
 require File.expand_path("spec/support/controller_macros.rb")
+require 'payjp'
