@@ -12,6 +12,7 @@ FactoryBot.define do
     created_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
     association :category, factory: :category
     association :user, factory: :user
-    association :address, factory: :address
+    association :prefecture, factory: :prefecture
+    # association :address, factory: :address
   end
 end

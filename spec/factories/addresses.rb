@@ -4,12 +4,11 @@ FactoryBot.define do
     city {Faker::Address.city}
     address {Faker::Address.street_address}
     building_name {Faker::Dessert.variety}
-    prefecture_id {"1"}
 
     trait :prefecture do
       prefecture
     end
-    # association :prefecture, factory: :prefecture
+    association :prefecture, factory: :prefecture
     association :user, factory: :user
 
   end

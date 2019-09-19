@@ -17,9 +17,8 @@ describe Users::OmniauthCallbacksController, type: :controller do
     @request.env["devise.mapping"] = Devise.mappings[:user]
 
     request.env["omniauth.auth"] = OmniAuth::AuthHash.new({
-      "provider"=>"facebook",
-      "uid"=>uid,
-      ...
+      provider: facebook,
+      uid: uid
     })
   end
 end

@@ -6,7 +6,9 @@ module OmniauthMacros
         uid: '12345',
         info: {
           name: 'mockuser',
-          email: 'sample@test.com'
+          email: 'sample@test.com',
+          first_name: 'ほげ',
+          last_name: 'ふが'
         },
         credentials: {
           token: 'hogefuga'
@@ -14,7 +16,6 @@ module OmniauthMacros
       }
     )
   end
-
   def google_oauth2
     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
       {
@@ -22,7 +23,9 @@ module OmniauthMacros
         uid: '12345',
         info: {
           name: 'mockuser',
-          email: 'sample@test.com'
+          email: 'sample@test.com',
+          first_name: 'ほげ',
+          last_name: 'ふが'
         },
         credentials: {
           token: 'hogefuga'

@@ -15,7 +15,8 @@ describe ProductsController, type: :controller do
 
   describe 'GET #show' do
     it "renders the :show template" do
-      get :show, params: {  id: 1 }
+      product = create(:product)
+      get :show, params: {  id: product.id }
       expect(response).to render_template :show
     end
   end
@@ -27,31 +28,6 @@ describe ProductsController, type: :controller do
       expect(response).to render_template :edit
     end
   end
-
-  # describe 'GET #update' do
-  #   it "renders the :update template" do
-  #     get :update, params: {  id: 1 }
-  #     expect(response).to render_template :update
-  #   ends
-  # end
-
-#   describe 'delete #destroy' do
-#   expect do
-#     delete :destroy, params: { id: product }
-#   end.to change(Product, :count).by(-1)
-# end
-    # it "deletes the product" do
-    #   product = create(:product)
-    #   expect{delete :destroy, id: product}.to change(Product).by(-1)
-    #   binding.pry
-    # end
-  # end
-  # describe 'DELETE #destroy' do
-  #   it "renders the :destroy template" do
-  #     get :destroy, params: { id: product }
-  #     expect(response).to render_template :destroy
-  #   end
-  # end
 
   describe 'GET #search' do
   it "populates an array of products ordered by Category.all" do
@@ -76,16 +52,4 @@ describe ProductsController, type: :controller do
       expect(response).to render_template :finish
     end
   end
-
-  # describe 'post #pay' do
-  #   it "renders the :pay template" do
-  #   end
-  # end
-
-  # describe 'GET #confirmation' do
-  #   it "renders the :confirmation template" do
-  #   end
-  # end
-
-
 end
