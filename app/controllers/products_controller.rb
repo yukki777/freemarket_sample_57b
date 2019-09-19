@@ -65,14 +65,14 @@ class ProductsController < ApplicationController
   end
 
   def search
-    i = 132
+    num = 132
     @categories = Category.all
     @parents = @categories.where(ancestry: nil)
-    @products = Product.search(params[:search]).order("created_at DESC").page(params[:page]).per(i)
-
-    @total_page =  Product.search(params[:search]).page(params[:page]).per(i).total_pages
-    @first_page =  Product.search(params[:search]).page(params[:page]).per(i).first_page?
-    @last_page =  Product.search(params[:search]).page(params[:page]).per(i).last_page?
+    @products = Product.search(params[:search]).order("created_at DESC").page(params[:page]).per(num)
+    
+    @total_page =  Product.search(params[:search]).page(params[:page]).per(num).total_pages
+    @first_page =  Product.search(params[:search]).page(params[:page]).per(num).first_page?
+    @last_page =  Product.search(params[:search]).page(params[:page]).per(num).last_page?
 
   end
   
