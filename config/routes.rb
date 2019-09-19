@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:edit, :update, :show]
-  resources :products, only: [:edit, :show, :new,:destroy, :index] do
+  resources :products, only: [:edit, :show, :new,:destroy, :index,:update] do
     collection do
       get 'finish' => 'products#finish'
       get 'search'

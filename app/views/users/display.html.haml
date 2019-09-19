@@ -15,7 +15,7 @@
         .container__mypage__display__flex__column
           = link_to "売却済み",sell_user_path(@user)
       .container__mypage__display__bottom
-        - @products.order('created_at DESC').each do |product|
+        - @user.products.order('created_at DESC').each do |product|
           - if product.images.present?   
             = link_to(edit_user_product_path(@user,product), class: 'path') do
               .container__mypage__display__bottom__product
