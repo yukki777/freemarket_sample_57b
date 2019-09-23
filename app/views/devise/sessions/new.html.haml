@@ -7,7 +7,7 @@
         = link_to '新規会員登録',new1_signup_index_path, class: "new_user"
     .information-registration-header__white__content-bottom
       .information-registration-header__white__content-bottom__facebook
-        %i.fa.fa-facebook-official
+        %i.fab.fa-facebook
         = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
       - if session[:value] == "facebook"
         = render partial: "devise/registrations/notice" 
@@ -22,8 +22,7 @@
             = f.email_field :email,placeholder: "メールアドレス",class: "input-mail"
           .information-registration-header__white__content-bottom__form__password
             = f.password_field :password, autocomplete: "off",placeholder: "パスワード",class: "input-password"
-          .information-registration-header__white__content-bottom__form__image
-            = image_tag "people.png",class: "image"
+         
           .information-registration-header__white__content-bottom__form__submit
             = f.submit "ログイン", class: 'input-btn'
       .information-registration-header__white__content-bottom__text
